@@ -11,7 +11,7 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
+        <div className="py-2 text-center text">
           {preview ? (
             <>
               This page is a preview.{' '}
@@ -32,7 +32,6 @@ export default function Alert({ preview }) {
               >
                 available on GitHub
               </a>
-              .
             </>
           )}
         </div>
