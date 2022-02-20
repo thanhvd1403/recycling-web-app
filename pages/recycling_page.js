@@ -14,7 +14,7 @@ export default function Index({ allPosts }) {
     <>
       <Layout preview={true}>
         <Head>
-          <title>OneStop E-Cycle</title>
+          <title>Recycling Hub</title>
         </Head>
         <Container>
           {heroPost && (

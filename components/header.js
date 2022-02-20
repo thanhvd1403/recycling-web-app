@@ -6,7 +6,6 @@ export default function Header() {
       <Link href="/">
         <a className="hover:underline">OneStop E-waste Recycle @NTU</a>
       </Link>
-      .
     </h2>
   );
 }
