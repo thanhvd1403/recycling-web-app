@@ -72,16 +72,18 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters>
           {/* Responsive screen: size=md (desktop) */}
           <Link href="/">
-            <Typography
-              className="text-xl"
-              variant="h6"
-              noWrap
-              onClick={handleOpenNavMenu}
-              component="div"
-              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-            >
-              OneStop E-Cycle
-            </Typography>
+            <Button color="inherit">
+              <Typography
+                className="text-xl"
+                variant="h6"
+                noWrap
+                onClick={handleOpenNavMenu}
+                component="div"
+                sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+              >
+                OneStop E-Cycle
+              </Typography>
+            </Button>
           </Link>
 
           {/* Responsive screen: size=xs (for Mobile) */}
