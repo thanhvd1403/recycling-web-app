@@ -23,6 +23,7 @@ export default function Footer() {
     //     </div>
     //   </Container>
     // </footer>
+
     <footer class="text-center bg-gray-900 text-white">
   
    < div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
@@ -52,10 +53,9 @@ export default function Footer() {
       </div>
     </div>
 
-
     <div class="mx-6 py-10 text-center md:text-left">
-      <div class="grid grid-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="">
+      <div class="grid grid-1 md:grid-cols-1 lg:grid-cols-4 gap-4">
+        <div class="col-span-2">
           <h6 class="
               uppercase
               font-semibold
@@ -64,11 +64,12 @@ export default function Footer() {
               items-center
               justify-center
               md:justify-start
+              text-green
             ">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cubes"
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cube"
               class="w-4 mr-3" role="img" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512">
-              <path fill="currentColor"
+              <path fill="green"
                 d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z">
               </path>
             </svg>
@@ -79,26 +80,7 @@ export default function Footer() {
           </p>
         </div>
 
-
-        {/* <div class="">
-          <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-            Products
-          </h6>
-          <p class="mb-4">
-            <a href="#!" class="text-gray-600">Angular</a>
-          </p>
-          <p class="mb-4">
-            <a href="#!" class="text-gray-600">React</a>
-          </p>
-          <p class="mb-4">
-            <a href="#!" class="text-gray-600">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-gray-600">Laravel</a>
-          </p>
-        </div>
- */}
-
+    
 
 
         <div class="">
@@ -153,46 +135,50 @@ export default function Footer() {
         </div>
       </div>
     </div>
-    <div class="px-6 pt-6">
-    <form action="">
-      <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
-        <div class="md:ml-auto md:mb-6">
-          <p class="text-white-">
-            <strong>Sign up for our newsletter</strong>
-          </p>
-        </div>
+    
+    <div>
+      <form action="">
+        <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
+          <div class="md:ml-auto md:mb-6">
+            <p class="">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
 
-        <div class="md:mb-6">
-          <input
-            type="text"
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleFormControlInput1"
-            placeholder="Email address"/>
+          <div class="md:mb-6">
+            <input
+              type="text"
+              class="
+                form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              "
+              id="exampleFormControlInput1"
+              placeholder="Email address"/>
+          </div>
+
+          <div class="md:mr-auto mb-6">
+            <button type="submit" class="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+              Subscribe
+            </button>
+          </div>
         </div>
-        <div class="md:mr-auto mb-6">
-          <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
-        </div>
-      </div>
-    </form>
-  </div>
+      </form>
+    </div>
     <div class="text-center p-6 bg-gray-800">
-      <span>© 2021 Copyright:</span>
+      <span>© 2021 Copyright: </span>
       <a class="text-white font-semibold" href="!#">Onestop E-cycle</a>
     </div>
   </footer>
