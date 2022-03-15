@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {
-  Alert,
-  Stack,
-  AppBar,
-  Typography,
-  Toolbar,
-  Slide,
-  CssBaseline,
-  useScrollTrigger,
-} from "@mui/material";
+import { Stack, Typography, Slide } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
@@ -225,7 +220,7 @@ const ResponsiveAppBar = () => {
   );
 };
 
-export default function NavBar(props) {
+export default function NavigationBar(props) {
   return (
     <>
       <CssBaseline />
