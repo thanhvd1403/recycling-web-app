@@ -8,7 +8,7 @@ export default function Layout({ preview, children }) {
     <>
       <Meta />
       <div className="min-h-screen">
-        <AppBar id="back-to-top-anchor" color="transparent"></AppBar>
+        <div id="back-to-top-anchor" color="transparent"></div>
         <NavigationBar />
         <div>
           <main>{children}</main>
