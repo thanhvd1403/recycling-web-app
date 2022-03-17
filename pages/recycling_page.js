@@ -1,6 +1,7 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
 import Head from "next/head";
+import db from "../firebase-config";
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -10,9 +11,33 @@ import {
   GoogleMap,
   LoadScript,
   Autocomplete,
-  useJsApiLoader,
+  Marker,
+  KmlLayer,
 } from "@react-google-maps/api";
-import React, { memo, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import TextField from "@mui/material/TextField";
+import { collection, getDocs } from "@firebase/firestore";
+
+const bounds_radius = {
+  "3km": 0.027,
+  "5km": 0.045,
+  "7km": 0.063,
+  "10km": 0.09,
+  "15km": 0.135,
+  "20km": 0.18,
+};
+const libraries = ["places"];
+
+function fireBase() {
+  const [places, setPlaces] = useState([]);
+  const placesRef = collection(db, "places");
+  const getPlaces = async () => {
+    const data = await getDocs(placesRef);
+    setPlaces(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+
+  return getPlaces();
+}
 
 const containerStyle = {
   width: "100%",
@@ -20,30 +45,96 @@ const containerStyle = {
   display: "block",
 };
 
-const center = {
-  lat: 1.348,
-  lng: 103.683,
-};
-
 function GoogleMapComponent() {
-  const onLoad = () => {};
-  const onPlaceChanged = () => {};
-  const [places, setPlaces] = useState([]);
-  useEffect(() => {
-    const getPlaces = async () => {}
+  const [center, setCenter] = useState({
+    lat: 1.348,
+    lng: 103.683,
   });
+  const [bounds, setbounds] = useState(1); // bounds whole singapore
+  const [zoomLevel, setzoomLevel] = useState(13);
+  const [autocomplete, setAutocomplete] = useState(null);
+  const onLoad = (autocomplete) => {
+    setAutocomplete(autocomplete);
+  };
+
+  const [searchMarker, setSearchMarker] = useState(null);
+  const [curPlace, setCurPlace] = useState({});
+  const [zoomIn, setZoomIn] = useState(0);
+  const onPlaceChanged = () => {
+    let input = document.getElementById("search-input");
+    let thisPlace = autocomplete.getPlace();
+    const lat = thisPlace.geometry.location.lat();
+    const lng = thisPlace.geometry.location.lng();
+    setzoomLevel(15);
+    setCenter({ lat, lng });
+    setSearchMarker({ lat, lng });
+    setCurPlace(thisPlace);
+  };
+
+  const options = {
+    strictBounds: true,
+    bounds: {
+      north: center.lat + bounds,
+      south: center.lat - bounds,
+      east: center.lng + bounds,
+      west: center.lng - bounds,
+    },
+  };
+
+  useEffect(() => {
+    // fireBase();
+  });
+
+  const [markers, setMarkers] = useState([]);
   return (
     <LoadScript
       googleMapsApiKey="AIzaSyBYqHAL0_W6xy3_FaKoxDrnpBsWNkj0urc"
-      libraries={["places"]}
+      libraries={libraries}
     >
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14}>
+      <button
+        onClick={() => {
+          setCenter({ ...center, lat: center.lat + 0.01 });
+        }}
+      >
+        Hello
+      </button>
+
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={zoomLevel}
+      >
         {/* Child components, such as markers, info windows, etc. */}
         <>
-          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+          <Marker
+            onLoad={() => {}}
+            position={searchMarker}
+            title={`${curPlace.name} \n${curPlace.formatted_address}`}
+            onClick={() => {
+              setzoomLevel(zoomLevel + 1);
+              setZoomIn(zoomIn + 1);
+            }}
+            onRightClick={() => {
+              setzoomLevel(zoomLevel - zoomIn);
+              setZoomIn(0);
+              console.log("Hello");
+            }}
+            visible={true}
+            // label="Hello"
+          />
+          <KmlLayer url="./data/e-waste-recycling-kml.kml" />
+          <Autocomplete
+            onLoad={onLoad}
+            onPlaceChanged={onPlaceChanged}
+            options={options} // further restriction by radius bounds.
+            restrictions={{ country: ["sg"] }} // restrict to singapore
+            id="autocomplete"
+            types={["geocode"]}
+          >
             <input
               type="text"
-              placeholder="Customized your placeholder"
+              id="search-input"
+              placeholder="Search for E-waste"
               style={{
                 boxSizing: `border-box`,
                 border: `1px solid transparent`,
@@ -56,7 +147,7 @@ function GoogleMapComponent() {
                 outline: `none`,
                 textOverflow: `ellipses`,
                 position: "absolute",
-                left: "50%",
+                left: "25%",
                 marginLeft: "-120px",
               }}
             />
@@ -69,13 +160,13 @@ function GoogleMapComponent() {
 export default function RecyclePage() {
   return (
     <>
-      <script src=""></script>
       <Layout preview={true}>
         <Head>
           <title>Recycling Hub</title>
         </Head>
-        <h1 class="">Where to recycle your E-waste?</h1>
+
         <Container>
+          {/* <h1 class="">Where to recycle your E-waste?</h1> */}
           <GoogleMapComponent className="flex items-center" />
         </Container>
       </Layout>
