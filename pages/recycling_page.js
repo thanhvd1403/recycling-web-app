@@ -106,6 +106,7 @@ function GoogleMapComponent() {
       >
         {/* Child components, such as markers, info windows, etc. */}
         <>
+          <KmlLayer url="../data/e-waste-recycling-kml.kml" />
           <Marker
             onLoad={() => {}}
             position={searchMarker}
@@ -122,7 +123,6 @@ function GoogleMapComponent() {
             visible={true}
             // label="Hello"
           />
-          <KmlLayer url="./data/e-waste-recycling-kml.kml" />
           <Autocomplete
             onLoad={onLoad}
             onPlaceChanged={onPlaceChanged}
