@@ -12,7 +12,7 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div class='pr-8 m-1 pl-8 m-3 pt-8 m-2 pb-8 m-2 bg-neutral-200'>
+    <div class='pr-8 m-1 pl-8 m-3 pt-8 m-2 pb-8 m-2 bg-neutral-100'>
       <div className="mb-5">
         <CoverImage
           slug={slug}
@@ -33,7 +33,7 @@ export default function PostPreview({
       <p className="text-lg leading-relaxed mb-4 text-stone-600">{excerpt}</p>
       {/* <Avatar name={author.name} picture={author.picture} /> */}
       {
-     <button class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-200 text-green-100">Learn more</button>
+     <button class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">Learn more</button>
       }
     </div>
   )
