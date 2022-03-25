@@ -1,43 +1,38 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
 import Head from "next/head";
-import db from "../firebase-config";
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
-import useOnclickOutside from "react-cool-onclickoutside";
 import {
   GoogleMap,
   LoadScript,
   Autocomplete,
   Marker,
-  KmlLayer,
+  Circle,
 } from "@react-google-maps/api";
-import React, { useRef, useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import { collection, getDocs } from "@firebase/firestore";
+import React, { useState, useEffect } from "react";
+import {
+  Checkbox,
+  Menu,
+  Box,
+  Tooltip,
+  IconButton,
+  FormGroup,
+  FormControlLabel,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import { deletePlace, getAllPlaces, getPlace } from "../lib/ewaste_api";
 
-const bounds_radius = {
-  "3km": 0.027,
-  "5km": 0.045,
-  "7km": 0.063,
-  "10km": 0.09,
-  "15km": 0.135,
-  "20km": 0.18,
+const bounds_arc_len = {
+  3000: 0.027,
+  5000: 0.045,
+  7000: 0.063,
+  10000: 0.09,
+  15000: 0.135,
+  20000: 0.18,
 };
 const libraries = ["places"];
-
-function fireBase() {
-  const [places, setPlaces] = useState([]);
-  const placesRef = collection(db, "places");
-  const getPlaces = async () => {
-    const data = await getDocs(placesRef);
-    setPlaces(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
-
-  return getPlaces();
-}
 
 const containerStyle = {
   width: "100%",
@@ -45,13 +40,16 @@ const containerStyle = {
   display: "block",
 };
 
+// initializeDatabase();
+
 function GoogleMapComponent() {
   const [center, setCenter] = useState({
     lat: 1.348,
     lng: 103.683,
   });
   const [bounds, setbounds] = useState(1); // bounds whole singapore
-  const [zoomLevel, setzoomLevel] = useState(13);
+  const [boundRadius, setBoundRadius] = useState(0);
+  const [zoomLevel, setzoomLevel] = useState(12);
   const [autocomplete, setAutocomplete] = useState(null);
   const onLoad = (autocomplete) => {
     setAutocomplete(autocomplete);
@@ -61,15 +59,26 @@ function GoogleMapComponent() {
   const [curPlace, setCurPlace] = useState({});
   const [zoomIn, setZoomIn] = useState(0);
   const onPlaceChanged = () => {
-    let input = document.getElementById("search-input");
+    // let input = document.getElementById("search-input");
     let thisPlace = autocomplete.getPlace();
     const lat = thisPlace.geometry.location.lat();
     const lng = thisPlace.geometry.location.lng();
-    setzoomLevel(15);
+    setzoomLevel(13);
     setCenter({ lat, lng });
     setSearchMarker({ lat, lng });
     setCurPlace(thisPlace);
   };
+
+  const [places, setPlaces] = useState(null);
+  useEffect(() => {
+    // getAllPlaces()
+    //   .then((data) => {
+    //     setPlaces(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  }, [places]);
 
   const options = {
     strictBounds: true,
@@ -81,82 +90,166 @@ function GoogleMapComponent() {
     },
   };
 
-  useEffect(() => {
-    // fireBase();
-  });
-
-  const [markers, setMarkers] = useState([]);
+  const handleOpenUserMenu = (event) => {
+    setanchorUser(event.currentTarget);
+  };
+  const handleCloseUserMenu = () => {
+    setanchorUser(null);
+  };
+  const [anchorUser, setanchorUser] = useState(null);
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyBYqHAL0_W6xy3_FaKoxDrnpBsWNkj0urc"
-      libraries={libraries}
-    >
-      <button
-        onClick={() => {
-          setCenter({ ...center, lat: center.lat + 0.01 });
-        }}
+    <>
+      <LoadScript
+        googleMapsApiKey="AIzaSyBYqHAL0_W6xy3_FaKoxDrnpBsWNkj0urc"
+        libraries={libraries}
       >
-        Hello
-      </button>
-
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={zoomLevel}
-      >
-        {/* Child components, such as markers, info windows, etc. */}
-        <>
-          <KmlLayer url="../data/e-waste-recycling-kml.kml" />
-          <Marker
-            onLoad={() => {}}
-            position={searchMarker}
-            title={`${curPlace.name} \n${curPlace.formatted_address}`}
-            onClick={() => {
-              setzoomLevel(zoomLevel + 1);
-              setZoomIn(zoomIn + 1);
+        <Box sx={{ flexGrow: 0, display: "inline-flex" }}>
+          <Tooltip title="E-waste settings">
+            <IconButton
+              sx={{ p: 0, fontSize: 24 }}
+              onClick={handleOpenUserMenu}
+            >
+              Filters
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "45px" }}
+            id="menu-appbar"
+            anchorEl={anchorUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
             }}
-            onRightClick={() => {
-              setzoomLevel(zoomLevel - zoomIn);
-              setZoomIn(0);
-              console.log("Hello");
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
             }}
-            visible={true}
-            // label="Hello"
-          />
-          <Autocomplete
-            onLoad={onLoad}
-            onPlaceChanged={onPlaceChanged}
-            options={options} // further restriction by radius bounds.
-            restrictions={{ country: ["sg"] }} // restrict to singapore
-            id="autocomplete"
-            types={["geocode"]}
+            open={Boolean(anchorUser)}
+            onClose={handleCloseUserMenu}
           >
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search for E-waste"
-              style={{
-                boxSizing: `border-box`,
-                border: `1px solid transparent`,
-                width: `240px`,
-                height: `32px`,
-                padding: `0 12px`,
-                borderRadius: `3px`,
-                boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                fontSize: `14px`,
-                outline: `none`,
-                textOverflow: `ellipses`,
-                position: "absolute",
-                left: "25%",
-                marginLeft: "-120px",
+            <FormGroup sx={{ ml: "10px" }}>
+              <FormControlLabel
+                control={<Checkbox defaultChecked />}
+                label="ICT Equipments"
+              />
+              <FormControlLabel
+                control={<Checkbox defaultChecked />}
+                label="Batterries and Lamps"
+              />
+              <FormControlLabel
+                control={<Checkbox defaultChecked />}
+                label="Ink and toner cartridges"
+              />
+            </FormGroup>
+          </Menu>
+        </Box>
+        <Box
+          sx={{
+            minWidth: 100,
+            display: "inline-flex",
+            paddingLeft: "10px",
+            paddingTop: "20px",
+          }}
+        >
+          <FormControl fullWidth>
+            <InputLabel id="search-radius-input">Within</InputLabel>
+            <Select
+              labelId="search-radius"
+              id="search-radius"
+              value={boundRadius}
+              label="Radius"
+              onChange={(event) => {
+                const radius = event.target.value;
+                if (radius) {
+                  setBoundRadius(radius);
+                  // setbounds(bounds_arc_len[radius]);
+                } else {
+                  setBoundRadius(0);
+                  setbounds(1);
+                }
+                console.log(places);
+              }}
+            >
+              <MenuItem value={0}>All</MenuItem>
+              <MenuItem value={3000}>3km</MenuItem>
+              <MenuItem value={5000}>5km</MenuItem>
+              <MenuItem value={7000}>7km</MenuItem>
+              <MenuItem value={10000}>10km</MenuItem>
+              <MenuItem value={15000}>15km</MenuItem>
+              <MenuItem value={20000}>20km</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={zoomLevel}
+        >
+          {/* Child components, such as markers, info windows, etc. */}
+          <>
+            <Marker
+              onLoad={() => {}}
+              position={searchMarker}
+              title={`${curPlace.name} \n${curPlace.formatted_address}`}
+              onClick={() => {
+                setzoomLevel(zoomLevel + 1);
+                setZoomIn(zoomIn + 1);
+              }}
+              onRightClick={() => {
+                setzoomLevel(zoomLevel - zoomIn);
+                setZoomIn(0);
+              }}
+              icon="../public/assets/markers/green_markers.png"
+            />
+
+            <Circle
+              center={searchMarker}
+              radius={boundRadius}
+              option={{
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
               }}
             />
-          </Autocomplete>
-        </>
-      </GoogleMap>
-    </LoadScript>
+            <Autocomplete
+              onLoad={onLoad}
+              onPlaceChanged={onPlaceChanged}
+              options={options} // further restriction by radius bounds.
+              restrictions={{ country: ["sg"] }} // restrict to singapore
+              id="autocomplete"
+              types={["geocode"]}
+            >
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search for E-waste"
+                style={{
+                  boxSizing: `border-box`,
+                  border: `1px solid transparent`,
+                  width: `240px`,
+                  height: `32px`,
+                  padding: `0 12px`,
+                  borderRadius: `3px`,
+                  boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+                  fontSize: `14px`,
+                  outline: `none`,
+                  textOverflow: `ellipses`,
+                  position: "absolute",
+                  left: "25%",
+                  marginLeft: "-150px",
+                }}
+              />
+            </Autocomplete>
+          </>
+        </GoogleMap>
+      </LoadScript>
+    </>
   );
 }
+
 export default function RecyclePage() {
   return (
     <>
@@ -166,12 +259,9 @@ export default function RecyclePage() {
         </Head>
 
         <Container>
-          {/* <h1 class="">Where to recycle your E-waste?</h1> */}
-          <GoogleMapComponent className="flex items-center" />
+          <GoogleMapComponent />
         </Container>
       </Layout>
     </>
   );
 }
-
-// export async function getStaticProps() {}
