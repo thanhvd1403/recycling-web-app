@@ -34,7 +34,7 @@ export default function PostPreview({
       <p className="text-base leading-relaxed mb-4 text-stone-600">{excerpt}</p>
       {/* <Avatar name={author.name} picture={author.picture} /> */}
       {
-     <button class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">Learn more</button>
+        <button class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100" onClick={() => (window.location.href =`/posts/${slug}`)} >Learn more</button>
       }
     </div>
   )
