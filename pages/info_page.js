@@ -1,5 +1,5 @@
 import Container from "../components/container";
-import MoreStories from "../components/more-stories";
+import MoreInfo from "../components/more-info";
 import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
@@ -59,23 +59,63 @@ Electronic scrap components, such as CPUs, contain potentially harmful materials
 
 
   <div id="ToE" class="flex space-x-7 py-10 pl-10 pr-10">
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">ICT Equipment means any radio and telecommunication equipment or combination of equipment capable of effecting radio communications or telecommunications, whether by transmission or reception of radio and telecommunications.</div>
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+
+    
   </div>
 
-  <div class="flex space-x-7 py-10 pl-10 pr-10">
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">ICT Equipment means any radio and telecommunication equipment or combination of equipment capable of effecting radio communications or telecommunications, whether by transmission or reception of radio and telecommunications.</div>
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+  <div id="ToE" class="flex space-x-7 py-10 pl-10 pr-10">
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+
+    
   </div>
 
-  <div class="flex space-x-7 py-10 pl-10 pr-10">
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">ICT Equipment means any radio and telecommunication equipment or combination of equipment capable of effecting radio communications or telecommunications, whether by transmission or reception of radio and telecommunications.</div>
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+  <div id="ToE" class="flex space-x-7 py-10 pl-10 pr-10">
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+
+    
   </div>
 
-  <div class="flex space-x-7 py-10 pl-10 pr-10">
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">ICT Equipment means any radio and telecommunication equipment or combination of equipment capable of effecting radio communications or telecommunications, whether by transmission or reception of radio and telecommunications.</div>
-    <div class="flex-initial w-1/2 text-center pl-5 pr-5 py-20 rounded-lg border-3 border-red-500 bg-green-300">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+  <div id="ToE" class="flex space-x-7 py-10 pl-10 pr-10">
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+    <div>
+    <Container>
+          {morePosts.length > 0 && <MoreInfo posts={morePosts} />}
+    </Container>
+    </div>
+
+    
   </div>
 
 </div>
