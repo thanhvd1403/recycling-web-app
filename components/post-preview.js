@@ -12,7 +12,7 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div class='pr-8 m-1 pl-8 m-3 m-2 pb-8 m-2 bg-gradient-to-b from-white via-white to-emerald-200'>
+    <div class='pr-3 m-1 pl-3 m-3 m-2 pb-8 m-2 bg-gradient-to-b from-white via-white to-emerald-200'>
     {/* <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16"> */}
       <div className="mb-5">
         <CoverImage
