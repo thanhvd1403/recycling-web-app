@@ -54,15 +54,15 @@ Electronic scrap components, such as CPUs, contain potentially harmful materials
       </div>
     </div>
   </div>
-
-  <div id="CoE" class="space-x-7 py-10 pl-10 pr-10">
+    <br></br>
+  <div id="CoE">
     <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-blue-300">Characteristics of E-waste
     <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, most prominently, hazardous substances such as lead, polychlorinated biphenyls (PCBs), polybrominated biphenyls (PBBs), mercury, polybrominated diphenyl ethers (PBDEs), brominated flame retardants (BFRs)
     </div>
     </div>
   </div>
-
-  <div id="BoE" class="space-x-7 py-10 pl-10 pr-10">
+    <br></br>
+  <div id="BoE">
   <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-blue-300">Benefits of E-waste
     <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">
       <div class="flex">
