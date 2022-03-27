@@ -22,17 +22,19 @@ export default function InfoPage({ allPosts }) {
 <div class="flex">
     
 <div class="flex-none w-72 text-left pl-10 pr-5 py-20 rounded-full border-3 border-yellow-600 fixed">
-On this page
-<br></br>
+    <div class="pr-20 text-center">
+      On this page
+    </div>
+
 
 <br></br>
-<a href="#DoE">> Definition of E-waste</a>
+<a href="#DoE">▶ Definition of E-waste</a>
 <br></br>
-<a href="#CoE">> Characteristics of E-waste</a>
+<a href="#CoE">▶ Characteristics of E-waste</a>
 <br></br>
-<a href="#BoE">> Benefits of E-waste</a>
+<a href="#BoE">▶ Benefits of E-waste</a>
 <br></br>
-<a href="#ToE">> Types of E-waste</a>
+<a href="#ToE">▶ Types of E-waste</a>
 <br></br>
 
 </div>
