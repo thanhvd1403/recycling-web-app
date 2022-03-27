@@ -62,7 +62,6 @@ export default function GoogleMapComponent() {
     lat: 1.348,
     lng: 103.683,
   });
-  const [bounds, setbounds] = useState(1); // bounds whole singapore
   const [boundRadius, setBoundRadius] = useState(0);
   const [zoomLevel, setzoomLevel] = useState(12);
   const [autocomplete, setAutocomplete] = useState(null);
@@ -75,12 +74,14 @@ export default function GoogleMapComponent() {
   const onPlaceChanged = () => {
     // let input = document.getElementById("search-input");
     let thisPlace = autocomplete.getPlace();
+
     const lat = thisPlace.geometry.location.lat();
     const lng = thisPlace.geometry.location.lng();
     setzoomLevel(13);
     setCenter({ lat, lng });
     setSearchMarker({ lat, lng });
     setCurPlace(thisPlace);
+    console.log(thisPlace);
   };
 
   const [places, setPlaces] = useState(null);
@@ -93,16 +94,17 @@ export default function GoogleMapComponent() {
     // };
     // getPlaces();
     setPlaces(placesData);
+    if (navigator.geolocation) {
+      const location = navigator.geolocation.getCurrentPosition((location) => {
+        return location;
+      });
+      console.log(location);
+      setCurPlace({});
+    }
   }, [places]);
 
   const options = {
     strictBounds: true,
-    bounds: {
-      north: center.lat + bounds,
-      south: center.lat - bounds,
-      east: center.lng + bounds,
-      west: center.lng - bounds,
-    },
   };
 
   const handleOpenUserMenu = (event) => {
@@ -180,7 +182,6 @@ export default function GoogleMapComponent() {
                   setBoundRadius(radius);
                 } else {
                   setBoundRadius(0);
-                  setbounds(1);
                 }
               }}
             >
@@ -204,19 +205,13 @@ export default function GoogleMapComponent() {
             {places?.map((place) => {
               const radius = boundRadius > 0 ? boundRadius : 50000;
               if (haversine_distance(center, place.location) <= radius) {
-                console.log(place);
                 const location = place.location;
                 return (
                   <Marker
                     key={place.id}
                     position={{ lat: location.lat, lng: location.lng }}
                     title={`${place.Address}, Singapore ${place.PostalCode}`}
-                    onClick={() => {
-                      // setzoomLevel(13);
-                      // setCenter({ lat: place.lat, lng: place.lng });
-                      // setSearchMarker({ lat: location.lat, lng: location.lng });
-                      // setCurPlace(place);
-                    }}
+                    onClick={() => {}}
                     icon={"/assets/markers/greenMarkers.png"}
                   />
                 );
