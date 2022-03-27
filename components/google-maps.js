@@ -4,6 +4,7 @@ import {
   Autocomplete,
   Marker,
   Circle,
+  InfoWindow,
 } from "@react-google-maps/api";
 import React, { useState, useEffect } from "react";
 import {
@@ -11,7 +12,7 @@ import {
   Menu,
   Box,
   Tooltip,
-  IconButton,
+  Button,
   FormGroup,
   FormControlLabel,
   FormControl,
@@ -19,25 +20,26 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import { placesData } from "../data/data";
 // import { collection, getDocs, doc, deleteDoc } from "@firebase/firestore";
 // import db from "../firebase-config";
 // import { deleteAllPlaces, initializeDatabase } from "../lib/initializeDatabase";
-import { placesData } from "../data/data";
 
 const libraries = ["places"];
 
 const containerStyle = {
-  width: "100%",
-  height: "700px",
+  width: "90vw",
+  height: "80vh",
   display: "block",
 };
 
 /**
+ * Calculate the distance between two points in m's
  * @args (point1, point2): {object} { lat: number, lng: number }
  * @returns {number} distance in meters.
  */
 function haversine_distance(point1, point2) {
-  const R = 6371071; // Radius of the Earth in miles
+  const R = 6371071; // Radius of the Earth in meters
   let rlat1 = point1.lat * (Math.PI / 180); // Convert degrees to radians
   let rlat2 = point2.lat * (Math.PI / 180); // Convert degrees to radians
   let difflat = rlat2 - rlat1; // Radian difference (latitudes)
@@ -57,31 +59,34 @@ function haversine_distance(point1, point2) {
   return d;
 }
 
+const ewasteTypes = [
+  "ICT equipment",
+  "Batteries",
+  "Lamps",
+  "Ink and toner cartridges",
+];
+
 export default function GoogleMapComponent() {
-  const [center, setCenter] = useState({
-    lat: 1.348,
-    lng: 103.683,
-  });
-  const [boundRadius, setBoundRadius] = useState(0);
-  const [zoomLevel, setzoomLevel] = useState(12);
   const [autocomplete, setAutocomplete] = useState(null);
   const onLoad = (autocomplete) => {
     setAutocomplete(autocomplete);
   };
 
-  const [searchMarker, setSearchMarker] = useState(null);
+  const [center, setCenter] = useState({
+    lat: 1.348,
+    lng: 103.683,
+  });
+  const [boundRadius, setBoundRadius] = useState(0);
+  const [zoomLevel, setzoomLevel] = useState(13);
+
   const [curPlace, setCurPlace] = useState({});
   const onPlaceChanged = () => {
-    // let input = document.getElementById("search-input");
     let thisPlace = autocomplete.getPlace();
-
     const lat = thisPlace.geometry.location.lat();
     const lng = thisPlace.geometry.location.lng();
-    setzoomLevel(13);
+    setzoomLevel(14);
     setCenter({ lat, lng });
-    setSearchMarker({ lat, lng });
     setCurPlace(thisPlace);
-    console.log(thisPlace);
   };
 
   const [places, setPlaces] = useState(null);
@@ -107,6 +112,8 @@ export default function GoogleMapComponent() {
     strictBounds: true,
   };
 
+  const [infos, setInfos] = useState([]);
+
   const handleOpenUserMenu = (event) => {
     setanchorUser(event.currentTarget);
   };
@@ -114,21 +121,35 @@ export default function GoogleMapComponent() {
     setanchorUser(null);
   };
   const [anchorUser, setanchorUser] = useState(null);
+
+  // Info window for current location.
+  const [infoCurrent, setinfoCurrent] = useState([]);
+
+  const defaultChecked = {};
+  for (let type of ewasteTypes) {
+    defaultChecked[type] = true;
+  }
+  const [typeChecked, setTypeChecked] = useState(defaultChecked);
+
   return (
     <>
       <LoadScript
         googleMapsApiKey="AIzaSyBYqHAL0_W6xy3_FaKoxDrnpBsWNkj0urc"
         libraries={libraries}
+        preventGoogleFontsLoading={false}
       >
+        {/* Type filter */}
         <Box sx={{ flexGrow: 0, display: "inline-flex" }}>
           <Tooltip title="E-waste settings">
-            <IconButton
-              sx={{ p: 0, fontSize: 24 }}
+            <Button
+              sx={{ p: 0, fontSize: 20 }}
               onClick={handleOpenUserMenu}
+              color="inherit"
             >
-              Filters
-            </IconButton>
+              E-waste Type
+            </Button>
           </Tooltip>
+
           <Menu
             sx={{ mt: "45px" }}
             id="menu-appbar"
@@ -146,21 +167,29 @@ export default function GoogleMapComponent() {
             onClose={handleCloseUserMenu}
           >
             <FormGroup sx={{ ml: "10px" }}>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="ICT Equipments"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Batterries and Lamps"
-              />
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Ink and toner cartridges"
-              />
+              {ewasteTypes.map((ewasteType) => {
+                return (
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        defaultChecked
+                        onChange={(event) => {
+                          setTypeChecked({
+                            ...typeChecked,
+                            [ewasteType]: event.target.checked,
+                          });
+                          console.log("Type checked:", typeChecked);
+                        }}
+                      />
+                    }
+                    label={ewasteType}
+                  />
+                );
+              })}
             </FormGroup>
           </Menu>
         </Box>
+        {/* Distance filter */}
         <Box
           sx={{
             minWidth: 100,
@@ -178,64 +207,103 @@ export default function GoogleMapComponent() {
               label="Radius"
               onChange={(event) => {
                 const radius = event.target.value;
-                if (radius) {
-                  setBoundRadius(radius);
-                } else {
-                  setBoundRadius(0);
-                }
+                setBoundRadius(radius);
               }}
             >
-              <MenuItem value={0}>All</MenuItem>
+              <MenuItem value={70000}>All</MenuItem>
+              <MenuItem value={500}>500m</MenuItem>
+              <MenuItem value={1000}>1km</MenuItem>
+              <MenuItem value={2000}>2km</MenuItem>
               <MenuItem value={3000}>3km</MenuItem>
               <MenuItem value={5000}>5km</MenuItem>
               <MenuItem value={7000}>7km</MenuItem>
               <MenuItem value={10000}>10km</MenuItem>
-              <MenuItem value={15000}>15km</MenuItem>
-              <MenuItem value={20000}>20km</MenuItem>
             </Select>
           </FormControl>
         </Box>
         <GoogleMap
+          id="google-map"
           mapContainerStyle={containerStyle}
           center={center}
           zoom={zoomLevel}
+          onZoomChanged={() => {}}
         >
           {/* Child components, such as markers, info windows, etc. */}
           <>
             {places?.map((place) => {
-              const radius = boundRadius > 0 ? boundRadius : 50000;
-              if (haversine_distance(center, place.location) <= radius) {
+              let matchedFilter = false;
+              for (let type of ewasteTypes) {
+                if (typeChecked[type] && place.Type.includes(type)) {
+                  matchedFilter = true;
+                  break;
+                }
+              }
+              if (
+                haversine_distance(center, place.location) <= boundRadius &&
+                matchedFilter
+              ) {
                 const location = place.location;
                 return (
                   <Marker
                     key={place.id}
                     position={{ lat: location.lat, lng: location.lng }}
                     title={`${place.Address}, Singapore ${place.PostalCode}`}
-                    onClick={() => {}}
+                    onClick={() => {
+                      setInfos((prevInfos) => [...prevInfos, place]);
+                    }}
                     icon={"/assets/markers/greenMarkers.png"}
                   />
                 );
               }
             })}
+
+            {infos?.map((info) => {
+              const location = {
+                lat: info.location.lat + 0.0003 * 10 ** (14 - zoomLevel),
+                lng: info.location.lng,
+              };
+              return (
+                <InfoWindow position={location}>
+                  <>
+                    <h1 class="font-medium">{info.Address},</h1>
+                    <h1 class="font-medium"> Singapore {info.PostalCode}</h1>
+                    <br></br>
+                    <h2 class="font-medium">
+                      Collections bin, Type available:
+                    </h2>
+                    <ul>
+                      {info.Type?.map((type) => {
+                        return <li>{type}</li>;
+                      })}
+                    </ul>
+                  </>
+                </InfoWindow>
+              );
+            })}
             <Marker
               onLoad={() => {}}
-              position={searchMarker}
+              position={center}
               title={`${curPlace.name} \n${curPlace.formatted_address}`}
               editable={true}
               onDblClick={() => {}}
               onRightClick={() => {}}
-            />
-            <Circle
-              center={searchMarker}
-              radius={boundRadius}
-              option={{
-                strokeColor: "#F9F9F9",
-                strokeOpacity: 0.8,
-                strokeWeight: 1,
-                fillColor: "#F9F9F9",
-                fillOpacity: 0.1,
+              onClick={() => {
+                setinfoCurrent((prevState) => {
+                  return [
+                    ...prevState,
+                    { lat: center.lat + 0.0025, lng: center.lng },
+                  ];
+                });
               }}
+              id="search-marker"
             />
+            {infoCurrent?.map((position) => {
+              return (
+                <InfoWindow position={position}>
+                  <h1>Hello</h1>
+                </InfoWindow>
+              );
+            })}
             <Autocomplete
               onLoad={onLoad}
               onPlaceChanged={onPlaceChanged}
@@ -251,17 +319,17 @@ export default function GoogleMapComponent() {
                 style={{
                   boxSizing: `border-box`,
                   border: `1px solid transparent`,
-                  width: `240px`,
-                  height: `32px`,
+                  width: `250px`,
+                  height: `40px`,
                   padding: `0 12px`,
                   borderRadius: `3px`,
                   boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                  fontSize: `14px`,
+                  fontSize: `18px`,
                   outline: `none`,
                   textOverflow: `ellipses`,
                   position: "absolute",
                   left: "25%",
-                  marginLeft: "-150px",
+                  marginLeft: "-10vw",
                 }}
               />
             </Autocomplete>
