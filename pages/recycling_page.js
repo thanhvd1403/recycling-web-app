@@ -11,7 +11,6 @@ export default function RecyclePage() {
         <Head>
           <title>Recycling Hub</title>
         </Head>
-
         <Container>
           <GoogleMapComponent />
         </Container>
@@ -22,14 +21,6 @@ export default function RecyclePage() {
 
 export async function getStaticProps() {
   // await deleteAllPlaces();
-  // const allPosts = getAllPosts([
-  //   "title",
-  //   "date",
-  //   "slug",
-  //   "author",
-  //   "coverImage",
-  //   "excerpt",
-  // ]);
   return {
     props: { 1: 2 },
   };
