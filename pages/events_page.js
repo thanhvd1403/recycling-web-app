@@ -34,12 +34,12 @@ export default function EventPage({ allPosts }) {
             />
           )} */}
 
-          <Container class='bg-conic-to-tl from-white via-sky-500 to-sky-500'> 
+          <Container> 
           {morePosts.length > 0 && <EventPosts posts={morePosts} />}
           </Container>
 
 
-            <div class="pt-6 pb-12 pl-24 pr-24  md:w-2/3 xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-r from-yellow-100 via-indigo-200 to-teal-500">
+            <div class="pt-6 pb-12 pl-24 pr-24  md:w-2/3 xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-500">
                 <div class="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
                     <img src="https://scontent.fsin9-2.fna.fbcdn.net/v/t1.15752-9/275902695_987680598526632_2060188881909165562_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=rryT1bAp0tUAX8-37mH&_nc_ht=scontent.fsin9-2.fna&oh=03_AVIsAMFi-Gbioxg6Z8dlviSk4ZvEpOy9kQjzmX6497xNzg&oe=625CF7CE" alt="Envelope with a newsletter" role="img" class="w-auto h-auto  xl:w-full lg:w-1/2 w-full" />
                 </div>
