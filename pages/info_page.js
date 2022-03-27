@@ -47,7 +47,7 @@ export default function InfoPage({ allPosts }) {
 
 </div>
 <div class="flex-initial w-640">
-  <div id="DoE" class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-blue-300">Definition of E-waste
+  <div id="DoE" class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">Definition of E-waste
     <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">Electronic waste or e-waste describes discarded electrical or electronic devices. Used electronics which are destined for refurbishment, reuse, resale, salvage recycling through material recovery, or disposal are also considered e-waste. Informal processing of e-waste in developing countries can lead to adverse human health effects and environmental pollution.
 Electronic scrap components, such as CPUs, contain potentially harmful materials such as lead, cadmium, beryllium, or brominated flame retardants. Recycling and disposal of e-waste may involve significant risk to health of workers and their communities
       <div class="text-center pr-30"><br></br>Wikipedia
@@ -56,14 +56,14 @@ Electronic scrap components, such as CPUs, contain potentially harmful materials
   </div>
     <br></br>
   <div id="CoE">
-    <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-blue-300">Characteristics of E-waste
+    <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">Characteristics of E-waste
     <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, most prominently, hazardous substances such as lead, polychlorinated biphenyls (PCBs), polybrominated biphenyls (PBBs), mercury, polybrominated diphenyl ethers (PBDEs), brominated flame retardants (BFRs)
     </div>
     </div>
   </div>
     <br></br>
   <div id="BoE">
-  <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-blue-300">Benefits of E-waste
+  <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">Benefits of E-waste
     <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">
       <div class="flex">
         <div class="w-2/5"></div>
@@ -250,6 +250,7 @@ Electronic scrap components, such as CPUs, contain potentially harmful materials
     </>
   );
 }
+
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
