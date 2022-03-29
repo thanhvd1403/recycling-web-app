@@ -14,6 +14,7 @@ export default function PostBody({ content }) {
           </button>
         </div>
       </div>
+
       {/* 
      NEW TABLE 
       <h2 className='mb-8 text-4xl md:text-3xl font-sans font-bold text-emerald-900 tracking-tighter leading-tight pt-12 '>
