@@ -1,6 +1,6 @@
 import markdownStyles from './markdown-styles.module.css';
 
-export default function PostBody({ content }) {
+export default function PostBody({ content, RegURL }) {
   return (
     <div class='w-full mx-auto p-5 sm:p-10 md:p-16 bg-gray-100'>
       <div>
@@ -9,7 +9,10 @@ export default function PostBody({ content }) {
           dangerouslySetInnerHTML={{ __html: content }}
         />
         <div class='text-center'>
-          <button class='m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'>
+          <button
+            class='m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'
+            onClick={() => (window.location.href = { RegURL })}
+          >
             Register
           </button>
         </div>

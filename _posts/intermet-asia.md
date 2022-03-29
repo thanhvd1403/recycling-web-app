@@ -7,7 +7,7 @@ author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
-  url: '/assets/blog/post1/cover.png'
+  url: 'https://www.asiaclimateforum.com'
 ---
 
 **"The only dedicated meteorological technology and forecasting services event in the APAC region"**
