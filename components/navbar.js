@@ -80,7 +80,6 @@ const pages = [
   },
   { page: "Recycling Hub", href: "/recycling_page" },
   { page: "Events", href: "/events_page" },
-  { page: "Home-test", href: "/home_page" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
