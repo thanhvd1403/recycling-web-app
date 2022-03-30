@@ -6,8 +6,7 @@ date: '2022-04-18T05:35:07.322Z'
 author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
-ogImage:
-  url: 'https://www.asiaclimateforum.com'
+RegURL: 'https://www.asiaclimateforum.com'
 ---
 
 **"The only dedicated meteorological technology and forecasting services event in the APAC region"**

@@ -1,4 +1,5 @@
 import markdownStyles from './markdown-styles.module.css';
+import Link from 'next/link';
 
 export default function PostBody({ content, RegURL }) {
   return (
@@ -9,12 +10,11 @@ export default function PostBody({ content, RegURL }) {
           dangerouslySetInnerHTML={{ __html: content }}
         />
         <div class='text-center'>
-          <button
-            class='m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'
-            onClick={() => (window.location.href = { RegURL })}
-          >
-            Register
-          </button>
+          <Link href={RegURL} passHref={true}>
+            <button class='m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'>
+              Register
+            </button>
+          </Link>
         </div>
       </div>
 

@@ -6,8 +6,8 @@ date: '2022-04-18T05:35:07.322Z'
 author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
-ogImage:
-  url: '/assets/blog/intermet-asia/cover.png'
+RegURL: 'https://www.thestormexpoasia.com/'
+omImage: '/assets/blog/storm-expo-asia/cover.jpg'
 ---
 
 **"Asia's Leading Meteorological Disaster Management Event"**
