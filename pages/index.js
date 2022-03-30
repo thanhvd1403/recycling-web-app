@@ -125,7 +125,6 @@ function Waste_Item(props) {
           <CardMedia
             style={{
               height: "200px",
-              paddingTop: "2%",
               filter: "brightness(40%)",
             }}
             component="img"
