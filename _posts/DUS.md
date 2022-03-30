@@ -6,8 +6,8 @@ date: '2022-06-13T05:35:07.322Z'
 author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
-ogImage:
-  url: 'https://www.equip-global.com/register?product_id=460'
+RegURL: 'https://www.equip-global.com/index.php?route=product/pricing&product_id=460'
+omImage: '/assets/blog/DUS/cover.jpg'
 ---
 
 This major summit consists of four Virtual Conferences over a two-week period, diving deep into some of the critical challenges and focus areas for the sector, and providing delegates with genuine learning opportunities from some of the best and brightest minds across Singapore (and the world!).
