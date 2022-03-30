@@ -10,6 +10,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  RegURL,
 }) {
   return (
     <div class='pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-white to-emerald-200'>
@@ -34,12 +35,11 @@ export default function PostPreview({
       <p className='text-base leading-relaxed mb-4 text-stone-600'>{excerpt}</p>
       {/* <Avatar name={author.name} picture={author.picture} /> */}
       {
-        <button
-          class='px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100'
-          onClick={() => (window.location.href = `/posts/${slug}`)}
-        >
-          Learn more
-        </button>
+        <Link href={`posts/${slug}`}>
+          <button class='px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100'>
+            Learn more
+          </button>
+        </Link>
       }
     </div>
   );

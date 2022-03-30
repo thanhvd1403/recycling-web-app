@@ -48,16 +48,16 @@ export default function EventPage({ allPosts }) {
             />
           </div>
           <div class='w-full xl:w-1/2 xl:pl-10 xl:py-28'>
-            <h1 class='text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-teal-800 dark:text-white mb-4 text-center xl:text-left md:mt-0 mt-4'>
+            <h1 class='text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-teal-800 mb-4 text-center xl:text-left md:mt-0 mt-4'>
               Subscribe
             </h1>
-            <p class='text-base leading-normal text-teal-800 dark:text-teal-200 text-center xl:text-left'>
+            <p class='text-base leading-normal text-teal-800 text-center xl:text-left'>
               Subscribe to our mailing list to be the first one receiving
               e-newsletter and events about E-recycling.
             </p>
             <div class='flex items-stretch mt-12'>
               <input
-                class='bg-gray-100 rounded-lg rounded-r-none dark:bg-teal-800 text-base leading-none text-gray-800 dark:text-white p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500'
+                class='bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500'
                 type='email'
                 placeholder='Your Email'
               />
@@ -80,6 +80,8 @@ export async function getStaticProps() {
     'author',
     'coverImage',
     'excerpt',
+    'RegURL',
+    'ogImage',
   ]);
 
   return {

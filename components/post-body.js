@@ -10,11 +10,11 @@ export default function PostBody({ content, RegURL }) {
           dangerouslySetInnerHTML={{ __html: content }}
         />
         <div class='text-center'>
-          <Link href={RegURL} passHref={true}>
+          <a href={RegURL} target='_blank'>
             <button class='m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700'>
               Register
             </button>
-          </Link>
+          </a>
         </div>
       </div>
 
