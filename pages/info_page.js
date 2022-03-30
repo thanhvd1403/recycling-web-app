@@ -29,32 +29,34 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
         </div>
         <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div>
         <div class="flex-initial w-640">
-          <div id="DoE" class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
+          <div id="DoE" class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
             <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Definition of E-waste ♻</p>
-            <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">Electronic waste or e-waste describes discarded electrical or electronic devices. 
+            <br></br>
+            <div class="w-full text-center pl-5 pr-5 text-justify">Electronic waste or e-waste describes discarded electrical or electronic devices. 
             Used electronics which are destined for refurbishment, reuse, resale, salvage recycling through material recovery, or disposal are also considered e-waste. Informal processing of e-waste in developing countries 
             can lead to adverse human health effects and environmental pollution. Electronic scrap components, such as CPUs, contain potentially harmful materials such as lead, cadmium, beryllium, or brominated flame retardants. 
             Recycling and disposal of e-waste may involve significant risk to health of workers and their communities <div class="text-center pr-30">
-                <br></br>Wikipedia
               </div>
             </div>
           </div>
           <br></br>
           <div id="CoE">
-            <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
+            <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
               <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Characteristics of E-waste ♻</p>
-              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, 
+              <br></br>
+              <div class="w-full text-center pl-5 pr-5 text-justify">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, 
                 most prominently, hazardous substances such as lead, polychlorinated biphenyls (PCBs), polybrominated biphenyls (PBBs), mercury, polybrominated diphenyl ethers (PBDEs), brominated flame retardants (BFRs) </div>
             </div>
           </div>
           <br></br>
           <div id="BoE">
-            <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
+            <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
               <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Benefits of E-waste ♻</p>
-              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">
+              <br></br>
+              <div class="w-full text-center pl-5 pr-5">
                 <div class="flex">
                   <div class="w-2/5"></div>
-                  <div class="w-4/7 text-left whitespace-pre">
+                  <div class="w-4/7 text-left whitespace-pre font-sans">
                     <li> Save Landfill Space</li>
                     <li> Save Natural Resources</li>
                     <li> Increase in Employment</li>
@@ -69,7 +71,7 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
           <br></br>
           <br></br>
           <br></br>
-          <div id="TT">
+          <div id="TT font-sans">
             <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Types of E-Waste ♻</p>
             <div id="ToE" class="flex space-x-7 pl-10 pr-10">
               <div class="w-1/2">
