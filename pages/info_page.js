@@ -24,14 +24,14 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
           <a href="#BoE" class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">▶ Benefits of E-waste              </a>
           <br></br>
           <br></br>
-          <a href="#ToE" class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">▶ Types of E-waste                 </a>
+          <a href="#ToE" class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">▶ Types of E-waste                  </a>
           <br></br>
         </div>
         <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div>
         <div class="flex-initial w-640">
           <div id="DoE" class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
-            <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">Definition of E-waste</p>
-            <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300 font-mono font-bold">Electronic waste or e-waste describes discarded electrical or electronic devices. 
+            <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Definition of E-waste ♻</p>
+            <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">Electronic waste or e-waste describes discarded electrical or electronic devices. 
             Used electronics which are destined for refurbishment, reuse, resale, salvage recycling through material recovery, or disposal are also considered e-waste. Informal processing of e-waste in developing countries 
             can lead to adverse human health effects and environmental pollution. Electronic scrap components, such as CPUs, contain potentially harmful materials such as lead, cadmium, beryllium, or brominated flame retardants. 
             Recycling and disposal of e-waste may involve significant risk to health of workers and their communities <div class="text-center pr-30">
@@ -42,16 +42,16 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
           <br></br>
           <div id="CoE">
             <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
-              <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">Characteristics of E-waste</p>
-              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300 font-mono font-bold">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, 
+              <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Characteristics of E-waste ♻</p>
+              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">E-waste stream contains diverse materials, which requires special treatment and cannot be dumped in landfill sites, 
                 most prominently, hazardous substances such as lead, polychlorinated biphenyls (PCBs), polybrominated biphenyls (PBBs), mercury, polybrominated diphenyl ethers (PBDEs), brominated flame retardants (BFRs) </div>
             </div>
           </div>
           <br></br>
           <div id="BoE">
             <div class="space-x-7 py-10 pl-10 pr-10 text-center rounded-full border-3 border-yellow-600 bg-emerald-100">
-              <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">Benefits of E-waste </p>
-              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300 font-mono font-bold">
+              <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Benefits of E-waste ♻</p>
+              <div class="w-full text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600 bg-green-300">
                 <div class="flex">
                   <div class="w-2/5"></div>
                   <div class="w-4/7 text-left whitespace-pre">
@@ -70,7 +70,7 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
           <br></br>
           <br></br>
           <div id="TT">
-            <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">Types of E-Waste</p>
+            <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">♻ Types of E-Waste ♻</p>
             <div id="ToE" class="flex space-x-7 pl-10 pr-10">
               <div class="w-1/2">
                 <Container>
@@ -96,8 +96,7 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
                         </Link>
                       </h3>
                       <p className="text-base leading-relaxed mb-4 text-stone-600">This includes printers, computers and laptops, mobile phones and tablets, network and set-top boxes, TVs and desktop monitors. 
-                      ICT peripherals such as mouse, keyboard, cables and adaptor can be disposed of together. ALBA E-Waste ensures that ICT devices collected will be sent to qualified recyclers with 
-                        specific data sanitisation mechanisms put in place when processing the E-Waste</p> { <a href="https://www.lawinsider.com/dictionary/ict-equipment#:~:text=ICT%20Equipment%20means%20any%20radio,reception%20of%20radio%20and%20telecommunications." class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">Learn more</a> }
+                      ICT peripherals such as mouse, keyboard, cables and adaptor can be disposed of together.</p> { <a href="https://www.lawinsider.com/dictionary/ict-equipment#:~:text=ICT%20Equipment%20means%20any%20radio,reception%20of%20radio%20and%20telecommunications." class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">Learn more</a> }
                     </div>
                   </div>
                 </Container>
@@ -125,8 +124,8 @@ export default function InfoPage({ allPosts }) { const heroPost = allPosts[0]; r
                         <a className="hover:underline">Electric Mobility Device </a>
                         </Link>
                       </h3>
-                      <p className="text-base leading-relaxed mb-4 text-stone-600">An electric vehicle (EV)[note 1] is a vehicle that uses one or more electric motors for propulsion.
-                      It can be powered by a collector system, with electricity from extravehicular sources, or it can be powered autonomously by a battery (sometimes charged by solar panels, or by converting fuel to electricity using fuel cells or a generator).[1] EVs include, but are not limited to, road and rail vehicles, 
+                      <p className="text-base leading-relaxed mb-4 text-stone-600">An electric vehicle (EV) is a vehicle that uses one or more electric motors for propulsion.
+                      It can be powered by a collector system, with electricity from extravehicular sources, or it can be powered autonomously by a battery (sometimes charged by solar panels, or by converting fuel to electricity using fuel cells or a generator). EVs include, but are not limited to, road and rail vehicles, 
                         surface and underwater vessels, electric aircraft and electric spacecraft.</p> { <a href="https://en.wikipedia.org/wiki/Electric_vehicle" class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">Learn more</a> }
                     </div>
                   </div>
