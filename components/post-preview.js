@@ -13,7 +13,7 @@ export default function PostPreview({
   RegURL,
 }) {
   return (
-    <div class='pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-white to-emerald-200'>
+    <div class='pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-[#e7fff1] to-[#d0ffe0]'>
       {/* <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16"> */}
       <div className='mb-5'>
         <CoverImage
@@ -36,7 +36,7 @@ export default function PostPreview({
       {/* <Avatar name={author.name} picture={author.picture} /> */}
       {
         <Link href={`posts/${slug}`}>
-          <button class='px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100'>
+          <button class='px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-white'>
             Learn more
           </button>
         </Link>
