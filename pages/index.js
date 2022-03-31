@@ -1,17 +1,9 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import { Typography } from "@mui/material";
-import { Container } from "@mui/material";
-import { Box } from "@mui/system";
-import { Button } from "@mui/material";
-import { Grid } from "@mui/material";
-import { Link } from "@mui/material";
+import { Typography, Container, Box, Button, Grid, Link } from "@mui/material";
 import { getAllPosts } from "../lib/api";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import { Card } from "@mui/material";
-import { CardActionArea } from "@mui/material";
-import { CardMedia } from "@mui/material";
+import { Card, CardActionArea } from "@mui/material";
+import DateFormatter from "../components/date-formatter";
 
 export default function Index({ allPosts }) {
   return (
@@ -38,7 +30,7 @@ export default function Index({ allPosts }) {
 function Welcome() {
   return (
     <div class="text-center bg-[#ebfff3]">
-      <Container className="welcome" maxWidth="lg">
+      <Container className="welcome" maxWidth="lg" fixed>
         <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: 20 }}>
           <Typography
             sx={{ fontSize: { xs: 55, sm: 75, md: 90 } }}
@@ -64,26 +56,21 @@ function To_Recycle() {
   return (
     <Grid container alignItems="center" spacing={2}>
       <Grid item xs={12} md={6}>
-        <Box>
-          <img
-            src="/assets/home_page/Watch_Moment.jpg"
-            alt="An E-waste recycling center in Singapore."
-          />
-        </Box>
+        <img
+          src="/assets/home_page/Watch_Moment.jpg"
+          alt="An E-waste recycling center in Singapore."
+        />
       </Grid>
       <Grid item xs={12} md={6}>
-        <Box sx={{ p: 5 }}>
-          <div class="text-center">
-            <Typography variant="h5" align="center">
-              114kg of electrical and electronic items are being thrown away
-              every minute in Singapore.
-            </Typography>
-            <Box sx={{ my: 5 }}></Box>
-            <Button href="/reclycling_page" variant="outlined" size="large">
-              Find nearest recycling centers
-            </Button>
-          </div>
-        </Box>
+        <div class="text-center">
+          <Typography sx={{ m: 5 }} variant="h5" align="center">
+            114kg of electrical and electronic items are being thrown away every
+            minute in Singapore.
+          </Typography>
+          <Button href="/recycling_page" variant="outlined" size="large">
+            Find nearest recycling centers
+          </Button>
+        </div>
       </Grid>
     </Grid>
   );
@@ -94,9 +81,8 @@ function To_Information() {
     <div class="text-center">
       <Typography variant="h4" align="center">
         Not sure how to recycle your E-waste?
-        <Box sx={{ m: 5 }}></Box>
       </Typography>
-      <Grid container alignItems="stretch" spacing={2}>
+      <Grid container alignItems="stretch" spacing={2} my={7}>
         <Waste_Item title="Fluorescent lamp" image="fluorescent.jpg" />
         <Waste_Item title="ICT Equipments" image="ict.jpg" />
         <Waste_Item title="Household appliances" image="household.jpg" />
@@ -109,7 +95,6 @@ function To_Information() {
         />
         <Waste_Item title="Incandescent light bulb" image="lightbulbs.jpg" />
       </Grid>
-      <Box sx={{ p: 5 }}></Box>
       <Button href="/info_page" variant="contained" size="large">
         Learn more
       </Button>
@@ -122,15 +107,16 @@ function Waste_Item(props) {
     <Grid item xs={6} md={3}>
       <Card className="waste_card" elevation={6}>
         <CardActionArea>
-          <CardMedia
-            style={{
-              height: "200px",
-              filter: "brightness(40%)",
-            }}
-            component="img"
-            image={"/assets/home_page/" + props.image}
+          <img
+            src={"/assets/home_page/" + props.image}
             title={props.title}
             alt={"Image of " + props.title}
+            style={{
+              height: "200px",
+              width: "100%",
+              filter: "brightness(40%)",
+              objectFit: "cover",
+            }}
           />
           <div
             style={{
@@ -152,12 +138,11 @@ function Waste_Item(props) {
 }
 
 function To_Event({ allPosts }) {
-  const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (
     <Grid container alignItems="center" spacing={2}>
-      <Grid item xs={12} lg={6}>
-        <Typography variant="h4" className="recycle_ref-heading" align="left">
+      <Grid item xs={12} md={6}>
+        <Typography align="left" variant="h4" className="recycle_ref-heading">
           Looking to hang out with the community?
           <Box sx={{ m: 5 }}></Box>
           <Link href="/event_page" underline="always">
@@ -165,13 +150,40 @@ function To_Event({ allPosts }) {
           </Link>
         </Typography>
       </Grid>
-      <Grid item xs={12} lg={6}>
-        <body>TODO: event posts goes here</body>
-        {/* <Container>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container> */}
+      <Grid item xs={12} md={6}>
+        <Event_Card post={morePosts[0]} />
+        <Event_Card post={morePosts[1]} />
+        <Event_Card post={morePosts[2]} />
       </Grid>
     </Grid>
+  );
+}
+
+function Event_Card(props) {
+  return (
+    <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item>
+          <img
+            src={props.post.coverImage}
+            alt="Event cover image."
+            style={{
+              height: "120px",
+              width: "240px",
+              objectFit: "fill",
+            }}
+          />
+        </Grid>
+        <Grid item maxWidth={310}>
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <Typography variant="h5" className="event_card-title">
+              {props.post.title}
+            </Typography>
+            <DateFormatter dateString={props.post.date} />
+          </Box>
+        </Grid>
+      </Grid>
+    </Card>
   );
 }
 

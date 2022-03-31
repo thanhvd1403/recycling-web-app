@@ -13,7 +13,7 @@ export default function PostPreview({
   RegURL,
 }) {
   return (
-    <div class="pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-[#e8fff5] to-[#d8ffe7]">
+    <div class="pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-[#effff8] to-[#d8ffe7]">
       {/* <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16"> */}
       <div className="mb-5">
         <CoverImage
