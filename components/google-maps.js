@@ -21,9 +21,11 @@ import {
   Select,
 } from "@mui/material";
 import { placesData } from "../data/data";
-// import { collection, getDocs, doc, deleteDoc } from "@firebase/firestore";
+// import { collection, getDocs, doc } from "@firebase/firestore";
 // import db from "../firebase-config";
-// import { deleteAllPlaces, initializeDatabase } from "../lib/initializeDatabase";
+// const placesCollectionRef = collection(db, "places");
+// const data = await getDocs(placesCollectionRef);
+// placesData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 
 const libraries = ["places"];
 
@@ -81,32 +83,26 @@ export default function GoogleMapComponent() {
 
   const [curPlace, setCurPlace] = useState({});
   const onPlaceChanged = () => {
-    let thisPlace = autocomplete.getPlace();
-    const lat = thisPlace.geometry.location.lat();
-    const lng = thisPlace.geometry.location.lng();
-    setzoomLevel(14);
-    setCenter({ lat, lng });
-    setCurPlace(thisPlace);
+    try {
+      let thisPlace = autocomplete.getPlace();
+      const lat = thisPlace.geometry.location.lat();
+      const lng = thisPlace.geometry.location.lng();
+      setzoomLevel(14);
+      setCenter({ lat, lng });
+      setCurPlace(thisPlace);
+    } catch (error) {}
   };
 
   const [places, setPlaces] = useState(null);
-  useEffect(() => {
-    // const getPlaces = async () => {
-    //   const placesCollectionRef = collection(db, "places");
-    //   const data = await getDocs(placesCollectionRef);
-    //   setPlaces(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    //   console.log(places);
-    // };
-    // getPlaces();
+  useEffect(async () => {
     setPlaces(placesData);
     if (navigator.geolocation) {
       const location = navigator.geolocation.getCurrentPosition((location) => {
         return location;
       });
-      console.log(location);
       setCurPlace({});
     }
-  }, [places]);
+  });
 
   const options = {
     strictBounds: true,
@@ -140,15 +136,15 @@ export default function GoogleMapComponent() {
       >
         {/* Type filter */}
         <Box sx={{ flexGrow: 0, display: "inline-flex" }}>
-          <Tooltip title="E-waste settings">
-            <Button
-              sx={{ p: 0, fontSize: 20 }}
-              onClick={handleOpenUserMenu}
-              color="inherit"
-            >
-              E-waste Type
-            </Button>
-          </Tooltip>
+          {/* <Tooltip title="E-waste settings"> */}
+          <Button
+            sx={{ p: 0, fontSize: 20 }}
+            onClick={handleOpenUserMenu}
+            color="inherit"
+          >
+            E-waste Type
+          </Button>
+          {/* </Tooltip> */}
 
           <Menu
             sx={{ mt: "45px" }}

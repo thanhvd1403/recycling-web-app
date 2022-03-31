@@ -2,7 +2,6 @@ import Container from "../components/container";
 import Layout from "../components/layout";
 import Head from "next/head";
 import GoogleMapComponent from "../components/google-maps";
-// import { getAllPosts } from "../lib/api";
 
 export default function RecyclePage() {
   return (
@@ -17,11 +16,4 @@ export default function RecyclePage() {
       </Layout>
     </>
   );
-}
-
-export async function getStaticProps() {
-  // await deleteAllPlaces();
-  return {
-    props: { 1: 2 },
-  };
 }
