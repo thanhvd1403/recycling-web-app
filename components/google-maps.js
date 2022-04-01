@@ -20,20 +20,13 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import ArrowDropDownCircleRoundedIcon from "@mui/icons-material/ArrowDropDownCircleRounded";
 import { placesData } from "../data/data";
 // import { collection, getDocs, doc } from "@firebase/firestore";
 // import db from "../firebase-config";
 // const placesCollectionRef = collection(db, "places");
 // const data = await getDocs(placesCollectionRef);
 // placesData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-
-const libraries = ["places"];
-
-const containerStyle = {
-  width: "90vw",
-  height: "80vh",
-  display: "block",
-};
 
 /**
  * Calculate the distance between two points in m's
@@ -68,7 +61,7 @@ const ewasteTypes = [
   "Ink and toner cartridges",
 ];
 
-export default function GoogleMapComponent() {
+export default function GoogleMapComponent({ containerStyle }) {
   const [autocomplete, setAutocomplete] = useState(null);
   const onLoad = (autocomplete) => {
     setAutocomplete(autocomplete);
@@ -78,7 +71,7 @@ export default function GoogleMapComponent() {
     lat: 1.348,
     lng: 103.683,
   });
-  const [boundRadius, setBoundRadius] = useState(0);
+  const [boundRadius, setBoundRadius] = useState(3000);
   const [zoomLevel, setzoomLevel] = useState(13);
 
   const [curPlace, setCurPlace] = useState({});
@@ -102,12 +95,9 @@ export default function GoogleMapComponent() {
       });
       setCurPlace({});
     }
-  });
+  }, [places]);
 
-  const options = {
-    strictBounds: true,
-  };
-
+  // Markers information on click
   const [infos, setInfos] = useState([]);
 
   const handleOpenUserMenu = (event) => {
@@ -121,12 +111,15 @@ export default function GoogleMapComponent() {
   // Info window for current location.
   const [infoCurrent, setinfoCurrent] = useState([]);
 
+  // state variables for e-waste type filters.
   const defaultChecked = {};
   for (let type of ewasteTypes) {
     defaultChecked[type] = true;
   }
   const [typeChecked, setTypeChecked] = useState(defaultChecked);
 
+  // const for google map config
+  const libraries = ["places"];
   return (
     <>
       <LoadScript
@@ -135,19 +128,21 @@ export default function GoogleMapComponent() {
         preventGoogleFontsLoading={false}
       >
         {/* Type filter */}
-        <Box sx={{ flexGrow: 0, display: "inline-flex" }}>
-          {/* <Tooltip title="E-waste settings"> */}
-          <Button
-            sx={{ p: 0, fontSize: 20 }}
-            onClick={handleOpenUserMenu}
-            color="inherit"
-          >
-            E-waste Type
-          </Button>
-          {/* </Tooltip> */}
+        <Box sx={{ paddingLeft: "5vw", flexGrow: 0, display: "inline-flex" }}>
+          <Tooltip title="E-waste filters">
+            <Button
+              sx={{ p: 0, fontSize: 20 }}
+              onClick={handleOpenUserMenu}
+              color="inherit"
+              variant="outlined"
+              size="large"
+            >
+              Type
+              <ArrowDropDownCircleRoundedIcon />
+            </Button>
+          </Tooltip>
 
           <Menu
-            sx={{ mt: "45px" }}
             id="menu-appbar"
             anchorEl={anchorUser}
             anchorOrigin={{
@@ -220,6 +215,7 @@ export default function GoogleMapComponent() {
         <GoogleMap
           id="google-map"
           mapContainerStyle={containerStyle}
+          options={{ mapTypeControl: false }}
           center={center}
           zoom={zoomLevel}
           onZoomChanged={() => {}}
@@ -259,7 +255,11 @@ export default function GoogleMapComponent() {
                 lng: info.location.lng,
               };
               return (
-                <InfoWindow position={location}>
+                <InfoWindow
+                  position={location}
+                  key={`${info.id} info window`}
+                  onClick={() => {}}
+                >
                   <>
                     <h1 class="font-medium">{info.Address},</h1>
                     <h1 class="font-medium"> Singapore {info.PostalCode}</h1>
@@ -303,7 +303,9 @@ export default function GoogleMapComponent() {
             <Autocomplete
               onLoad={onLoad}
               onPlaceChanged={onPlaceChanged}
-              options={options} // further restriction by radius bounds.
+              options={{
+                strictBounds: true,
+              }} // further restriction by radius bounds.
               restrictions={{ country: ["sg"] }} // restrict to singapore
               id="autocomplete"
               types={["geocode"]}
@@ -324,8 +326,7 @@ export default function GoogleMapComponent() {
                   outline: `none`,
                   textOverflow: `ellipses`,
                   position: "absolute",
-                  left: "25%",
-                  marginLeft: "-10vw",
+                  left: "3%",
                 }}
               />
             </Autocomplete>
