@@ -56,13 +56,13 @@ export default function EventPage({ allPosts }) {
               e-newsletter and events about E-recycling.
             </p>
 
-            <div class='grid grid-cols-1 gap-4 flex justify-center items-center md:grid-cols-80/20 flex items-stretch mt-12'>
+            <div class='grid grid-cols-1 gap-4 flex justify-center items-center md:grid-cols-80/20 tablet: grid-cols-1 flex items-stretch mt-12'>
               <input
-                class='bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 p-5  border border-transparent focus:outline-none focus:border-gray-500'
+                class='bg-gray-100 rounded-lg rounded text-base leading-none text-gray-800 p-5  border border-transparent focus:outline-none focus:border-gray-500'
                 type='email'
                 placeholder='Your Email'
               />
-              <button class='flex-auto text-center md:text-flex w-32 rounded-l-none hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out'>
+              <button class='flex-auto text-center item-center md:text-flex w-32 rounded hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out'>
                 subscribe
               </button>
             </div>
