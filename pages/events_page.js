@@ -1,6 +1,5 @@
 import Container from "../components/container";
 import EventPosts from "../components/event-posts";
-import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
@@ -54,21 +53,11 @@ export default function EventPage({ allPosts }) {
             alt="..."
           />
         </div>
-        {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )} */}
         <Container>
           {morePosts.length > 0 && <EventPosts posts={morePosts} />}
         </Container>
-        <div class='pt-6 pb-12 pl-24 pr-24  md:flex xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300'>
-          <div class='xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center'>
+        <div class="pt-6 pb-12 pl-24 pr-24  md:flex xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300">
+          <div class="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
             <img
               src="/assets/background_event_page.png"
               alt="Envelope with a newsletter"
@@ -76,6 +65,7 @@ export default function EventPage({ allPosts }) {
               class="w-auto h-auto  xl:w-full lg:w-1/2"
             />
           </div>
+
           <div class="w-full xl:w-1/2 xl:pl-10 xl:py-28">
             <h1 class="text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-teal-800 mb-4 text-center xl:text-left md:mt-0 mt-4">
               Subscribe
@@ -84,16 +74,19 @@ export default function EventPage({ allPosts }) {
               Subscribe to our mailing list to be the first one receiving
               e-newsletter and events about E-recycling.
             </p>
-            <form class="grid grid-cols-1 gap-4 flex justify-center items-center md:grid-cols-80/20 tablet: grid-cols-1 flex items-stretch mt-12" onSubmit={handleSubmit}>
+            <form
+              class="grid grid-cols-1 gap-4 justify-center items-center md:grid-cols-80/20 tablet: flex items-stretch mt-12"
+              onSubmit={handleSubmit}
+            >
               <input
-                class="bg-gray-100 rounded-lg rounded text-base leading-none text-gray-800 p-5  border border-transparent focus:outline-none focus:border-gray-500"
+                class="bg-gray-100 rounded text-base leading-none text-gray-800 p-5  border border-transparent focus:outline-none focus:border-gray-500"
                 type="email"
                 placeholder="Your Email"
                 value={inputEmail}
                 onChange={handleChange}
               />
               <input
-                class="flex-auto text-center item-center md:text-flex w-32 rounded hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out"
+                class="flex-auto text-center item-center md:text-flex w-32 hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out"
                 type="submit"
                 value="Subscribe"
               />
