@@ -67,9 +67,8 @@ export default function EventPage({ allPosts }) {
         <Container>
           {morePosts.length > 0 && <EventPosts posts={morePosts} />}
         </Container>
-
-        <div class="pt-6 pb-12 pl-24 pr-24  md:w-2/3 xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300">
-          <div class="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
+        <div class='pt-6 pb-12 pl-24 pr-24  md:flex xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300'>
+          <div class='xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center'>
             <img
               src="/assets/background_event_page.png"
               alt="Envelope with a newsletter"
@@ -85,16 +84,16 @@ export default function EventPage({ allPosts }) {
               Subscribe to our mailing list to be the first one receiving
               e-newsletter and events about E-recycling.
             </p>
-            <form class="flex items-stretch mt-12" onSubmit={handleSubmit}>
+            <form class="grid grid-cols-1 gap-4 flex justify-center items-center md:grid-cols-80/20 tablet: grid-cols-1 flex items-stretch mt-12" onSubmit={handleSubmit}>
               <input
-                class="bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500"
+                class="bg-gray-100 rounded-lg rounded text-base leading-none text-gray-800 p-5  border border-transparent focus:outline-none focus:border-gray-500"
                 type="email"
                 placeholder="Your Email"
                 value={inputEmail}
                 onChange={handleChange}
               />
               <input
-                class="flex-auto w-32 rounded-l-none hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700"
+                class="flex-auto text-center item-center md:text-flex w-32 rounded hover:bg-emerald-600 bg-emerald-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out"
                 type="submit"
                 value="Subscribe"
               />
