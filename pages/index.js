@@ -145,7 +145,7 @@ function To_Event({ allPosts }) {
         <Typography align="left" variant="h4" className="recycle_ref-heading">
           Looking to hang out with the community?
           <Box sx={{ m: 5 }}></Box>
-          <Link href="/event_page" underline="always">
+          <Link href="/events_page" underline="always">
             Check out these events happening in Singapore
           </Link>
         </Typography>

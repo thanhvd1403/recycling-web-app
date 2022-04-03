@@ -71,7 +71,7 @@ export default function InfoPage({ allPosts }) {
         <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono ">
         <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">♻ Types of E-Waste ♻</div>
         </p>
-        <div id="ToE" class="flex space-x-7 pl-10 pr-10">
+        <div id="ToE" class="flex space-x-7 pl-10 pr-10 bg-white">
           <div class="w-1/2">
             <Container>
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
