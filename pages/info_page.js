@@ -191,7 +191,7 @@ export default function InfoPage({ allPosts }) {
       </div>
     </div>
     <div class="flex-none w-70 text-left pl-5 pr-5 py- rounded-full border-3 border-yellow-600">
-      <Menu as="div" className="relative inline-block text-right pl-15">
+      <Menu as="div" className="relative inline-block text-right pl-15 py-10">
         <div>
           <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base font-medium text-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100  bg-emerald-600 hover:bg-emerald-700 text-green-100 hover"> On This Page
             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
