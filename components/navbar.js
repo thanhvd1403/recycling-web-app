@@ -81,25 +81,14 @@ const pages = [
   { page: "Recycling Hub", href: "/recycling_page" },
   { page: "Events", href: "/events_page" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
   const [anchorNav, setanchorNav] = useState(null);
-  const [anchorUser, setanchorUser] = useState(null);
-
   const handleOpenNavMenu = (event) => {
     setanchorNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setanchorUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setanchorNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setanchorUser(null);
   };
 
   return (

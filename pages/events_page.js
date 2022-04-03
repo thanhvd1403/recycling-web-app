@@ -4,15 +4,13 @@ import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import { collection, addDoc } from "@firebase/firestore";
+import { doc, setDoc, Timestamp } from "@firebase/firestore";
 import db from "../firebase-config";
 import React, { useState } from "react";
-import swal from "sweetalert";
-// import MoreStories from "../components/more-stories";
+import Swal from "sweetalert2";
 
 export default function EventPage({ allPosts }) {
   const morePosts = allPosts.slice(0);
-  const emailsCollectionRef = collection(db, "emails");
 
   const [inputEmail, setInputEmail] = useState("");
   const handleChange = (event) => {
@@ -20,12 +18,23 @@ export default function EventPage({ allPosts }) {
   };
   const handleSubmit = (event) => {
     if (inputEmail != "") {
-      addDoc(emailsCollectionRef, { emailAddress: inputEmail });
-      swal({
-        title: "Thank you!",
-        text: `Email ${inputEmail} submitted successfully.`,
-        icon: "success",
-        button: "Yay!",
+      setDoc(
+        doc(db, "emails", inputEmail),
+        {
+          subscriptionDate: Timestamp.now(),
+        },
+        { merge: true }
+      ).then(() => {
+        Swal.fire({
+          title: "Welcome on board!",
+          html: `<p>Email
+              <strong>${inputEmail}</strong> 
+              added successfully!
+              </p>`,
+          icon: "success",
+          showConfirmButton: false,
+          timer: 3000,
+        });
       });
     }
     event.preventDefault();
