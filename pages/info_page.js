@@ -77,7 +77,7 @@ export default function InfoPage({ allPosts }) {
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/Fluorescent_lamp">
                     <a className="hover:underline"> Consumer Lamp (fluorescent tube) </a>
                     </Link>
                   </h3>
@@ -90,7 +90,7 @@ export default function InfoPage({ allPosts }) {
             <Container> {" "} {/* <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight"> More Stories </h2> */}{" "} <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://www.lawinsider.com/dictionary/ict-equipment#:~:text=ICT%20Equipment%20means%20any%20radio,reception%20of%20radio%20and%20telecommunications">
                     <a className="hover:underline">ICT equipment</a>
                     </Link>
                   </h3>
@@ -105,7 +105,7 @@ export default function InfoPage({ allPosts }) {
             <Container> {" "} {/* <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight"> More Stories </h2> */}{" "} <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://alba-ewaste.sg/types-e-waste/">
                     <a className="hover:underline"> Large household Appliance{" "} </a>
                     </Link>
                   </h3>
@@ -118,7 +118,7 @@ export default function InfoPage({ allPosts }) {
             <Container> {" "} {/* <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight"> More Stories </h2> */}{" "} <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/Electric_vehicle">
                     <a className="hover:underline"> Electric Mobility Device{" "} </a>
                     </Link>
                   </h3>
@@ -134,7 +134,7 @@ export default function InfoPage({ allPosts }) {
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/AA_battery">
                     <a className="hover:underline"> Household Battery{" "} </a>
                     </Link>
                   </h3>
@@ -148,7 +148,7 @@ export default function InfoPage({ allPosts }) {
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/Lithium-ion_battery">
                     <a className="hover:underline"> Lithium-Ion Portable Battery{" "} </a>
                     </Link>
                   </h3>
@@ -164,7 +164,7 @@ export default function InfoPage({ allPosts }) {
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/Electric_vehicle_battery">
                     <a className="hover:underline"> Consumer Electric Vehicle Battery{" "} </a>
                     </Link>
                   </h3>
@@ -178,7 +178,7 @@ export default function InfoPage({ allPosts }) {
               <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
                 <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg pr-5 py-5 pl-5">
                   <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                    <Link href="https://google.com">
+                    <Link href="https://en.wikipedia.org/wiki/Incandescent_light_bulb">
                     <a className="hover:underline"> Consumer Lamp (Bulb){" "} </a>
                     </Link>
                   </h3>
@@ -200,12 +200,58 @@ export default function InfoPage({ allPosts }) {
         <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
           <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              <Menu.Item> {({ active }) => ( <a href="#DoE" className={classNames( active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700' , 'block px-4 py-2 text-sm' )}> Definition of E-waste </a> )} </Menu.Item>
-              <Menu.Item> {({ active }) => ( <a href="#CoE" className={classNames( active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700' , 'block px-4 py-2 text-sm' )}> Characteristics of E-waste </a> )} </Menu.Item>
-              <Menu.Item> {({ active }) => ( <a href="#BoE" className={classNames( active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700' , 'block px-4 py-2 text-sm' )}> Benefits of E-waste </a> )} </Menu.Item>
-              <form method="POST" action="#">
-                <Menu.Item> {({ active }) => ( <a href="#ToE" className={classNames( active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700' , 'block px-4 py-2 text-sm' )}> Types of E-waste </a> )} </Menu.Item>
-              </form>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#DoE"
+                  className={classNames(
+                    active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Definition of E-waste
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#CoE"
+                  className={classNames(
+                    active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Characteristics of E-waste
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#BoE"
+                  className={classNames(
+                    active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Benefits of E-waste
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#ToE"
+                  className={classNames(
+                    active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Types of E-Waste
+                </a>
+              )}
+            </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
