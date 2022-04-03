@@ -6,6 +6,13 @@ import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Link from "next/link";
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 export default function InfoPage({ allPosts }) {
   const heroPost = allPosts[0];
   return (
@@ -17,49 +24,13 @@ export default function InfoPage({ allPosts }) {
         {/* BODYYYYY */}{" "}
         <section>
           <div class="flex">
-            <div class="flex-none w-70 text-left pl-10 pr-5 py-20 rounded-full border-3 border-yellow-600 fixed">
-              <div class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100">
-                {" "}
-                On this page{" "}
-              </div>
-              <br></br>
-              <a
-                href="#DoE"
-                class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100"
-              >
-                ▶ Definition of E-waste{" "}
-              </a>
-              <br></br>
-              <br></br>
-              <a
-                href="#CoE"
-                class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100"
-              >
-                ▶ Characteristics of E-waste{" "}
-              </a>
-              <br></br>
-              <br></br>
-              <a
-                href="#BoE"
-                class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100"
-              >
-                ▶ Benefits of E-waste{" "}
-              </a>
-              <br></br>
-              <br></br>
-              <a
-                href="#ToE"
-                class="px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-700 text-green-100"
-              >
-                ▶ Types of E-waste{" "}
-              </a>
-              <br></br>
-            </div>
-            <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div>
+            
+            {/* <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div> */}
+            
             <div class="flex-initial w-640">
               <div
                 id="DoE"
-                class="space-x-7 py-10 pl-10 pr-10 text-center font-sans"
+                class="space-x-7 py-10 pl-10 pr-10 text-center font-sans "
               >
                 <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
                   ♻ Definition of E-waste ♻
@@ -384,7 +355,98 @@ export default function InfoPage({ allPosts }) {
                   </div>
                 </div>
               </div>
+
             </div>
+
+
+                            
+                        
+            <div class="flex-none w-70 text-left pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600">
+
+
+              <Menu as="div" className="relative inline-block text-right pl-20 ">
+                  <div>
+                    <Menu.Button className=" inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base font-medium text-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100  bg-emerald-600 hover:bg-emerald-700 text-green-100 hover">
+                      On This Page
+                      <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="#DoE"
+                              className={classNames(
+                                active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                                'block px-4 py-2 text-sm'
+                              )}
+                            >
+                              Definition of E-waste
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="#CoE"
+                              className={classNames(
+                                active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                                'block px-4 py-2 text-sm'
+                              )}
+                            >
+                              Characteristics of E-waste
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="#BoE"
+                              className={classNames(
+                                active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                                'block px-4 py-2 text-sm'
+                              )}
+                            >
+                              Benefits of E-waste
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <form method="POST" action="#">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                              href="#ToE"
+                              className={classNames(
+                                active ? 'px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100' : 'text-gray-700',
+                                'block px-4 py-2 text-sm'
+                              )}
+                            >
+                              Types of E-waste
+                            </a>
+                            )}
+                          </Menu.Item>
+                        </form>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+
+
+
+
+            </div>
+            
           </div>
         </section>{" "}
         {/* BODYYYYY */}
