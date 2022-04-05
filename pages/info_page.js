@@ -1,6 +1,5 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Link from "next/link";
 import { Typography, Grid, Card, CardActionArea } from "@mui/material";
@@ -8,12 +7,15 @@ import { EwasteInfo } from "../data/data";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import styled from "styled-components";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function InfoPage({ allPosts }) {
+export default function InfoPage() {
   const sectionRef = [
     { href: "#DoE", title: "Definition of E-waste" },
     { href: "#CoE", title: "Characteristics of E-waste" },
@@ -172,18 +174,6 @@ export default function InfoPage({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
-  return { props: { allPosts } };
-}
-
 function TypeInformation() {
   return (
     <Container>
@@ -191,30 +181,69 @@ function TypeInformation() {
         ♻ Types of E-Waste ♻
       </h1>
       <Grid container alignItems="stretch" spacing={2} my={2}>
-        <ItemCard title="Fluorescent lamp" image="fluorescent.jpg" />
-        <ItemCard title="ICT Equipments" image="ict.jpg" />
-        <ItemCard title="Household appliances" image="household.jpg" />
-        <ItemCard title="Electric vehicles" image="lucid-dream.jpg" />
-        <ItemCard title="Household batteries" image="batteries.jpg" />
-        <ItemCard title="Lithium-Ion batteries" image="lithium.jpg" />
-        <ItemCard title="Electric vehicle batteries" image="car-battery.jpg" />
-        <ItemCard title="Incandescent light bulb" image="lightbulbs.jpg" />
+        {Object.entries(EwasteInfo).map(([type, specificInfo]) => {
+          return (
+            <ItemCard
+              title={type}
+              imageURL={specificInfo.imageURL}
+              data={[type, specificInfo.description, specificInfo.link]}
+            />
+          );
+        })}
       </Grid>
     </Container>
   );
 }
 
+// const styledButton = styled.a`
+//   display: inline-block;
+//   border-radius: 3px;
+//   padding: 0.5rem 0;
+//   margin: 0.5rem 1rem;
+//   width: 11rem;
+//   background: transparent;
+//   color: white;
+//   border: 2px solid white;
+
+//   ${(props) =>
+//     props.primary &&
+//     css`
+//       background: white;
+//       color: black;
+//     `}
+// `;
+
 function ItemCard(props) {
+  const [type, description, link] = props.data;
   return (
     <Grid item xs={6} md={3}>
       <Card className="cardItem" elevation={6}>
         <CardActionArea
           onClick={() => {
-            alert("hello");
+            Swal.fire({
+              title: `${type}`,
+              html: `<div>
+                <p style="text-align: justify; margin-bottom:2rem">
+                  ${description}
+                </p>
+                <link href="/button.css" rel="stylesheet">
+                <style>
+                </style>
+                <a href=${link} target="_blank" class="btn btn-success activate">
+                  Learn More
+                </a>
+              </div>`,
+              icon: "info",
+              color: "#000",
+              background:
+                "url(/assets/type_of_ewaste/alert_background.jpg) no-repeat fixed center",
+              // backdrop: `rgba(153, 241, 118, 0.4)`,
+              confirmButtonText: "Sure thing!",
+            });
           }}
         >
           <img
-            src={"/assets/home_page/" + props.image}
+            src={props.imageURL}
             title={props.title}
             alt={"Image of " + props.title}
             style={{
