@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Stack, Typography, Slide } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import Link from "next/link";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Zoom from "@mui/material/Zoom";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Stack, Typography, Slide } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Link from 'next/link';
+import Fab from '@mui/material/Fab';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Zoom from '@mui/material/Zoom';
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -29,13 +29,13 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
+      '#back-to-top-anchor'
     );
 
     if (anchor) {
       anchor.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center',
       });
     }
   };
@@ -44,8 +44,8 @@ function ScrollTop(props) {
     <Zoom in={trigger}>
       <Box
         onClick={handleClick}
-        role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        role='presentation'
+        sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
         {children}
       </Box>
@@ -63,7 +63,7 @@ function OnScroll(props) {
     target: window ? window() : undefined,
   });
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
+    <Slide appear={false} direction='down' in={!trigger}>
       {children}
     </Slide>
   );
@@ -75,11 +75,11 @@ OnScroll.propTypes = {
 
 const pages = [
   {
-    page: "E-waste Information",
-    href: "/info_page",
+    page: 'E-waste Information',
+    href: '/info_page',
   },
-  { page: "Recycling Hub", href: "/recycling_page" },
-  { page: "Events", href: "/events_page" },
+  { page: 'Recycling Hub', href: '/recycling_page' },
+  { page: 'Events', href: '/events_page' },
 ];
 
 const ResponsiveAppBar = () => {
@@ -92,19 +92,19 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="sticky" enableColorOnDark color="inherit">
-      <Container maxWidth="xl">
+    <AppBar position='sticky' enableColorOnDark color='inherit'>
+      <Container maxWidth='xl'>
         <Toolbar disableGutters>
           {/* Responsive screen: size=md (desktop) */}
-          <Link href="/">
-            <Button color="inherit">
+          <Link href='/'>
+            <Button color='inherit'>
               <Typography
-                className="text-xl"
-                variant="h6"
+                className='text-xl'
+                variant='h6'
                 noWrap
                 onClick={handleOpenNavMenu}
-                component="div"
-                sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+                component='div'
+                sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
               >
                 OneStop E-Cycle
               </Typography>
@@ -112,39 +112,39 @@ const ResponsiveAppBar = () => {
           </Link>
 
           {/* Responsive screen: size=xs (for Mobile) */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color='inherit'
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorNav}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: 'bottom',
+                horizontal: 'left',
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
+                vertical: 'top',
+                horizontal: 'left',
               }}
               open={Boolean(anchorNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: 'block', md: 'none' },
               }}
             >
               {pages.map(({ page, href }) => (
                 <Link href={href} key={href}>
                   <MenuItem key={[page]} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{[page]}</Typography>
+                    <Typography textAlign='center'>{[page]}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -152,20 +152,20 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Typography
-            variant="h6"
+            variant='h6'
             noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            component='div'
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             OneStop E-Cycle
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(({ page, href }) => (
               <Link href={href} key={href}>
                 <Button
                   key={[page]}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "#323131", display: "block" }}
+                  sx={{ my: 2, color: '#323131', display: 'block' }}
                 >
                   {[page]}
                 </Button>
@@ -218,11 +218,11 @@ export default function NavigationBar(props) {
       {/* </OnScroll> */}
 
       <ScrollTop {...props}>
-        <Fab color="inherit" size="small" aria-label="scroll back to top">
+        <Fab color='inherit' size='small' aria-label='scroll back to top'>
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-      <Stack sx={{ width: "100%" }} spacing={2}>
+      <Stack sx={{ width: '100%' }} spacing={2}>
         {/* <Alert severity="error">This is an error alert — check it out!</Alert> */}
       </Stack>
     </>
