@@ -7,7 +7,7 @@ author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
 RegURL: 'https://www.asiaclimateforum.com'
-omImage: '/assets/blog/intermet-asia/cover.jpg'
+omImage: '/assets/favicons/logo.png'
 ---
 
 **"The only dedicated meteorological technology and forecasting services event in the APAC region"**

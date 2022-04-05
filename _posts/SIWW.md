@@ -7,7 +7,7 @@ author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
 RegURL: 'https://www.siww.com.sg/home/general-information/registration'
-omImage: '/assets/blog/SIWW/cover.jpg'
+omImage: '/assets/favicons/logo.png'
 ---
 
 Singapore International Water Week will focus on Industrial Water Solutions, and we are delighted to welcome more than 180 leaders from local and international water companies, including large industrial water users. The aim is to encourage more firms to recognise the technical viability of these industrial water solutions and the value of water recycling for water sustainability.
