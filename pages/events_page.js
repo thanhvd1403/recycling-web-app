@@ -3,7 +3,7 @@ import EventPosts from "../components/event-posts";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import { doc, setDoc, Timestamp } from "@firebase/firestore";
+import { doc, getDoc, setDoc, Timestamp } from "@firebase/firestore";
 import db from "../firebase-config";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
@@ -16,27 +16,44 @@ export default function EventPage({ allPosts }) {
     setInputEmail(event.target.value);
   };
   const handleSubmit = (event) => {
+    event.preventDefault();
     if (inputEmail != "") {
-      setDoc(
-        doc(db, "emails", inputEmail),
-        {
-          subscriptionDate: Timestamp.now(),
-        },
-        { merge: true }
-      ).then(() => {
-        Swal.fire({
-          title: "Welcome on board!",
-          html: `<p>Email
-              <strong>${inputEmail}</strong> 
-              added successfully!
-              </p>`,
-          icon: "success",
-          showConfirmButton: false,
-          timer: 3000,
-        });
+      const emailRef = doc(db, "emails", inputEmail);
+      getDoc(emailRef).then((emailSnap) => {
+        if (emailSnap.exists()) {
+          Swal.fire({
+            title: "Welcome back!",
+            html: `<p>Email
+                <strong>${inputEmail}</strong> 
+                already exists!
+                </p>`,
+            icon: "info",
+            color: "#000",
+            background: "url(/assets/recycle_alert.jpg) no-repeat fixed center",
+            showConfirmButton: false,
+            backdrop: `rgba(153, 241, 118, 0.4)`,
+            timer: 3000,
+          });
+        } else {
+          setDoc(emailRef, {
+            subscriptionDate: Timestamp.now(),
+          });
+          Swal.fire({
+            title: "Welcome on board!",
+            html: `<p>Email
+                <strong>${inputEmail}</strong> 
+                added successfully!
+                </p>`,
+            icon: "success",
+            color: "#000",
+            background: "url(/assets/recycle_alert.jpg) no-repeat fixed center",
+            showConfirmButton: false,
+            backdrop: `rgba(153, 241, 118, 0.4)`,
+            timer: 3000,
+          });
+        }
       });
     }
-    event.preventDefault();
     setInputEmail("");
   };
   return (

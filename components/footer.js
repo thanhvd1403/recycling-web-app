@@ -1,9 +1,55 @@
-import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import { doc, getDoc, setDoc, Timestamp } from "@firebase/firestore";
+import db from "../firebase-config";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Footer() {
+  const [inputEmail, setInputEmail] = useState("");
+  const handleChange = (event) => {
+    setInputEmail(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (inputEmail != "") {
+      const emailRef = doc(db, "emails", inputEmail);
+      getDoc(emailRef).then((emailSnap) => {
+        if (emailSnap.exists()) {
+          Swal.fire({
+            title: "Welcome back!",
+            html: `<p>Email
+                <strong>${inputEmail}</strong> 
+                already exists!
+                </p>`,
+            icon: "info",
+            color: "#000",
+            background: "url(/assets/recycle_alert.jpg) no-repeat fixed center",
+            showConfirmButton: false,
+            backdrop: `rgba(153, 241, 118, 0.4)`,
+            timer: 3000,
+          });
+        } else {
+          setDoc(emailRef, {
+            subscriptionDate: Timestamp.now(),
+          });
+          Swal.fire({
+            title: "Welcome on board!",
+            html: `<p>Email
+                <strong>${inputEmail}</strong> 
+                added successfully!
+                </p>`,
+            icon: "success",
+            color: "#000",
+            background: "url(/assets/recycle_alert.jpg) no-repeat fixed center",
+            showConfirmButton: false,
+            backdrop: `rgba(153, 241, 118, 0.4)`,
+            timer: 3000,
+          });
+        }
+      });
+    }
+    setInputEmail("");
+  };
   return (
-
     <footer class="text-center bg-gray-900 text-white">
       <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
         <div class="mr-12 hidden lg:block">
@@ -176,8 +222,8 @@ export default function Footer() {
       </div>
 
       <div>
-        <form action="">
-          <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
+        <form action="" onSubmit={handleSubmit}>
+          <div class="grid md:grid-cols-3 gird-cols-1 gap-4 justify-center items-center">
             <div class="md:ml-auto md:mb-6">
               <p class="">
                 <strong>Sign up for our newsletter</strong>
@@ -206,6 +252,8 @@ export default function Footer() {
               "
                 id="exampleFormControlInput1"
                 placeholder="Email address"
+                value={inputEmail}
+                onChange={handleChange}
               />
             </div>
 

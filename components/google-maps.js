@@ -3,7 +3,6 @@ import {
   LoadScript,
   Autocomplete,
   Marker,
-  Circle,
   InfoWindow,
 } from "@react-google-maps/api";
 import React, { useState, useEffect } from "react";

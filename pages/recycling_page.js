@@ -22,7 +22,7 @@ export default function RecyclePage() {
 
         <Image
           layout="fill"
-          src="/ewaste.gif"
+          src="/assets/recycle_background.webp"
           alt="E-waste recycling"
           objectFit="cover"
           objectPosition="center"
