@@ -7,7 +7,7 @@ author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
 RegURL: 'https://www.thestormexpoasia.com/'
-omImage: '/assets/blog/storm-expo-asia/cover.jpg'
+omImage: '/assets/favicons/logo.png'
 ---
 
 **"Asia's Leading Meteorological Disaster Management Event"**

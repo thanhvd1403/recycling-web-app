@@ -7,7 +7,7 @@ author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
 RegURL: 'http://www.areee.org'
-omImage: '/assets/blog/AREEE/cover.jpg'
+omImage: '/assets/faticon/logo.png'
 ---
 
 The conference program will feature keynote and plenary sessions, oral and poster presentations. Distinguished speaker will be invited to deliver keynote speeches and invited talks on emerging technologies in renewable energy and enviromental engineering. Attendees will have the opportunity to interface with experts from all related fields. Prospective authors are invited to submit their papers in English. Interested parties without papers are also invited to participate as attendees at the conference as listeners.
