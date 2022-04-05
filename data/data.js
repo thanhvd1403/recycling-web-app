@@ -1,3 +1,44 @@
+export const EwasteInfo = {
+  "Consumer Lamp (fluorescent tube)": {
+    description: `A fluorescent lamp, also known as a fluorescent tube, or a fluorescent light is a 
+    low-pressure mercury-vapor gas-discharge lamp that uses fluorescence to produce visible light. 
+    An electric current in the gas excites mercury vapor, which produces short-wave ultraviolet light
+    that then causes a phosphor coating on the inside of the lamp to glow. A fluorescent lamp converts
+    electrical energy into useful light much more efficiently than an incandescent lamp`,
+    link: "https://en.wikipedia.org/wiki/Fluorescent_lamp",
+  },
+  "ICT equipment": {
+    description: `This includes printers, computers and laptops, mobile phones and tablets, 
+    network and set-top boxes, TVs and desktop monitors. ICT peripherals such as mouse, keyboard,
+    cables and adaptor can be disposed of together.`,
+    link: "https://www.lawinsider.com/dictionary/ict-equipment#:~:text=ICT%20Equipment%20means%20any%20radio,reception%20of%20radio%20and%20telecommunications.",
+  },
+  "Large household Appliance": {
+    description: `This includes Consumer Refrigerators (900L), Air-conditioners, Washing Machines, Dryers, Televisions`,
+    link: "https://alba-ewaste.sg/types-e-waste/",
+  },
+  "Electric Mobility Device": {
+    description: `An electric vehicle (EV) is a vehicle that uses one or more electric motors for propulsion. It can be powered by a collector system, with electricity from extravehicular sources, or it can be powered autonomously by a battery (sometimes charged by solar panels, or by converting fuel to electricity using fuel cells or a generator). EVs include, but are not limited to, road and rail vehicles, surface and underwater vessels, electric aircraft and electric spacecraft.`,
+    link: "https://en.wikipedia.org/wiki/Electric_vehicle",
+  },
+  "Household Battery": {
+    description: `D, C, AA, AAA, AAAA, N, 9-volt, Button cell`,
+    link: "https://en.wikipedia.org/wiki/AA_battery",
+  },
+  "Lithium-Ion Portable Battery": {
+    description: `Powerbank, Mobile Telephone Battery & Laptop Battery`,
+    link: "https://en.wikipedia.org/wiki/Lithium-ion_battery",
+  },
+  "Consumer Electric Vehicle Battery": {
+    description: `An electric vehicle battery (EVB, also known as a traction battery) is a rechargeable battery used to power the electric motors of a battery electric vehicle (BEV) or hybrid electric vehicle (HEV). Typically lithium-ion batteries, they are specifically designed for high electric charge (or energy) capacity.`,
+    link: "https://en.wikipedia.org/wiki/Electric_vehicle_battery",
+  },
+  "Consumer Lamp (Bulb)": {
+    description: `An incandescent light bulb, incandescent lamp or incandescent light globe is an electric light with a wire filament heated until it glows. The filament is enclosed in a glass bulb with a vacuum or inert gas to protect the filament from oxidation. Current is supplied to the filament by terminals or wires embedded in the glass. A bulb socket provides mechanical support and electrical connections.`,
+    link: "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+  },
+};
+
 export const placesData = [
   {
     record_no: 0,
