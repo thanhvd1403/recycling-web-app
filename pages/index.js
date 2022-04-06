@@ -29,26 +29,33 @@ export default function Index({ allPosts }) {
 
 function Welcome() {
   return (
-    <div class="text-center bg-[#ebfff3]">
-      <Container className="welcome" maxWidth="lg" fixed>
-        <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: 20 }}>
-          <Typography
-            sx={{ fontSize: { xs: 55, sm: 75, md: 90 } }}
-            align="center"
-          >
-            Welcome to E&#8209;Cycle
-          </Typography>
-          <Box sx={{ my: 5 }} />
-          <Typography
-            sx={{ fontSize: { xs: 24, sm: 30, md: 36 } }}
-            className="welcome-brief"
-            align="center"
-          >
-            The OneStop destination for E&#8209;waste recycling
-          </Typography>
-        </Box>
-      </Container>
-    </div>
+    // <div class="text-center bg-[#ebfff3]">
+    //   <Container className="welcome" maxWidth="lg" fixed>
+    //     <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: 20 }}>
+    //       <Typography
+    //         sx={{ fontSize: { xs: 55, sm: 75, md: 90 } }}
+    //         align="center"
+    //       >
+    //         Welcome to E&#8209;Cycle
+    //       </Typography>
+    //       <Box sx={{ my: 5 }} />
+    //       <Typography
+    //         sx={{ fontSize: { xs: 24, sm: 30, md: 36 } }}
+    //         className="welcome-brief"
+    //         align="center"
+    //       >
+    //         The OneStop destination for E&#8209;waste recycling
+    //       </Typography>
+    //     </Box>
+    //   </Container>
+    // </div>
+    <div class="flex flex-wrap flex-grow justify-center">
+    <img
+      src="/assets/home_page/banner.png"
+      class="w-full h-auto"
+      alt="..."
+    />
+  </div>
   );
 }
 
