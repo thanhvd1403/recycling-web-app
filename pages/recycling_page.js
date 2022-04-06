@@ -29,7 +29,6 @@ export default function RecyclePage() {
           quality="100"
           height={"500vh"}
         /> */}
-
         <div class="mb-10 p-10 bg-teal-50 items-center justify-center">
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where you can recycle E-waste?
@@ -55,11 +54,11 @@ export default function RecyclePage() {
             the E-Waste unless it is damaged.
             <br />
             <br />
-            <b>Step 3 </b>
-            (for damaged E-Waste only): Broken appliances or leaking batteries
-            may be disposed of by Securing it properly in a container. Please
-            take care note to dispose of any broken lamps inside the E-Bin.
-            Please dispose them of as general waste, i.e. green refuse bins.
+            <b>Step 3: </b>
+            Broken appliances or leaking batteries may be disposed of by
+            Securing it properly in a container. Please take care note to
+            dispose of any broken lamps inside the E-Bin. Please dispose them of
+            as general waste, i.e. green refuse bins.
             <br />
             <br />
             <b>Step 4: </b>
@@ -80,16 +79,16 @@ export default function RecyclePage() {
             <br />
             <br />
             <b>For Large Household Appliances: </b>
-            <ul>
+            <div>
               <li>
-                <b>1.</b> Disconnect any cables/connections and ensure
-                appliances, fittings or equipment have been switched off.
+                Disconnect any cables/connections and ensure appliances,
+                fittings or equipment have been switched off.
               </li>
               <li>
-                <b>2.</b> Empty, properly defrost and clean refrigerators and
-                deep freezers.
+                Empty, properly defrost and clean refrigerators and deep
+                freezers.
               </li>
-            </ul>
+            </div>
           </div>
         </div>
       </Layout>

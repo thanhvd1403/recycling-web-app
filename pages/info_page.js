@@ -73,52 +73,6 @@ export default function InfoPage() {
                   </div>
                 </div>
               </div>
-              <div id="BoE">
-                <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
-                  <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg">
-                    <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
-                      ♻ Benefits of E-waste ♻
-                    </p>
-                    <div class="w-full text-center pl-5 pr-5">
-                      <div class="flex">
-                        <div class="w-2/5"></div>
-                        <div class="w-4/7 text-left whitespace-pre font-sans">
-                          <li> Save Landfill Space</li>
-                          <li> Save Natural Resources</li>
-                          <li> Increase in Employment</li>
-                          <li> Increases Affordability</li>
-                          <li> Removes Data Appropriately</li>
-                          <li> Saves the Environment</li>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* <div id="TT font-sans">
-                <div id="ToE" class="flex space-x-7 pl-10 pr-10">
-                  <Container class="w-1/2">
-                    <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
-                      <div class="rounded-3xl bg-emerald-100 border-black p-5 shadow-lg">
-                        <h3 className="text-3xl mb-3 align='center' leading-snug text-emerald-800 font-bold">
-                          <Link href="https://en.wikipedia.org/wiki/Electric_vehicle_battery">
-                            <a className="hover:underline">
-                              Consumer Electric Vehicle Battery
-                            </a>
-                          </Link>
-                        </h3>
-                        <p className="text-base leading-relaxed mb-4 text-stone-600"></p>
-                        <a
-                          href="https://en.wikipedia.org/wiki/Electric_vehicle_battery"
-                          class="px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-green-100"
-                        >
-                          Learn more
-                        </a>
-                      </div>
-                    </div>
-                  </Container>
-                </div>
-              </div>*/}
               <TypeInformation />
 
               {/* Start */}
@@ -227,48 +181,60 @@ export default function InfoPage() {
                   BENEFIT THE ENVIRONEMNT AND THE PUBLIC, AS THIS
                 </div>
                 <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
-                  <div class="bg-emerald-100 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                    <div class="w-full">
-                      <p class="text-md text-gray-600 text-center px-5">
-                        Keeps valuable resources out of the waste of the stream
-                        and converses our planet's finite resources.
-                      </p>
-                    </div>
+                  <div class="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                    <p class="text-md text-gray-600 text-center px-5">
+                      Keeps valuable resources out of the waste of the stream
+                      and converses our planet's finite resources.
+                    </p>
                   </div>
 
-                  <div class="bg-emerald-50 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                    <div class="w-full">
-                      <p class="text-md text-gray-600 text-center px-5">
-                        Ensures harmful substances are not released into the
-                        environment
-                      </p>
-                    </div>
+                  <div class="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                    <p class="text-md text-gray-600 text-center px-5">
+                      Ensures harmful substances are not released into the
+                      environment
+                    </p>
+                  </div>
+                  <div class="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                    <p class="text-md text-gray-600 text-center px-5">
+                      Reduces strain on Singapore's waste disposal facilities
+                      and frees up land for letter quality of life for residents
+                    </p>
                   </div>
 
-                  <div class="bg-emerald-50 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                    <div class="w-full">
-                      <p class="text-md text-gray-600 text-center px-5">
-                        Reduces strain on Singapore's waste disposal facilities
-                        and frees up land for letter quality of life for
-                        residents
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="bg-emerald-100 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                    <div class="w-full">
-                      <p class="text-md text-gray-600 text-center px-5">
-                        Helps fight climate change, grow our green economy and
-                        local employment opportunities
-                      </p>
-                    </div>
+                  <div class="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                    <p class="text-md text-gray-600 text-center px-5">
+                      Helps fight climate change, grow our green economy and
+                      local employment opportunities
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* end */}
+              {/* End */}
             </div>
-            <div class="flex-none w-70 text-left pl-5 pr-5 py- rounded-full">
+            {/* <div id="BoE">
+              <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
+                <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg">
+                  <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+                    ♻ Benefits of E-waste ♻
+                  </p>
+                  <div class="w-full text-center pl-5 pr-5">
+                    <div class="flex">
+                      <div class="w-2/5"></div>
+                      <div class="w-4/7 text-left whitespace-pre font-sans">
+                        <li> Save Landfill Space</li>
+                        <li> Save Natural Resources</li>
+                        <li> Increase in Employment</li>
+                        <li> Increases Affordability</li>
+                        <li> Removes Data Appropriately</li>
+                        <li> Saves the Environment</li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            {/* <div class="flex-none w-70 text-left pl-5 pr-5 py- rounded-full">
               <Menu
                 as="div"
                 className="relative inline-block text-right pl-15 py-10"
@@ -312,7 +278,7 @@ export default function InfoPage() {
                   </Menu.Items>
                 </Transition>
               </Menu>
-            </div>
+            </div> */}
           </div>
         </section>
       </Layout>
