@@ -96,7 +96,7 @@ export default function InfoPage() {
                   </div>
                 </div>
               </div>
-              <div id="TT font-sans">
+              {/* <div id="TT font-sans">
                 <div id="ToE" class="flex space-x-7 pl-10 pr-10">
                   <Container class="w-1/2">
                     <div className="grid md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
@@ -119,7 +119,7 @@ export default function InfoPage() {
                     </div>
                   </Container>
                 </div>
-              </div>
+              </div>*/}
               <TypeInformation />
               
 
@@ -131,12 +131,12 @@ export default function InfoPage() {
 
 
               {/* Start */}
-              <p class="py-10 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+              <p class="pt-10 pb-5 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
                       ♻ Do you know ♻
                 </p>
 
-              <div class="bg-gray-200 flex items-center justify-center">
-                <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
+              <div class="flex items-center justify-center">
+                <div class="bg-gray-100  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
                   <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                         <div class="w-full">
                             
@@ -173,10 +173,13 @@ export default function InfoPage() {
                 </div>
                 
               </div>
+
+
+              
               <div class=" flex flex-grow justify-center">
                     <img
                       src="/assets/home_page/stat1.png"
-                      class="w-auto h-auto"
+                      class="w-auto h-auto py-10"
                       alt="..."
                     />
               </div>
@@ -187,6 +190,48 @@ export default function InfoPage() {
                       class="w-auto h-auto"
                       alt="..."
                     />
+              </div>
+
+              <div class="py-10 flex flex-grow justify-center">
+                    <img
+                      src="/assets/home_page/stat3.png"
+                      class="w-auto h-auto"
+                      alt="..."
+                    />
+              </div>
+
+              
+              <div class="py-10 bg-teal-50 flex items-center justify-center">
+                <div class="px-10 pt-10 text-2xl font-bold text-teal-700 rounded-full flex items-center text-center justify-center font-mono">
+                  CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT THE ENVIRONEMNT AND THE PUBLIC, AS THIS 
+                </div>
+                <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
+                  <div class="bg-emerald-100 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            
+                            <p class="text-md text-gray-600 text-center px-5">Keeps valuable resources out of the waste of the stream and converses our planet's finite resources.</p>
+                        </div>
+                  </div>
+
+                  <div class="bg-emerald-50 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <p class="text-md text-gray-600 text-center px-5">Ensures harmful substances are not released into the environment</p>
+                        </div>
+                  </div>
+
+                  <div class="bg-emerald-50 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <p class="text-md text-gray-600 text-center px-5">Reduces strain on Singapore's waste disposal facilities and frees up land for letter quality of life for residents</p>
+                        </div>
+                  </div>
+
+                  <div class="bg-emerald-100 w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <p class="text-md text-gray-600 text-center px-5">Helps fight climate change, grow our green economy and local employment opportunities</p>
+                        </div>
+                  </div>
+                </div>
+                
               </div>
               
 
