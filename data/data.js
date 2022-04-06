@@ -26,8 +26,17 @@ export const EwasteInfo = {
     imageURL: "/assets/type_of_ewaste/lucid-dream.jpg",
   },
   "Household Batteries": {
-    description: `D, C, AA, AAA, AAAA, N, 9-volt, Button cell`,
-    link: "https://en.wikipedia.org/wiki/AA_battery",
+    description: `Every year in the United States, millions of single use and rechargeable batteries are bought, used and recycled or disposed of in the trash. 
+    Batteries come in various chemistries, types and sizes to fit their use.
+    <ul>
+    <li>Single-use batteries can generally be removed from the device when they stop powering the device.</li>
+    <li>Rechargeable batteries may be removable or permanently attached to the device.</li>
+    </ul>
+    The increased demand for batteries can be traced largely to the rapid increase in use of small portable electronics, 
+    power tools, and other everyday items, as well as the increase in “smart” products, such as small and 
+    large appliances and automobiles.
+    This include: D, C, AA, AAA, AAAA, N, 9-volt, Button cell`,
+    link: "https://www.epa.gov/recycle/used-household-batteries",
     imageURL: "/assets/type_of_ewaste/batteries.jpg",
   },
   "Lithium-Ion Batteries": {
