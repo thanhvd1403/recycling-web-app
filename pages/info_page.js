@@ -121,6 +121,92 @@ export default function InfoPage() {
                 </div>
               </div>
               <TypeInformation />
+              
+
+
+
+
+
+
+
+
+              {/* Start */}
+              <p class="py-10 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+                      ♻ Do you know ♻
+                </p>
+
+              <div class="bg-gray-200 flex items-center justify-center">
+                <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
+                  <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            
+                            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+                            <p class="text-md text-gray-600 text-center px-5">A large number of what is labeled as "e-waste" is actually not waste at all, but rather whole electronic equipment or parts that are readily marketable for reuse or can be recycled for materials recovery</p>
+                            <div class="text-3xl text-indigo-500 text-right leading-tight h-3">”</div>
+                        </div>
+                  </div>
+
+                  <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+                            <p class="text-md text-gray-600 text-center px-5">Singapore generates about 60,000 tonnes of e-waste a year. That’s equivalent to discarding about 70 mobile phones per person in Singapore!</p>
+                            <div class="text-3xl text-indigo-500 text-right leading-tight h-3">”</div>
+                        </div>
+                  </div>
+
+                  <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+                            <p class="text-md text-gray-600 text-center px-5">Singapore is the second-largest generator of e-waste in the region – about 60,000 tonnes of e-waste (equivalent to the weight of 220 Airbus A380 airplanes) was produced each year</p>
+                            <div class="text-3xl text-indigo-500 text-right leading-tight h-3">”</div>
+                        </div>
+                  </div>
+
+                  <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                        <div class="w-full">
+                            <div class="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+                            <p class="text-md text-gray-600 text-center px-5">When e-waste is warmed up, toxic chemicals are released into the air damaging the atmosphere. The damage to the atmosphere is one of the biggest environmental impacts from e-waste.</p>
+                            <div class="text-3xl text-indigo-500 text-right leading-tight h-3">”</div>
+                        </div>
+                  </div>
+                  
+                </div>
+                
+              </div>
+              <div class=" flex flex-grow justify-center">
+                    <img
+                      src="/assets/home_page/stat1.png"
+                      class="w-auto h-auto"
+                      alt="..."
+                    />
+              </div>
+
+              <div class="bg-gray-100 py-10 flex flex-grow justify-center">
+                    <img
+                      src="/assets/home_page/stat2.png"
+                      class="w-auto h-auto"
+                      alt="..."
+                    />
+              </div>
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+{/* end */}
+
+
             </div>
             <div class="flex-none w-70 text-left pl-5 pr-5 py- rounded-full">
               <Menu
