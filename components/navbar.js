@@ -57,27 +57,8 @@ ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-function OnScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
-OnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
 const pages = [
-  {
-    page: "E-waste Information",
-    href: "/info_page",
-  },
+  { page: "Information", href: "/info_page" },
   { page: "Recycling Hub", href: "/recycling_page" },
   { page: "Events", href: "/events_page" },
 ];
@@ -103,6 +84,7 @@ const ResponsiveAppBar = (props) => {
       position="fixed"
       enableColorOnDark
       color={trigger ? "inherit" : "transparent"}
+      elevation={0}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -210,16 +192,13 @@ export default function NavigationBar(props) {
   return (
     <>
       <CssBaseline />
-      {/* <OnScroll {...props}> */}
       <ResponsiveAppBar {...props} />
-      {/* </OnScroll> */}
 
       <ScrollTop {...props}>
         <Fab color="inherit" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-      <Stack sx={{ width: "100%" }} spacing={2}></Stack>
     </>
   );
 }

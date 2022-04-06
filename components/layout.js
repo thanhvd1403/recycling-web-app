@@ -1,7 +1,6 @@
 import Footer from "../components/footer";
 import Meta from "../components/meta";
 import NavigationBar from "./navbar";
-import AppBar from "@mui/material/ToolBar";
 
 export default function Layout({ preview, children }) {
   return (
