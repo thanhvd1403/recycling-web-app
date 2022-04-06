@@ -1,22 +1,33 @@
 export const EwasteInfo = {
   "Fluorescent Lamp": {
-    description: `A fluorescent lamp, also known as a fluorescent tube, or a fluorescent light is a 
-    low-pressure mercury-vapor gas-discharge lamp that uses fluorescence to produce visible light. 
-    An electric current in the gas excites mercury vapor, which produces short-wave ultraviolet light
-    that then causes a phosphor coating on the inside of the lamp to glow. A fluorescent lamp converts
-    electrical energy into useful light much more efficiently than an incandescent lamp`,
-    link: "https://en.wikipedia.org/wiki/Fluorescent_lamp",
+    description: `
+    <b>This include:</b> compact fluorescent lamp (CFL), Fluorescent Tubes (Long, Circular)
+    <div style="text-align:justify; padding-bottom: 5vh">
+    The glass tubes of the lamps
+    contain a fluorescent coating, mercury, and argon fumes which helps to produce visible light.
+    Once the power is switched on, the argon and mercury vapours produce ultraviolet (UV) light.
+    The UV light interacts with the fluorescent coating on the tubes to produce the visible light we
+    see. Over the lifetime of the lamps, most of the mercury vapour is found to get bound to the
+    fluorescent powder on the glass.
+    <br />
+    As mentioned above, fluorescent lamps contain a small amount of mercury. On an average
+    the fluorescent tubes contain less than 10 milligrams of mercury for straight and circular
+    lamps, and less than 5 milligrams for CFLs.
+    </div>
+    `,
+    link: "https://alba-ewaste.sg/wp-content/uploads/2021/06/Advisory-on-handling-CFLs.pdf",
     imageURL: "/assets/type_of_ewaste/fluorescent.jpg",
   },
   "ICT Equipments": {
-    description: `This includes printers, computers and laptops, mobile phones and tablets, 
+    description: `<b>This include:</b> printers, computers and laptops, mobile phones and tablets, 
     network and set-top boxes, TVs and desktop monitors. ICT peripherals such as mouse, keyboard,
     cables and adaptor can be disposed of together.`,
     link: "https://www.lawinsider.com/dictionary/ict-equipment#:~:text=ICT%20Equipment%20means%20any%20radio,reception%20of%20radio%20and%20telecommunications.",
     imageURL: "/assets/type_of_ewaste/ict.jpg",
   },
   "Household Appliances": {
-    description: `This includes Consumer Refrigerators (900L), Air-conditioners, Washing Machines, Dryers, Televisions`,
+    description: `<b>This include:</b> refrigerators (900L), air-conditioners,
+    washing machines, dryers, televisions`,
     link: "https://alba-ewaste.sg/types-e-waste/",
     imageURL: "/assets/type_of_ewaste/household.jpg",
   },
@@ -26,22 +37,38 @@ export const EwasteInfo = {
     imageURL: "/assets/type_of_ewaste/lucid-dream.jpg",
   },
   "Household Batteries": {
-    description: `Every year in the United States, millions of single use and rechargeable batteries are bought, used and recycled or disposed of in the trash. 
-    Batteries come in various chemistries, types and sizes to fit their use.
-    <ul>
-    <li>Single-use batteries can generally be removed from the device when they stop powering the device.</li>
-    <li>Rechargeable batteries may be removable or permanently attached to the device.</li>
-    </ul>
+    description: `
+    <b>This include:</b> D, C, AA, AAA, AAAA, N, 9-volt, Button cell
+    <br /><br />
+    Every year in the United States, millions of single use and rechargeable batteries are bought, used and recycled or disposed of in the trash. 
     The increased demand for batteries can be traced largely to the rapid increase in use of small portable electronics, 
     power tools, and other everyday items, as well as the increase in “smart” products, such as small and 
     large appliances and automobiles.
-    This include: D, C, AA, AAA, AAAA, N, 9-volt, Button cell`,
+    <div style="text-align:justify;">
+    Batteries come in various chemistries, types and sizes to fit their use:
+    <li>Single-use batteries can generally be removed from the device when 
+    they stop powering the device.</li>
+    <li>Rechargeable batteries are small battteries which is either removable or permanently attached to the device.</li>
+    </div>`,
     link: "https://www.epa.gov/recycle/used-household-batteries",
     imageURL: "/assets/type_of_ewaste/batteries.jpg",
   },
   "Lithium-Ion Batteries": {
-    description: `Powerbank, Mobile Telephone Battery & Laptop Battery`,
-    link: "https://en.wikipedia.org/wiki/Lithium-ion_battery",
+    description: `
+    <b>This include:</b> Powerbank, Mobile Telephone Battery & Laptop Battery
+    <br />
+    <div style="text-align:justify; padding-bottom: 5vh">
+    Lithium-ion battery powering electronics. While they contribute to making electronic devices slim and easy to recharge,
+    there’s always a risk that the lithium-ion reacts negatively if the device gets crushed or punctured.
+    That can create a “thermal event,” since batteries short-circuit when the thin separator between their positive and
+    negative parts gets breached.
+    <br/>
+    Because modern devices are designed to be slim, light, and sleek – which is what consumers appear to want – it’s 
+    problematic to cram a high-capacity cell into such a small body. If there isn’t enough venting or 
+    thermal management, the flammable electrolyte inside the battery can heat up.
+    </div>
+    `,
+    link: "https://www.ewaste1.com/top-reasons-why-lithium-ion-batteries-in-e-waste-require-more-recycling/",
     imageURL: "/assets/type_of_ewaste/lithium.jpg",
   },
   "Electric Vehicle Batteries": {

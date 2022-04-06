@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Stack, Typography, Slide } from "@mui/material";
+import { Typography } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AppBar from "@mui/material/AppBar";
@@ -10,14 +10,13 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
+import { useRouter } from "next/router";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -64,7 +63,7 @@ const pages = [
 ];
 
 const ResponsiveAppBar = (props) => {
-  const { window } = props;
+  // Open and close app bar on mobile devices
   const [anchorNav, setanchorNav] = useState(null);
   const handleOpenNavMenu = (event) => {
     setanchorNav(event.currentTarget);
@@ -73,11 +72,20 @@ const ResponsiveAppBar = (props) => {
     setanchorNav(null);
   };
 
+  // Scrool trigger for transparent app bar on top.
+  const { window } = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 200,
   });
+
+  // router and style config for current active route.
+  const router = useRouter();
+  const styleFocus = {
+    fontWeight: "bold",
+    color: "#348FF5",
+  };
 
   return (
     <AppBar
@@ -90,17 +98,19 @@ const ResponsiveAppBar = (props) => {
         <Toolbar disableGutters>
           {/* Responsive screen: size=md (desktop) */}
           <Link href="/">
-            <Button color="inherit">
+            <Button
+              color="inherit"
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
               <Typography
                 className="text-xl"
                 variant="inherit"
                 noWrap
-                onClick={handleOpenNavMenu}
                 component="div"
                 sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
+                  mr: 1,
                   fontFamily: "Arial",
+                  ...{ ...(router.asPath === "/" ? styleFocus : null) },
                 }}
               >
                 E-Cycle ♻
@@ -109,7 +119,13 @@ const ResponsiveAppBar = (props) => {
           </Link>
 
           {/* Responsive screen: size=xs (for Mobile) */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              left: -15,
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -136,13 +152,22 @@ const ResponsiveAppBar = (props) => {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
-                fontFamily: "Arial",
               }}
             >
               {pages.map(({ page, href }) => (
-                <Link href={href} key={href}>
-                  <MenuItem key={[page]} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{[page]}</Typography>
+                <Link href={href} key={`${href}_Link`}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        fontFamily: "Arial",
+                        // ...{
+                        //   ...(router.asPath === { href } ? styleFocus : null),
+                        // },
+                      }}
+                    >
+                      {[page]}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -164,23 +189,29 @@ const ResponsiveAppBar = (props) => {
               E-Cycle ♻
             </Typography>
           </Link>
+
+          {/* Responsive screen: size=md (for Desktop) */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map(({ page, href }) => (
-              <Link href={href} key={href}>
-                <Button
-                  key={[page]}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "#323131",
-                    display: "block",
-                    fontFamily: "Arial",
-                  }}
-                >
-                  {[page]}
-                </Button>
-              </Link>
-            ))}
+            {pages.map(({ page, href }) => {
+              return (
+                <Link href={href} key={`${href}_Desktop_Link`}>
+                  <Button
+                    key={[page]}
+                    color="inherit"
+                    sx={{
+                      my: 2,
+                      display: "block",
+                      fontFamily: "Arial",
+                      ...{
+                        ...(router.asPath == href ? styleFocus : null),
+                      },
+                    }}
+                  >
+                    {[page]}
+                  </Button>
+                </Link>
+              );
+            })}
           </Box>
         </Toolbar>
       </Container>

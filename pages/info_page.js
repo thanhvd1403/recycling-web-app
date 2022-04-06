@@ -33,6 +33,38 @@ export default function InfoPage() {
             {/* <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div> */}
             <div class="flex-initial w-640 border-r-4">
               <div
+                id="WoE"
+                class="space-x-7 py-10 pl-10 pr-10 text-center font-sans "
+              >
+                <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg">
+                  <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+                    ♻ Why E-waste? ♻
+                  </p>
+                  <div class="w-full pl-5 pr-5 text-justify">
+                    There are a lot of good reasons to recycle your used
+                    electronics. Lithium-ion batteries in e-Waste is one of
+                    them. Recycling helps protect our environment, lowers the
+                    cost of manufacturing new products, and enables the e-waste
+                    recycling industry to create jobs. Low recycling rates for
+                    e-waste are a worldwide problem. It requires a global
+                    solution. We need to improve our recycling rates for
+                    e-waste. But another reason to recycle e-waste is safety.
+                    Modern electronics contain circuit boards that smolder
+                    together various metals and plastics. Some of these
+                    materials are toxic. We want to keep those toxins out of
+                    landfills, where they can contaminate the soil and water.
+                    But safety is also a concern because the material in used
+                    electronics includes used batteries. That can be as
+                    problematic as toxins like lead and mercury. Although a rare
+                    occurrence, used batteries have been known to explode.
+                    Having e-Waste handled by skilled recycling experts is a lot
+                    safer than tossing them in landfills – or leaving them in a
+                    desk drawer once you stop using them.
+                    <div class="text-center pr-30"></div>
+                  </div>
+                </div>
+              </div>
+              <div
                 id="DoE"
                 class="space-x-7 py-10 pl-10 pr-10 text-center font-sans "
               >
@@ -51,7 +83,7 @@ export default function InfoPage() {
                     contain potentially harmful materials such as lead, cadmium,
                     beryllium, or brominated flame retardants. Recycling and
                     disposal of e-waste may involve significant risk to health
-                    of workers and their communities
+                    of workers and their communities.
                     <div class="text-center pr-30"></div>
                   </div>
                 </div>
@@ -289,7 +321,7 @@ export default function InfoPage() {
 function TypeInformation() {
   return (
     <Container>
-      <h1 class="text-3xl font-bold text-gray-700 rounded-full justify-center font-mono ">
+      <h1 class="text-3xl font-bold text-center text-gray-700 rounded-full justify-center font-mono ">
         ♻ Types of E-Waste ♻
       </h1>
       <Grid container alignItems="stretch" spacing={2} my={2}>

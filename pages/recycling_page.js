@@ -31,7 +31,7 @@ export default function RecyclePage() {
         /> */}
         <div class="mb-10 p-10 bg-teal-50 items-center justify-center">
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
-            Where you can recycle E-waste?
+            Where to recycle your E-waste?
           </div>
           <GoogleMapComponent containerStyle={containerStyle} />
           <hr className="border-accent-2 mt-14 mb-12 bg-teal-50 " />
@@ -46,12 +46,12 @@ export default function RecyclePage() {
             <br />
             <br />
             <b>Step 1: </b>
-            Only you are disposing only Regulated E-waste.
+            Make sure you are disposing only regulated E-waste.
             <br />
             <br />
             <b>Step 2: </b>
-            Remove all packaging (e.g. boxes, plastic wraps, bags). Dispose only
-            the E-Waste unless it is damaged.
+            Remove all packaging items (e.g. boxes, plastic wraps, bags).
+            Dispose only the E-waste unless it is damaged.
             <br />
             <br />
             <b>Step 3: </b>
@@ -62,21 +62,18 @@ export default function RecyclePage() {
             <br />
             <br />
             <b>Step 4: </b>
-            Drop off your E-Waste at designated points. Do note that different
-            E-Waste has different collection avenues.
+            Drop off your E-waste at designated points. Do note that different
+            E-waste has different collection avenues.
             <br />
             <br />
+            <div class="font-bold text-3xl pb-5">Special note</div>
             <b>For ICT Equipment: </b>
-            <br />
             Wipe all data on your devices whenever possible.
             <br />
-            <br />
             <b>For Light Bulbs: </b>
-            <br />
             Do note that long fluorescent tubes are only collected at Collection
             Drives or our Depot (20 Tuas Loop), kindly do not discard them into
             the E-Bins.
-            <br />
             <br />
             <b>For Large Household Appliances: </b>
             <div>
