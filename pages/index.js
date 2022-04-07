@@ -1,7 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Layout from "../components/layout";
 import Head from "next/head";
-import { Typography, Container, Box, Button, Grid } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Box,
+  Button,
+  Grid,
+  Link as MUILink,
+} from "@mui/material";
 import { getAllPosts } from "../lib/api";
 import { Card, CardActionArea } from "@mui/material";
 import DateFormatter from "../components/date-formatter";
@@ -17,11 +24,12 @@ export default function Index({ allPosts }) {
         <Welcome />
         <To_Recycle />
         <Container maxWidth="lg">
-          <Box sx={{ p: 15 }}></Box>
-          <To_Information />
-          <Box sx={{ p: 15 }}></Box>
-          <To_Event allPosts={allPosts} />
-          <Box sx={{ p: 15 }}></Box>
+          <div className="py-[15vh]">
+            <To_Information />
+          </div>
+          <div className="pb-[15vh]">
+            <To_Event allPosts={allPosts} />
+          </div>
         </Container>
       </Layout>
     </>
@@ -61,47 +69,68 @@ function To_Recycle() {
     //     </div>
     //   </Grid>
     // </Grid>
-    <div
-      style={{
+    <Container
+      maxWidth="false"
+      disableGutters="true"
+      sx={{
         position: "relative",
         textAlign: "center",
+        width: "100vw",
+
+        padding: 0,
       }}
     >
       <img
         src="/assets/home_page/map_preview.png"
         alt="Preview of the map of E-waste recycling centers in Singapore."
         style={{
-          height: "600px",
-          width: "100%",
+          height: "80vh",
+          width: "100vw",
           filter: "brightness(50%) blur(4px)",
           objectFit: "cover",
         }}
       />
       <div
         style={{
+          width: "100vw",
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
       >
-        <Typography variant="h3" align="center" color="white" mb="50px" noWrap>
-          Do your part to help the community!
-        </Typography>
-        <Button
-          href="/recycling_page"
-          variant="contained"
-          color="success"
+        <Typography
+          variant="h3"
+          align="center"
+          color="white"
+          mb="7vh"
           sx={{
-            borderRadius: 30,
-            fontSize: "1.5rem",
-            padding: "10px 30px",
+            fontSize: { md: "2.5rem", xs: "1.5rem" },
+            fontFamily: "cursive",
+            fontWeight: "bold",
+            color: "#DFE8FB",
+            textShadow: "1px 1px 2px blue",
           }}
         >
-          Find nearest recycling centers
-        </Button>
+          Do your part to help the community!
+        </Typography>
+        <Link href="/recycling_page" passHref>
+          <Button
+            variant="contained"
+            color="success"
+            sx={{
+              borderRadius: 30,
+              fontSize: { md: "1.75rem", xs: "1.125rem" },
+              padding: { md: "10px 30px", xs: "5px 10px" },
+              color: "#DFE8FB",
+              textShadow: "1px 1px 1px pink",
+            }}
+          >
+            Find nearest recycling centers
+          </Button>
+        </Link>
       </div>
-    </div>
+    </Container>
   );
 }
 
@@ -124,9 +153,11 @@ function To_Information() {
         />
         <Waste_Item title="Incandescent light bulb" image="lightbulbs.jpg" />
       </Grid>
-      <Button href="/info_page" variant="contained" size="large">
-        Learn more
-      </Button>
+      <Link href="/recycling_page" passHref>
+        <Button variant="contained" size="large" color="success">
+          Learn more
+        </Button>
+      </Link>
     </div>
   );
 }
@@ -171,13 +202,32 @@ function To_Event({ allPosts }) {
   return (
     <Grid container alignItems="center" spacing={2}>
       <Grid item xs={12} md={6}>
-        <Typography align="left" variant="h4" className="recycle_ref-heading">
-          Looking to hang out with the community?
+        <Typography
+          align="left"
+          variant="h4"
+          className="recycle_ref-heading"
+          sx={{
+            fontFamily: "cursive",
+            color: "#1D1D1D",
+            textShadow: "2px 2px 3px pink",
+          }}
+        >
+          Looking to hang out with our community?
           <Box sx={{ m: 5 }}></Box>
-          <Link href="/events_page" underline="always">
-            Check out these events happening in Singapore
-          </Link>
         </Typography>
+        <Link href="/events_page" passHref>
+          <MUILink
+            underline="always"
+            variant="overline"
+            sx={{
+              fontSize: 15,
+              color: "#3572F5",
+              textShadow: "1px 1px 1px pink",
+            }}
+          >
+            Check out these events happening in Singapore
+          </MUILink>
+        </Link>
       </Grid>
       <Grid item xs={12} md={6}>
         <Event_Card post={morePosts[0]} />

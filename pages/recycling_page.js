@@ -28,52 +28,53 @@ export default function RecyclePage() {
             Disposal guidelines
           </div>
           <div className="text-xl px-4 laptop:px-36 laptop:text-2xl text-justify">
-            <strong>
-              Before you dispose your E-Waste, there are some things you should
-              take note of:
-            </strong>
-            <br />
-            <br />
-            <b>Step 1: </b>
-            Make sure you are disposing only regulated E-waste.
-            <br />
-            <br />
-            <b>Step 2: </b>
-            Remove all packaging items (e.g. boxes, plastic wraps, bags).
-            Dispose only the E-waste unless it is damaged.
-            <br />
-            <br />
-            <b>Step 3: </b>
-            Broken appliances or leaking batteries may be disposed of by
-            Securing it properly in a container. Please take care note to
-            dispose of any broken lamps inside the E-Bin. Please dispose them of
-            as general waste, i.e. green refuse bins.
-            <br />
-            <br />
-            <b>Step 4: </b>
-            Drop off your E-waste at designated points. Do note that different
-            E-waste has different collection avenues.
-            <br />
-            <br />
-            <div className="font-bold text-3xl pb-5">Special note</div>
-            <b>For ICT Equipment: </b>
-            Wipe all data on your devices whenever possible.
-            <br />
-            <b>For Light Bulbs: </b>
-            Do note that long fluorescent tubes are only collected at Collection
-            Drives or our Depot (20 Tuas Loop), kindly do not discard them into
-            the E-Bins.
-            <br />
-            <b>For Large Household Appliances: </b>
-            <div>
-              <li>
-                Disconnect any cables or connections and ensure appliances,
-                fittings or equipment have been switched off.
-              </li>
-              <li>
-                Empty, properly defrost and clean refrigerators and deep
-                freezers.
-              </li>
+            <div className="py-3 font-bold text-3xl">
+              Reminder before disposing your E-Waste:
+            </div>
+            <div className="py-1">
+              <b>Step 1: </b>
+              Make sure you are disposing only regulated E-waste.
+            </div>
+            <div className="py-1">
+              <b>Step 2: </b>
+              Remove all packaging items (e.g. boxes, plastic wraps, bags).
+              Dispose only the E-waste unless it is damaged.
+            </div>
+            <div className="py-1">
+              <b>Step 3: </b>
+              Broken appliances or leaking batteries may be disposed of by
+              securing it properly in a container. Please take care note of any
+              broken lamps inside the E-Bin, dispose them as general waste, i.e.
+              green refuse bins.
+            </div>
+            <div className="py-1">
+              <b>Step 4: </b>
+              Drop off your E-waste at designated points. Do note that different
+              E-waste has different collection avenues.
+            </div>
+            <div className="font-bold text-3xl py-3">Special note</div>
+            <div className="py-1">
+              <b>For ICT Equipment: </b>
+              Wipe all data on your devices whenever possible.
+            </div>
+            <div className="py-1">
+              <b>For Light Bulbs: </b>
+              Do note that long fluorescent tubes are only collected at
+              Collection Drives or our Depot (20 Tuas Loop), kindly do not
+              discard them into the E-Bins.
+            </div>
+            <div className="py-1">
+              <b>For Large Household Appliances: </b>
+              <div>
+                <li>
+                  Disconnect cables and ensure appliances, fittings or equipment
+                  have been switched off.
+                </li>
+                <li>
+                  Make sure to empty, properly defrost and clean refrigerators
+                  or deep freezers.
+                </li>
+              </div>
             </div>
           </div>
         </div>

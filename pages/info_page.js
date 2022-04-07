@@ -40,24 +40,20 @@ export default function InfoPage() {
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ What is E-waste? ♻
                 </p>
-                <strong className="text-lg">
+                <span className="font-medium">
                   Electronic waste or e-waste{" "}
-                </strong>
+                </span>
                 describes discarded electrical or electronic devices. Used
                 electronics which are destined for refurbishment, reuse, resale,
                 salvage recycling through material recovery, or disposal are
                 also considered e-waste. Informal processing of e-waste in
                 developing countries can lead to{" "}
-                <b>
-                  <i>adverse</i>
-                </b>{" "}
-                human health effects and environmental pollution. Electronic
-                scrap components, such as CPUs, contain potentially harmful
-                materials such as lead, cadmium, beryllium, or brominated flame
+                <span className="font-medium italic">adverse</span> human health
+                effects and environmental pollution. Electronic scrap
+                components, such as CPUs, contain potentially harmful materials
+                such as lead, cadmium, beryllium, or brominated flame
                 retardants. Recycling and disposal of e-waste may involve{" "}
-                <b>
-                  <i>significant risk</i>
-                </b>{" "}
+                <span className="font-medium italic">significant risk </span>
                 to health of workers and their communities.
               </div>
 
@@ -68,27 +64,25 @@ export default function InfoPage() {
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Characteristics of E-waste ♻
                 </p>
-                <strong className="text-lg">E-waste stream</strong> contains
-                diverse materials, which{" "}
-                <b>
-                  <i>requires special treatment and cannot</i>
-                </b>{" "}
+                <span className=" font-medium">E-waste stream </span>
+                contains diverse materials, which{" "}
+                <span className="font-medium italic">
+                  requires special treatment and cannot
+                </span>
                 be dumped in landfill sites, most prominently, hazardous
                 substances such as lead, polychlorinated biphenyls (PCBs),
                 polybrominated biphenyls (PBBs), mercury, polybrominated
                 diphenyl ethers (PBDEs), brominated flame retardants (BFRs), and
                 valuable substances such as iron, steel, copper, aluminium,
                 gold, silver, platinum, palladium, and plastics.{" "}
-                <b>
-                  <i>
-                    During the last decade, large amounts of diverse e-waste
-                    discarded by developing and transition countries, as well as
-                    a sizeable portion of the e-waste generated from developed
-                    countries and exported to developing and transition
-                    countries, has been rapidly piling up in developing
-                    countries impacting their emerging economies.
-                  </i>
-                </b>{" "}
+                <span className="font-medium italic">
+                  During the last decade, large amounts of diverse e-waste
+                  discarded by developing and transition countries, as well as a
+                  sizeable portion of the e-waste generated from developed
+                  countries and exported to developing and transition countries,
+                  has been rapidly piling up in developing countries impacting
+                  their emerging economies.
+                </span>
                 The management of e-waste in developing and transition countries
                 is exacerbated by several factors, including illegal trafficking
                 and unlicensed recycling of e-waste; lack of technological,
@@ -121,22 +115,20 @@ export default function InfoPage() {
                 </p>
                 <div>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       1. Save Landfill Space:{" "}
-                    </strong>
+                    </span>
                     Electronic waste is being thrown into landfills at an
                     increasing rate each year. This problem is prevalent not
                     only in the USA, but is quickly spreading around the world.
                     Throwing e-waste into landfills creates many environmental
                     issues.{" "}
-                    <b>
-                      <i>
-                        When e-waste is recycled it is not disposed of in a
-                        landfill, instead the components of electronic gadgets
-                        are separated. Experts determine whether they are
-                        reusable or not.{" "}
-                      </i>
-                    </b>
+                    <span className="font-medium italic">
+                      When e-waste is recycled it is not disposed of in a
+                      landfill, instead the components of electronic gadgets are
+                      separated. Experts determine whether they are reusable or
+                      not.{" "}
+                    </span>
                     Non-recyclable components are disposed of properly so their
                     harmful impact on the environment is reduced and recoverable
                     e-waste components are used to create new products. Keeping
@@ -145,9 +137,9 @@ export default function InfoPage() {
                     disturbed.
                   </ul>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       2. Save Natural Resources:{" "}
-                    </strong>
+                    </span>
                     As per studies, 98% of components in an electronic device
                     are recyclable. Metals extracted through mining require much
                     difficulty and effort. Apart from mining, the cost to refine
@@ -166,75 +158,66 @@ export default function InfoPage() {
                     Manufacturers reuse glass from old electronics so it does
                     not go to waste. This also saves time and money
                     manufacturing new glass.{" "}
-                    <b>
-                      <i>
-                        Recycling e-waste means that natural resources such as
-                        metals aren’t wasted and the energy and cost required to
-                        manufacture and mine them are also saved.{" "}
-                      </i>
-                    </b>
+                    <span className="font-medium italic">
+                      Recycling e-waste means that natural resources such as
+                      metals aren’t wasted and the energy and cost required to
+                      manufacture and mine them are also saved.{" "}
+                    </span>
                   </ul>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       3. Increase in Employment:{" "}
-                    </strong>
+                    </span>
                     There are a lot of jobs in the field of recycling. There are
                     many experts out there that have professional degrees
                     regarding the recycling of electronic waste. Increased
                     education about electronics recycling means more people
                     recycle and more jobs are created.{" "}
-                    <b>
-                      <i>
-                        Therefore e-waste recycling industry create more jobs,
-                        which mean increase financial stability for our
-                        communities.{" "}
-                      </i>
-                    </b>
+                    <span className="font-medium italic">
+                      Therefore e-waste recycling industry create more jobs,
+                      which mean increase financial stability for our
+                      communities.{" "}
+                    </span>
                     The overall economy gets a boost and will eventually results
                     in the prosperity of the whole nation.
                   </ul>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       4. Increases Affordability:{" "}
-                    </strong>
+                    </span>
                     In many cases, people want to get rid of an electronic
                     device not because it has stopped working, but because they
                     want to buy one with the latest technology. If they give
                     their old gadgets to charity or sell them in a
                     second-hand-shop, other people who cannot afford to buy new
                     electronic devices can easily buy them.{" "}
-                    <b>
-                      <i>
-                        Always remember, you may not need an electronic gadget,
-                        but it could be of the utmost importance to someone
-                        else!
-                      </i>
-                    </b>
+                    <span className="font-medium italic">
+                      Always remember, you may not need an electronic gadget,
+                      but it could be of the utmost importance to someone else!
+                    </span>
                   </ul>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       5. Removes Data Appropriately:{" "}
-                    </strong>
+                    </span>
                     Keeping data safe is becoming an increasingly important
                     issue throughout the world. In most cases, people assume
                     because they have deleted files from their computer, they no
                     longer exist on the computer. But that is not always the
                     case.{" "}
-                    <b>
-                      <i>
-                        Permanently removing data from a mobile phone and
-                        computer requires special software and proper strategy.
-                      </i>{" "}
-                    </b>
+                    <span className="font-medium italic">
+                      Permanently removing data from a mobile phone and computer
+                      requires special software and proper strategy.
+                    </span>
                     Ensuring the appropriate removal of data is mandatory before
                     getting rid of the electronic device. People caught breaking
                     recycling laws or data security regulations face legal
                     implications.
                   </ul>
                   <ul className="py-2">
-                    <strong className="text-lg">
+                    <span className="font-semibold text-xl">
                       6. Saves the Environment:{" "}
-                    </strong>
+                    </span>
                     Toxic and harmful poisons are reduced because green gas
                     emissions are decreased and plastic is not thrown into the
                     sea thereby improving marine life. Do not forget, we are a
@@ -242,15 +225,13 @@ export default function InfoPage() {
                     out of the e-waste is harmful to us as well. These toxins
                     from e-waste are partially responsible for diseases such as
                     cancer in human beings as well as animals.
-                    <b>
-                      <i>
-                        {" "}
-                        Consumers must be responsible and protect the
-                        environment by recycling e-waste. To save our future
-                        generations from an unhealthy environment or before
-                        completely losing natural habitats.
-                      </i>
-                    </b>
+                    <span className="font-medium italic">
+                      {" "}
+                      Consumers must be responsible and protect the environment
+                      by recycling e-waste. To save our future generations from
+                      an unhealthy environment or before completely losing
+                      natural habitats.
+                    </span>
                   </ul>
                 </div>
               </div>
