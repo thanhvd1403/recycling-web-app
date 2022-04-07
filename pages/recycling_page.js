@@ -26,7 +26,7 @@ export default function RecyclePage() {
           quality="100"
           height={"500vh"}
         /> */}
-        <div className="mb-10 p-10 bg-teal-50 items-center justify-center">
+        <div className="p-10 bg-teal-50 items-center justify-center">
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where to recycle your E-waste?
           </div>
