@@ -18,14 +18,6 @@ export default function RecyclePage() {
         <Head>
           <title>Recycling Hub</title>
         </Head>
-        {/* <Image
-          layout="fill"
-          alt="E-waste recycling"
-          objectFit="cover"
-          objectPosition="center"
-          quality="100"
-          height={"500vh"}
-        /> */}
         <div className="p-10 bg-teal-50 items-center justify-center">
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where to recycle your E-waste?
