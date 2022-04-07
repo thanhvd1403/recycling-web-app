@@ -13,9 +13,8 @@ export default function Index({ allPosts }) {
           <title>OneStop E-Cycle</title>
         </Head>
         <Welcome />
+        <To_Recycle />
         <Container maxWidth="lg">
-          <Box sx={{ p: 10 }}></Box>
-          <To_Recycle />
           <Box sx={{ p: 15 }}></Box>
           <To_Information />
           <Box sx={{ p: 15 }}></Box>
@@ -29,57 +28,74 @@ export default function Index({ allPosts }) {
 
 function Welcome() {
   return (
-    // <div class="text-center bg-[#ebfff3]">
-    //   <Container className="welcome" maxWidth="lg" fixed>
-    //     <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: 20 }}>
-    //       <Typography
-    //         sx={{ fontSize: { xs: 55, sm: 75, md: 90 } }}
-    //         align="center"
-    //       >
-    //         Welcome to E&#8209;Cycle
-    //       </Typography>
-    //       <Box sx={{ my: 5 }} />
-    //       <Typography
-    //         sx={{ fontSize: { xs: 24, sm: 30, md: 36 } }}
-    //         className="welcome-brief"
-    //         align="center"
-    //       >
-    //         The OneStop destination for E&#8209;waste recycling
-    //       </Typography>
-    //     </Box>
-    //   </Container>
-    // </div>
     <div class="flex flex-wrap flex-grow justify-center">
-    <img
-      src="/assets/home_page/banner.png"
-      class="w-full h-auto"
-      alt="..."
-    />
-  </div>
+      <img src="/assets/home_page/banner.png" class="w-full h-auto" alt="..." />
+    </div>
   );
 }
 
 function To_Recycle() {
   return (
-    <Grid container alignItems="center" spacing={2}>
-      <Grid item xs={12} md={6}>
-        <img
-          src="/assets/home_page/Watch_Moment.jpg"
-          alt="An E-waste recycling center in Singapore."
-        />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <div class="text-center">
-          <Typography sx={{ m: 5 }} variant="h5" align="center">
-            114kg of electrical and electronic items are being thrown away every
-            minute in Singapore.
-          </Typography>
-          <Button href="/recycling_page" variant="outlined" size="large">
-            Find nearest recycling centers
-          </Button>
-        </div>
-      </Grid>
-    </Grid>
+    // <Grid container alignItems="center" spacing={2}>
+    //   <Grid item xs={12} md={6}>
+    //     <img
+    //       src="/assets/home_page/Watch_Moment.jpg"
+    //       alt="An E-waste recycling center in Singapore."
+    //     />
+    //   </Grid>
+    //   <Grid item xs={12} md={6}>
+    //     <div class="text-center">
+    //       <Typography sx={{ m: 5 }} variant="h5" align="center">
+    //         114kg of electrical and electronic items are being thrown away every
+    //         minute in Singapore.
+    //       </Typography>
+    //       <Button href="/recycling_page" variant="outlined" size="large">
+    //         Find nearest recycling centers
+    //       </Button>
+    //     </div>
+    //   </Grid>
+    // </Grid>
+    <div
+      style={{
+        position: "relative",
+        textAlign: "center",
+      }}
+    >
+      <img
+        src="/assets/home_page/map_preview.png"
+        alt="Preview of the map of E-waste recycling centers in Singapore."
+        style={{
+          height: "600px",
+          width: "100%",
+          filter: "brightness(50%) blur(4px)",
+          objectFit: "cover",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <Typography variant="h3" align="center" color="white" mb="50px" noWrap>
+          Do your part to help the community!
+        </Typography>
+        <Button
+          href="/recycling_page"
+          variant="contained"
+          color="success"
+          sx={{
+            borderRadius: 30,
+            fontSize: "1.5rem",
+            padding: "10px 30px",
+          }}
+        >
+          Find nearest recycling centers
+        </Button>
+      </div>
+    </div>
   );
 }
 
