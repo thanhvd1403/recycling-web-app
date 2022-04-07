@@ -55,7 +55,7 @@ export default function RecyclePage() {
             E-waste has different collection avenues.
             <br />
             <br />
-            <div class="font-bold text-3xl pb-5">Special note</div>
+            <div className="font-bold text-3xl pb-5">Special note</div>
             <b>For ICT Equipment: </b>
             Wipe all data on your devices whenever possible.
             <br />

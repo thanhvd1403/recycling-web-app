@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Container from "../components/container";
 import Layout from "../components/layout";
 import Head from "next/head";
@@ -26,20 +27,22 @@ export default function InfoPage() {
         </Head>
 
         {/* BODY */}
-        <div class="w-full bg-emerald-100">
+        <div className="w-full bg-emerald-100">
           <div
             id="General information"
-            class="space-x-7 py-20 px-5 text-center font-sans "
+            className="space-x-7 py-20 px-5 text-center font-sans "
           >
-            <div class="rounded-3xl  bg-emerald-50 border-black py-5 shadow-sm">
+            <div className="rounded-3xl  bg-emerald-50 border-black py-5 shadow-sm">
               <div
                 id="Definition"
-                class="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify md:px-10 sx:px-3"
               >
-                <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
+                <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ What is E-waste? ♻
                 </p>
-                <strong class="text-lg">Electronic waste or e-waste </strong>
+                <strong className="text-lg">
+                  Electronic waste or e-waste{" "}
+                </strong>
                 describes discarded electrical or electronic devices. Used
                 electronics which are destined for refurbishment, reuse, resale,
                 salvage recycling through material recovery, or disposal are
@@ -60,13 +63,13 @@ export default function InfoPage() {
 
               <div
                 id="Characteristic"
-                class="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify md:px-10 sx:px-3"
               >
-                <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
+                <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Characteristics of E-waste ♻
                 </p>
-                <strong class="text-lg">E-waste stream</strong> contains diverse
-                materials, which{" "}
+                <strong className="text-lg">E-waste stream</strong> contains
+                diverse materials, which{" "}
                 <b>
                   <i>requires special treatment and cannot</i>
                 </b>{" "}
@@ -97,28 +100,30 @@ export default function InfoPage() {
 
               <div
                 id="Impact"
-                class="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify md:px-10 sx:px-3"
               >
-                <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
+                <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Impact of E-waste ♻
                 </p>
                 <img
                   src="/assets/ewaste_effect.jpg"
-                  class="w-full h-auto py-6"
+                  className="w-full h-auto py-6"
                   alt="..."
                 />
               </div>
 
               <div
                 id="Benefit"
-                class="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify md:px-10 sx:px-3"
               >
-                <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
+                <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Benefits of E-waste recycling ♻
                 </p>
                 <div>
-                  <ul class="py-2">
-                    <strong class="text-lg">1. Save Landfill Space: </strong>
+                  <ul className="py-2">
+                    <strong className="text-lg">
+                      1. Save Landfill Space:{" "}
+                    </strong>
                     Electronic waste is being thrown into landfills at an
                     increasing rate each year. This problem is prevalent not
                     only in the USA, but is quickly spreading around the world.
@@ -139,8 +144,10 @@ export default function InfoPage() {
                     occupies, it also means fewer microorganisms and plants are
                     disturbed.
                   </ul>
-                  <ul class="py-2">
-                    <strong class="text-lg">2. Save Natural Resources: </strong>
+                  <ul className="py-2">
+                    <strong className="text-lg">
+                      2. Save Natural Resources:{" "}
+                    </strong>
                     As per studies, 98% of components in an electronic device
                     are recyclable. Metals extracted through mining require much
                     difficulty and effort. Apart from mining, the cost to refine
@@ -167,8 +174,10 @@ export default function InfoPage() {
                       </i>
                     </b>
                   </ul>
-                  <ul class="py-2">
-                    <strong class="text-lg">3. Increase in Employment: </strong>
+                  <ul className="py-2">
+                    <strong className="text-lg">
+                      3. Increase in Employment:{" "}
+                    </strong>
                     There are a lot of jobs in the field of recycling. There are
                     many experts out there that have professional degrees
                     regarding the recycling of electronic waste. Increased
@@ -184,8 +193,8 @@ export default function InfoPage() {
                     The overall economy gets a boost and will eventually results
                     in the prosperity of the whole nation.
                   </ul>
-                  <ul class="py-2">
-                    <strong class="text-lg">
+                  <ul className="py-2">
+                    <strong className="text-lg">
                       4. Increases Affordability:{" "}
                     </strong>
                     In many cases, people want to get rid of an electronic
@@ -202,8 +211,8 @@ export default function InfoPage() {
                       </i>
                     </b>
                   </ul>
-                  <ul class="py-2">
-                    <strong class="text-lg">
+                  <ul className="py-2">
+                    <strong className="text-lg">
                       5. Removes Data Appropriately:{" "}
                     </strong>
                     Keeping data safe is becoming an increasingly important
@@ -222,8 +231,10 @@ export default function InfoPage() {
                     recycling laws or data security regulations face legal
                     implications.
                   </ul>
-                  <ul class="py-2">
-                    <strong class="text-lg">6. Saves the Environment: </strong>
+                  <ul className="py-2">
+                    <strong className="text-lg">
+                      6. Saves the Environment:{" "}
+                    </strong>
                     Toxic and harmful poisons are reduced because green gas
                     emissions are decreased and plastic is not thrown into the
                     sea thereby improving marine life. Do not forget, we are a
@@ -243,7 +254,7 @@ export default function InfoPage() {
                   </ul>
                 </div>
               </div>
-              <div id="Type" class="w-full text-center px-5 py-6">
+              <div id="Type" className="w-full text-center px-5 py-6">
                 <TypeInformation />
               </div>
             </div>
@@ -251,74 +262,74 @@ export default function InfoPage() {
 
           {/* Do you know? */}
           <div id="More information">
-            <p class="pt-10 pb-5 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+            <p className="pt-10 pb-5 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
               ♻ Do you know ♻
             </p>
 
-            <div class="flex items-center justify-center">
-              <div class="bg-gray-100  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
-                <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <div class="w-full">
-                    <div class="text-3xl text-indigo-500 text-left leading-tight h-3">
+            <div className="flex items-center justify-center">
+              <div className="bg-gray-100  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
+                <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <div className="w-full">
+                    <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
                       “
                     </div>
-                    <p class="text-md text-gray-600 text-center px-5  text-lg">
-                      A large number of what is labeled as "e-waste" is actually
-                      not waste at all, but rather whole electronic equipment or
-                      parts that are readily marketable for reuse or can be
-                      recycled for materials recovery
+                    <p className="text-md text-gray-600 text-center px-5  text-lg">
+                      {`A large number of what is labeled as "e-waste" is
+                      actually not waste at all, but rather whole electronic
+                      equipment or parts that are readily marketable for reuse
+                      or can be recycled for materials recovery`}
                     </p>
-                    <div class="text-3xl text-indigo-500 text-right leading-tight h-3">
+                    <div className="text-3xl text-indigo-500 text-right leading-tight h-3">
                       ”
                     </div>
                   </div>
                 </div>
 
-                <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <div class="w-full">
-                    <div class="text-3xl text-indigo-500 text-left leading-tight h-3">
+                <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <div className="w-full">
+                    <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
                       “
                     </div>
-                    <p class="text-md text-gray-600 text-center px-5  text-lg">
+                    <p className="text-md text-gray-600 text-center px-5  text-lg">
                       Singapore generates about 60,000 tonnes of e-waste a year.
                       That’s equivalent to discarding about 70 mobile phones per
                       person in Singapore!
                     </p>
-                    <div class="text-3xl text-indigo-500 text-right leading-tight h-3">
+                    <div className="text-3xl text-indigo-500 text-right leading-tight h-3">
                       ”
                     </div>
                   </div>
                 </div>
 
-                <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <div class="w-full">
-                    <div class="text-3xl text-indigo-500 text-left leading-tight h-3">
+                <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <div className="w-full">
+                    <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
                       “
                     </div>
-                    <p class="text-md text-gray-600 text-center px-5 text-lg">
+                    <p className="text-md text-gray-600 text-center px-5 text-lg">
                       Singapore is the second-largest generator of e-waste in
                       the region – about 60,000 tonnes of e-waste (equivalent to
                       the weight of 220 Airbus A380 airplanes) was produced each
                       year
                     </p>
-                    <div class="text-3xl text-indigo-500 text-right leading-tight h-3">
+                    <div className="text-3xl text-indigo-500 text-right leading-tight h-3">
                       ”
                     </div>
                   </div>
                 </div>
 
-                <div class="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <div class="w-full">
-                    <div class="text-3xl text-indigo-500 text-left leading-tight h-3">
+                <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <div className="w-full">
+                    <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
                       “
                     </div>
-                    <p class="text-md text-gray-600 text-center px-5  text-lg">
+                    <p className="text-md text-gray-600 text-center px-5  text-lg">
                       When e-waste is warmed up, toxic chemicals are released
                       into the air damaging the atmosphere. The damage to the
                       atmosphere is one of the biggest environmental impacts
                       from e-waste.
                     </p>
-                    <div class="text-3xl text-indigo-500 text-right leading-tight h-3">
+                    <div className="text-3xl text-indigo-500 text-right leading-tight h-3">
                       ”
                     </div>
                   </div>
@@ -326,63 +337,63 @@ export default function InfoPage() {
               </div>
             </div>
 
-            <div class="lg:flex flex-grow justify-center sm:block">
+            <div className="lg:flex flex-grow justify-center sm:block">
               <img
                 src="/assets/home_page/stat4.jpg"
-                class="lg:w-1/2 h-auto py-10 px-5 sm:w-full"
+                className="lg:w-1/2 h-auto py-10 px-5 sm:w-full"
                 alt="..."
               />
               <img
                 src="/assets/home_page/stat1.png"
-                class="lg:w-2/5 h-auto py-10 px-5 sm:w-full"
+                className="lg:w-2/5 h-auto py-10 px-5 sm:w-full"
                 alt="..."
               />
             </div>
 
-            <div class="bg-gray-100 py-10 flex flex-grow justify-center">
+            <div className="bg-gray-100 py-10 flex flex-grow justify-center">
               <img
                 src="/assets/home_page/stat2.png"
-                class="w-auto h-auto"
+                className="w-auto h-auto"
                 alt="..."
               />
             </div>
 
-            <div class="flex flex-grow justify-center">
+            <div className="flex flex-grow justify-center">
               <img
                 src="/assets/home_page/stat3.png"
-                class="w-auto h-auto"
+                className="w-auto h-auto"
                 alt="..."
               />
             </div>
 
-            <div class="py-10 bg-teal-50 items-center justify-center lg:flex">
-              <div class="px-10 pt-10 text-2xl font-bold text-teal-700 rounded-full flex items-center text-center justify-center font-mono">
+            <div className="py-10 bg-teal-50 items-center justify-center lg:flex">
+              <div className="px-10 pt-10 text-2xl font-bold text-teal-700 rounded-full flex items-center text-center justify-center font-mono">
                 CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT
                 THE ENVIRONEMNT AND THE PUBLIC, AS THIS
               </div>
-              <div class="text-lg grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
-                <div class="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <p class="text-md text-gray-600 text-center px-5">
-                    Keeps valuable resources out of the waste of the stream and
-                    converses our planet's finite resources.
+              <div className="text-lg grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
+                <div className="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <p className="text-md text-gray-600 text-center px-5">
+                    {`Keeps valuable resources out of the waste of the stream and
+                    converses our planet's finite resources.`}
                   </p>
                 </div>
 
-                <div class="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <p class="text-md text-gray-600 text-center px-5">
+                <div className="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <p className="text-md text-gray-600 text-center px-5">
                     Ensures harmful substances are not released into the
                     environment
                   </p>
                 </div>
-                <div class="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <p class="text-md text-gray-600 text-center px-5">
-                    Reduces strain on Singapore's waste disposal facilities and
-                    frees up land for letter quality of life for residents
+                <div className="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <p className="text-md text-gray-600 text-center px-5">
+                    {`Reduces strain on Singapore's waste disposal facilities and
+                    frees up land for letter quality of life for residents`}
                   </p>
                 </div>
 
-                <div class="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
-                  <p class="text-md text-gray-600 text-center px-5">
+                <div className="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                  <p className="text-md text-gray-600 text-center px-5">
                     Helps fight climate change, grow our green economy and local
                     employment opportunities
                   </p>
@@ -405,13 +416,14 @@ export default function InfoPage() {
 function TypeInformation() {
   return (
     <Container>
-      <h1 class="text-3xl font-bold text-center text-gray-700 rounded-full justify-center font-mono ">
+      <h1 className="text-3xl font-bold text-center text-gray-700 rounded-full justify-center font-mono ">
         ♻ Types of E-Waste ♻
       </h1>
       <Grid container alignItems="stretch" spacing={2} my={2}>
         {Object.entries(EwasteInfo).map(([type, specificInfo]) => {
           return (
             <ItemCard
+              key={type}
               title={type}
               imageURL={specificInfo.imageURL}
               data={[type, specificInfo.description, specificInfo.link]}

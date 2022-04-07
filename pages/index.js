@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import Layout from "../components/layout";
 import Head from "next/head";
-import { Typography, Container, Box, Button, Grid, Link } from "@mui/material";
+import { Typography, Container, Box, Button, Grid } from "@mui/material";
 import { getAllPosts } from "../lib/api";
 import { Card, CardActionArea } from "@mui/material";
 import DateFormatter from "../components/date-formatter";
+import Link from "next/link";
 
 export default function Index({ allPosts }) {
   return (
@@ -28,8 +30,12 @@ export default function Index({ allPosts }) {
 
 function Welcome() {
   return (
-    <div class="flex flex-wrap flex-grow justify-center">
-      <img src="/assets/home_page/banner.png" class="w-full h-auto" alt="..." />
+    <div className="flex flex-wrap flex-grow justify-center">
+      <img
+        src="/assets/home_page/banner.png"
+        className="w-full h-auto"
+        alt="..."
+      />
     </div>
   );
 }
@@ -101,7 +107,7 @@ function To_Recycle() {
 
 function To_Information() {
   return (
-    <div class="text-center">
+    <div className="text-center">
       <Typography variant="h4" align="center">
         Not sure how to recycle your E-waste?
       </Typography>

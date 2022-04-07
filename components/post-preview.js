@@ -1,4 +1,3 @@
-import Avatar from "../components/avatar";
 import DateFormatter from "../components/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
@@ -14,7 +13,7 @@ export default function PostPreview({
 }) {
   return (
     <Link href={`posts/${slug}`} passHref>
-      <div class="relative pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-[#effff8] to-[#d8ffe7] cursor-pointer">
+      <div className="relative pr-8 pl-8 pb-8 m-2 bg-gradient-to-b from-white via-[#effff8] to-[#d8ffe7] cursor-pointer">
         {/* <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16"> */}
         <div className="mb-5">
           <CoverImage
@@ -38,8 +37,8 @@ export default function PostPreview({
         </p>
         {/* <Avatar name={author.name} picture={author.picture} /> */}
         {
-          <Link href={`posts/${slug}`}>
-            <button class="absolute inset-x-0 bottom-0 px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-white">
+          <Link href={`posts/${slug}`} passHref>
+            <button className="absolute inset-x-0 bottom-0 px-6 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-white">
               Learn more
             </button>
           </Link>

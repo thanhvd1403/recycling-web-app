@@ -96,7 +96,7 @@ const ResponsiveAppBar = (props) => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Responsive screen: size=md (desktop) */}
-          <Link href="/">
+          <Link href="/" passHref>
             <Button
               color="inherit"
               sx={{ display: { xs: "none", md: "flex" } }}
@@ -153,7 +153,7 @@ const ResponsiveAppBar = (props) => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <Link href={"/"} key={`/_Link`}>
+              <Link href={"/"} key={`/_Link`} passHref>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     textAlign="center"
@@ -169,7 +169,7 @@ const ResponsiveAppBar = (props) => {
                 </MenuItem>
               </Link>
               {pages.map(({ page, href }) => (
-                <Link href={href} key={`${href}_Link`}>
+                <Link href={href} key={`${href}_Link`} passHref>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography
                       textAlign="center"
@@ -188,7 +188,7 @@ const ResponsiveAppBar = (props) => {
             </Menu>
           </Box>
 
-          <Link href="/">
+          <Link href="/" passHref>
             <Typography
               variant="inherit"
               noWrap
@@ -210,7 +210,7 @@ const ResponsiveAppBar = (props) => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ page, href }) => {
               return (
-                <Link href={href} key={`${href}_Desktop_Link`}>
+                <Link href={href} key={`${href}_Desktop_Link`} passHref>
                   <Button
                     key={[page]}
                     color="inherit"
