@@ -29,17 +29,17 @@ export default function InfoPage() {
         <div class="w-full bg-emerald-100">
           <div
             id="General information"
-            class="space-x-7 py-10 px-5 text-center font-sans "
+            class="space-x-7 py-20 px-5 text-center font-sans "
           >
             <div class="rounded-3xl  bg-emerald-50 border-black py-5 shadow-sm">
               <div
                 id="Definition"
-                class="w-full py-6 text-justify text-lg md:px-10 sx:px-3"
+                class="w-full py-6 text-justify md:px-10 sx:px-3"
               >
                 <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ What is E-waste? ♻
                 </p>
-                <strong class="text-xl">Electronic waste or e-waste </strong>
+                <strong class="text-lg">Electronic waste or e-waste </strong>
                 describes discarded electrical or electronic devices. Used
                 electronics which are destined for refurbishment, reuse, resale,
                 salvage recycling through material recovery, or disposal are
@@ -60,12 +60,12 @@ export default function InfoPage() {
 
               <div
                 id="Characteristic"
-                class="w-full py-6 text-justify text-lg md:px-10 sx:px-3"
+                class="w-full py-6 text-justify md:px-10 sx:px-3"
               >
                 <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Characteristics of E-waste ♻
                 </p>
-                <strong class="text-xl">E-waste stream</strong> contains diverse
+                <strong class="text-lg">E-waste stream</strong> contains diverse
                 materials, which{" "}
                 <b>
                   <i>requires special treatment and cannot</i>
@@ -97,7 +97,7 @@ export default function InfoPage() {
 
               <div
                 id="Impact"
-                class="w-full py-6 text-justify text-lg md:px-10 sx:px-3"
+                class="w-full py-6 text-justify md:px-10 sx:px-3"
               >
                 <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Impact of E-waste ♻
@@ -111,14 +111,14 @@ export default function InfoPage() {
 
               <div
                 id="Benefit"
-                class="w-full py-6 text-justify text-lg md:px-10 sx:px-3"
+                class="w-full py-6 text-justify md:px-10 sx:px-3"
               >
                 <p class="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Benefits of E-waste recycling ♻
                 </p>
                 <div>
                   <ul class="py-2">
-                    <strong class="text-xl">1. Save Landfill Space: </strong>
+                    <strong class="text-lg">1. Save Landfill Space: </strong>
                     Electronic waste is being thrown into landfills at an
                     increasing rate each year. This problem is prevalent not
                     only in the USA, but is quickly spreading around the world.
@@ -140,7 +140,7 @@ export default function InfoPage() {
                     disturbed.
                   </ul>
                   <ul class="py-2">
-                    <strong class="text-xl">2. Save Natural Resources: </strong>
+                    <strong class="text-lg">2. Save Natural Resources: </strong>
                     As per studies, 98% of components in an electronic device
                     are recyclable. Metals extracted through mining require much
                     difficulty and effort. Apart from mining, the cost to refine
@@ -168,7 +168,7 @@ export default function InfoPage() {
                     </b>
                   </ul>
                   <ul class="py-2">
-                    <strong class="text-xl">3. Increase in Employment: </strong>
+                    <strong class="text-lg">3. Increase in Employment: </strong>
                     There are a lot of jobs in the field of recycling. There are
                     many experts out there that have professional degrees
                     regarding the recycling of electronic waste. Increased
@@ -185,7 +185,7 @@ export default function InfoPage() {
                     in the prosperity of the whole nation.
                   </ul>
                   <ul class="py-2">
-                    <strong class="text-xl">
+                    <strong class="text-lg">
                       4. Increases Affordability:{" "}
                     </strong>
                     In many cases, people want to get rid of an electronic
@@ -203,7 +203,7 @@ export default function InfoPage() {
                     </b>
                   </ul>
                   <ul class="py-2">
-                    <strong class="text-xl">
+                    <strong class="text-lg">
                       5. Removes Data Appropriately:{" "}
                     </strong>
                     Keeping data safe is becoming an increasingly important
@@ -223,7 +223,7 @@ export default function InfoPage() {
                     implications.
                   </ul>
                   <ul class="py-2">
-                    <strong class="text-xl">6. Saves the Environment: </strong>
+                    <strong class="text-lg">6. Saves the Environment: </strong>
                     Toxic and harmful poisons are reduced because green gas
                     emissions are decreased and plastic is not thrown into the
                     sea thereby improving marine life. Do not forget, we are a
