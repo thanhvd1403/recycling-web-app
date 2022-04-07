@@ -20,7 +20,9 @@ import {
   Select,
 } from "@mui/material";
 import ArrowDropDownCircleRoundedIcon from "@mui/icons-material/ArrowDropDownCircleRounded";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { placesData } from "../data/data";
+import Swal from "sweetalert2";
 // import { collection, getDocs, doc } from "@firebase/firestore";
 // import db from "../firebase-config";
 // const placesCollectionRef = collection(db, "places");
@@ -82,30 +84,61 @@ export default function GoogleMapComponent({ containerStyle }) {
       setzoomLevel(14);
       setCenter({ lat, lng });
       setCurPlace(thisPlace);
+      const searchInput = document.querySelector("#search-input");
+      searchInput.value = "";
     } catch (error) {}
   };
 
   const [places, setPlaces] = useState(null);
   useEffect(async () => {
     setPlaces(placesData);
-    if (navigator.geolocation) {
-      const location = navigator.geolocation.getCurrentPosition((location) => {
-        return location;
-      });
-      setCurPlace({});
-    }
   }, [places]);
+  const getCurrentLocation = () => {
+    if (navigator.geolocation) {
+      try {
+        navigator.geolocation.getCurrentPosition(
+          (location) => {
+            const lat = location.coords.latitude;
+            const lng = location.coords.longitude;
+            setCenter({ lat, lng });
+            return location;
+          },
+          (error) => {
+            Swal.fire({
+              title: "Something went wrong :(",
+              text: "Please allow location access to use this feature",
+              icon: "warning",
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "Okay!",
+              background: "#ECEFDA",
+              backdrop: `rgba(153, 241, 118, 0.4)`,
+            });
+          }
+        );
+      } catch (error) {}
+    } else {
+      Swal.fire({
+        title: "Oops!",
+        text: "Location is not supported in your browser",
+        icon: "warning",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Okay!",
+        background: "#ECEFDA",
+        backdrop: `rgba(153, 241, 118, 0.4)`,
+      });
+    }
+  };
 
   // Markers information on click
   const [infos, setInfos] = useState([]);
 
-  const handleOpenUserMenu = (event) => {
-    setanchorUser(event.currentTarget);
+  const handleOpenFilterMenu = (event) => {
+    setanchorFilter(event.currentTarget);
   };
-  const handleCloseUserMenu = () => {
-    setanchorUser(null);
+  const handleCloseFilterMenu = () => {
+    setanchorFilter(null);
   };
-  const [anchorUser, setanchorUser] = useState(null);
+  const [anchorFilter, setanchorFilter] = useState(null);
 
   // Info window for current location.
   const [infoCurrent, setinfoCurrent] = useState([]);
@@ -130,8 +163,8 @@ export default function GoogleMapComponent({ containerStyle }) {
         <Box sx={{ paddingLeft: "10vw", flexGrow: 0, display: "inline-flex" }}>
           <Tooltip title="E-waste filters">
             <Button
-              sx={{ p: 0, fontSize: 20 }}
-              onClick={handleOpenUserMenu}
+              sx={{ fontSize: 20, paddingLeft: "10px", paddingRight: "10px" }}
+              onClick={handleOpenFilterMenu}
               color="inherit"
               variant="outlined"
               size="large"
@@ -143,7 +176,7 @@ export default function GoogleMapComponent({ containerStyle }) {
 
           <Menu
             id="menu-appbar"
-            anchorEl={anchorUser}
+            anchorEl={anchorFilter}
             anchorOrigin={{
               vertical: "top",
               horizontal: "right",
@@ -153,8 +186,8 @@ export default function GoogleMapComponent({ containerStyle }) {
               vertical: "top",
               horizontal: "right",
             }}
-            open={Boolean(anchorUser)}
-            onClose={handleCloseUserMenu}
+            open={Boolean(anchorFilter)}
+            onClose={handleCloseFilterMenu}
           >
             <FormGroup sx={{ ml: "10px" }}>
               {ewasteTypes.map((ewasteType) => {
@@ -210,6 +243,24 @@ export default function GoogleMapComponent({ containerStyle }) {
               <MenuItem value={10000}>10km</MenuItem>
             </Select>
           </FormControl>
+        </Box>
+        <Box sx={{ paddingLeft: "10px", flexGrow: 0, display: "inline-flex" }}>
+          <Button
+            sx={{
+              fontSize: 16,
+              paddingTop: "13px",
+              paddingBottom: "12px",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+            onClick={getCurrentLocation}
+            color="inherit"
+            variant="outlined"
+            size="large"
+          >
+            Get Location
+            <LocationOnIcon />
+          </Button>
         </Box>
         <GoogleMap
           id="google-map"

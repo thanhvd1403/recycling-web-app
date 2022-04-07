@@ -67,7 +67,7 @@ export default function RecyclePage() {
             <b>For Large Household Appliances: </b>
             <div>
               <li>
-                Disconnect any cables/connections and ensure appliances,
+                Disconnect any cables or connections and ensure appliances,
                 fittings or equipment have been switched off.
               </li>
               <li>

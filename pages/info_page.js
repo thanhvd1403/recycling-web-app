@@ -449,8 +449,9 @@ function ItemCard(props) {
               </div>`,
               icon: "info",
               color: "#000",
-              background:
-                "url(/assets/type_of_ewaste/alert_background.jpg) no-repeat fixed center",
+              // background:
+              //   "url(/assets/type_of_ewaste/alert_background.jpg) no-repeat fixed center",
+              background: "#ECEFDA",
               backdrop: `rgba(153, 241, 118, 0.4)`,
               confirmButtonText: "Gotcha!",
             });
