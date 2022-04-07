@@ -3,9 +3,10 @@ import Head from "next/head";
 import GoogleMapComponent from "../components/google-maps";
 
 const containerStyle = {
-  width: "90vw",
+  width: "80vw",
   height: "80vh",
   display: "block",
+  paddingRight: "5vw",
   margin: "auto",
   position: "relative",
 };
@@ -13,23 +14,19 @@ const containerStyle = {
 export default function RecyclePage() {
   return (
     <>
-      <Layout
-        preview={true}
-        class="mb-10 p-10 bg-teal-100 items-center justify-center"
-      >
+      <Layout preview={false}>
         <Head>
           <title>Recycling Hub</title>
         </Head>
         {/* <Image
           layout="fill"
-          src="/assets/very_long_background.jpg"
           alt="E-waste recycling"
           objectFit="cover"
           objectPosition="center"
           quality="100"
           height={"500vh"}
         /> */}
-        <div class="mb-10 p-10 bg-teal-50 items-center justify-center">
+        <div className="mb-10 p-10 bg-teal-50 items-center justify-center">
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where to recycle your E-waste?
           </div>

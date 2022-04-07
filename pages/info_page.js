@@ -23,15 +23,15 @@ export default function InfoPage() {
   ];
   return (
     <>
-      <Layout preview={true}>
+      <Layout>
         <Head>
           <title>E-waste Information</title>
         </Head>
-        {/* BODYYYYY */}
+
         <section>
+          {/* BODY */}
           <div class="flex">
-            {/* <div class="flex-none w-64 text-center pl-5 pr-5 py-20 rounded-full border-3 border-yellow-600"></div> */}
-            <div class="flex-initial w-640 border-r-4">
+            <div class="w-[100] md:w-[85vw] lg:w-[90vw] border-r-4 md">
               <div
                 id="WoE"
                 class="space-x-7 py-10 pl-10 pr-10 text-center font-sans "
@@ -105,9 +105,31 @@ export default function InfoPage() {
                   </div>
                 </div>
               </div>
+              <div id="BoE">
+                <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
+                  <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg">
+                    <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
+                      ♻ Benefits of E-waste ♻
+                    </p>
+                    <div class="w-full text-center pl-5 pr-5">
+                      <div class="flex">
+                        <div class="w-2/5"></div>
+                        <div class="w-4/7 text-left whitespace-pre font-sans">
+                          <li> Save Landfill Space</li>
+                          <li> Save Natural Resources</li>
+                          <li> Increase in Employment</li>
+                          <li> Increases Affordability</li>
+                          <li> Removes Data Appropriately</li>
+                          <li> Saves the Environment</li>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <TypeInformation />
 
-              {/* Start */}
+              {/* Do you know? */}
               <p class="pt-10 pb-5 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
                 ♻ Do you know ♻
               </p>
@@ -241,83 +263,20 @@ export default function InfoPage() {
                   </div>
                 </div>
               </div>
-
-              {/* End */}
+              {/* End Do you know? */}
             </div>
-            {/* <div id="BoE">
-              <div class="space-x-7 py-10 pl-10 pr-10 text-center font-sans">
-                <div class="rounded-3xl bg-emerald-100 border-black py-5 shadow-lg">
-                  <p class="text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
-                    ♻ Benefits of E-waste ♻
-                  </p>
-                  <div class="w-full text-center pl-5 pr-5">
-                    <div class="flex">
-                      <div class="w-2/5"></div>
-                      <div class="w-4/7 text-left whitespace-pre font-sans">
-                        <li> Save Landfill Space</li>
-                        <li> Save Natural Resources</li>
-                        <li> Increase in Employment</li>
-                        <li> Increases Affordability</li>
-                        <li> Removes Data Appropriately</li>
-                        <li> Saves the Environment</li>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            {/* <div class="flex-none w-70 text-left pl-5 pr-5 py- rounded-full">
-              <Menu
-                as="div"
-                className="relative inline-block text-right pl-15 py-10"
-              >
-                <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100  bg-emerald-600 hover:bg-emerald-700 text-green-100 hover">
-                  On This Page
-                  <ChevronDownIcon
-                    className="-mr-1 ml-2 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    {sectionRef.map((sectionInfo) => {
-                      return (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href={sectionInfo.href}
-                              className={classNames(
-                                active
-                                  ? "px-4 py-2 whitespace-pre rounded bg-emerald-600 hover:bg-emerald-600 text-green-100"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              {sectionInfo.title}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      );
-                    })}
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-            </div> */}
           </div>
+          {/* End Body */}
         </section>
       </Layout>
     </>
   );
 }
 
+/**
+ * Display type information in a responsive grid
+ * @returns {React.Node} of predefined Container
+ */
 function TypeInformation() {
   return (
     <Container>
@@ -338,7 +297,11 @@ function TypeInformation() {
     </Container>
   );
 }
-
+/**
+ * Item card to display information about specific type
+ * @param {*} props
+ * @returns {React.Node} of MUI Grid item
+ */
 function ItemCard(props) {
   const [type, description, link] = props.data;
   return (

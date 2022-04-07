@@ -127,7 +127,7 @@ export default function GoogleMapComponent({ containerStyle }) {
         preventGoogleFontsLoading={false}
       >
         {/* Type filter */}
-        <Box sx={{ paddingLeft: "5vw", flexGrow: 0, display: "inline-flex" }}>
+        <Box sx={{ paddingLeft: "10vw", flexGrow: 0, display: "inline-flex" }}>
           <Tooltip title="E-waste filters">
             <Button
               sx={{ p: 0, fontSize: 20 }}

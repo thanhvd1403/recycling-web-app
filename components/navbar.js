@@ -51,7 +51,6 @@ function ScrollTop(props) {
     </Zoom>
   );
 }
-
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
 };
@@ -154,6 +153,21 @@ const ResponsiveAppBar = (props) => {
                 display: { xs: "block", md: "none" },
               }}
             >
+              <Link href={"/"} key={`/_Link`}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    textAlign="center"
+                    sx={{
+                      fontFamily: "Arial",
+                      ...{
+                        ...(router.asPath === "/" ? styleFocus : null),
+                      },
+                    }}
+                  >
+                    E-Cycle ♻
+                  </Typography>
+                </MenuItem>
+              </Link>
               {pages.map(({ page, href }) => (
                 <Link href={href} key={`${href}_Link`}>
                   <MenuItem onClick={handleCloseNavMenu}>
@@ -161,9 +175,9 @@ const ResponsiveAppBar = (props) => {
                       textAlign="center"
                       sx={{
                         fontFamily: "Arial",
-                        // ...{
-                        //   ...(router.asPath === { href } ? styleFocus : null),
-                        // },
+                        ...{
+                          ...(router.asPath === href ? styleFocus : null),
+                        },
                       }}
                     >
                       {[page]}
@@ -179,11 +193,13 @@ const ResponsiveAppBar = (props) => {
               variant="inherit"
               noWrap
               component="div"
-              onClick={handleOpenNavMenu}
               sx={{
                 flexGrow: 1,
                 display: { xs: "flex", md: "none" },
                 fontFamily: "Arial",
+                ...{
+                  ...(router.asPath === "/" ? styleFocus : null),
+                },
               }}
             >
               E-Cycle ♻
