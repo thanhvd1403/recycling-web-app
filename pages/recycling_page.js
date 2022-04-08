@@ -18,8 +18,8 @@ export default function RecyclePage() {
         <Head>
           <title>Recycling Hub</title>
         </Head>
-        <div className="px-10 py-20 bg-[url('/assets/background.png')] items-center justify-center">
-          <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
+        <div className=" py-20 bg-[url('/assets/background.png')] items-center justify-center md:px-10 sx:px-6">
+          <div className="mb-12 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where to recycle your E-waste?
           </div>
           <GoogleMapComponent containerStyle={containerStyle} />
@@ -28,8 +28,8 @@ export default function RecyclePage() {
             Disposal guidelines
           </div>
           <div className="text-xl px-4 laptop:px-36 laptop:text-2xl text-left">
-            <div className="py-3 font-bold text-3xl">
-              Reminder before disposing your E-Waste:
+            <div className="py-3 font-bold md:text-3xl sx:text-2xl">
+              Before disposing your E-Waste:
             </div>
             <div className="py-1">
               <b>Step 1: </b>
@@ -52,7 +52,10 @@ export default function RecyclePage() {
               Drop off your E-waste at designated points. Do note that different
               E-waste has different collection avenues.
             </div>
-            <div className="font-bold text-3xl py-3">Special note</div>
+            <hr className="border-accent-2 my-2 bg-teal-50 " />
+            <div className="font-bold py-3 md:text-3xl sx:text-2xl">
+              Special note
+            </div>
             <div className="py-1">
               <b>For ICT Equipment: </b>
               Wipe all data on your devices whenever possible.

@@ -167,10 +167,20 @@ export default function GoogleMapComponent({ containerStyle }) {
         preventGoogleFontsLoading={false}
       >
         {/* Type filter */}
-        <Box sx={{ paddingLeft: "10vw", flexGrow: 0, display: "inline-flex" }}>
+        <Box
+          sx={{
+            paddingLeft: { md: "10vw", xs: "3vw" },
+            flexGrow: 0,
+            display: "inline-flex",
+          }}
+        >
           <Tooltip title="E-waste filters">
             <Button
-              sx={{ fontSize: 20, paddingLeft: "10px", paddingRight: "10px" }}
+              sx={{
+                fontSize: { md: 20, xs: 10 },
+                paddingLeft: "10px",
+                paddingRight: "10px",
+              }}
               onClick={handleOpenFilterMenu}
               color="inherit"
               variant="outlined"
@@ -223,10 +233,8 @@ export default function GoogleMapComponent({ containerStyle }) {
         {/* Distance filter */}
         <Box
           sx={{
-            minWidth: 100,
             display: "inline-flex",
             paddingLeft: "10px",
-            paddingTop: "20px",
           }}
         >
           <FormControl fullWidth>
@@ -240,6 +248,7 @@ export default function GoogleMapComponent({ containerStyle }) {
                 const radius = event.target.value;
                 setBoundRadius(radius);
               }}
+              sx={{ height: { md: 54, xs: 45 }, fontSize: { md: 20, xs: 15 } }}
             >
               <MenuItem value={70000}>All</MenuItem>
               <MenuItem value={500}>500m</MenuItem>
@@ -255,9 +264,9 @@ export default function GoogleMapComponent({ containerStyle }) {
         <Box sx={{ paddingLeft: "10px", flexGrow: 0, display: "inline-flex" }}>
           <Button
             sx={{
-              fontSize: 16,
-              paddingTop: "13px",
-              paddingBottom: "12px",
+              fontSize: { md: 16, xs: 10 },
+              paddingTop: { md: "13px", xs: "10px" },
+              paddingBottom: { md: "12px", xs: "10px" },
               paddingLeft: "10px",
               paddingRight: "10px",
             }}
@@ -266,7 +275,7 @@ export default function GoogleMapComponent({ containerStyle }) {
             variant="outlined"
             size="large"
           >
-            Get Location
+            Location
             <LocationOnIcon />
           </Button>
         </Box>
