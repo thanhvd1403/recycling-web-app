@@ -121,7 +121,7 @@ const ResponsiveAppBar = (props) => {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "flex", md: "none" },
+              display: { xs: trigger ? "flex" : "none", md: "none" },
               left: -15,
             }}
           >
@@ -195,7 +195,7 @@ const ResponsiveAppBar = (props) => {
               component="div"
               sx={{
                 flexGrow: 1,
-                display: { xs: "flex", md: "none" },
+                display: { xs: trigger ? "flex" : "none", md: "none" },
                 fontFamily: "Arial",
                 ...{
                   ...(router.asPath === "/" ? styleFocus : null),
