@@ -26,7 +26,7 @@ export default function InfoPage() {
         </Head>
 
         {/* BODY */}
-        <div class="w-full bg-emerald-100">
+        <div class="w-full bg-[url('/assets/background.png')]">
           <div
             id="General information"
             class="space-x-7 py-20 px-5 text-center font-sans "
@@ -355,8 +355,8 @@ export default function InfoPage() {
               />
             </div>
 
-            <div class="py-10 bg-teal-50 items-center justify-center lg:flex">
-              <div class="px-10 pt-10 text-2xl font-bold text-teal-700 rounded-full flex items-center text-center justify-center font-mono">
+            <div class="py-10 bg-[url('/assets/background.png')] items-center justify-center lg:flex">
+              <div class="px-10 pt-10 text-2xl font-bold text-teal-900 rounded-full flex items-center text-center justify-center font-mono">
                 CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT
                 THE ENVIRONEMNT AND THE PUBLIC, AS THIS
               </div>
