@@ -106,7 +106,6 @@ function To_Recycle() {
           mb="7vh"
           sx={{
             fontSize: { md: "2.5rem", xs: "1.5rem" },
-            fontFamily: "cursive",
             fontWeight: "bold",
             color: "#DFE8FB",
             textShadow: "1px 1px 2px blue",
@@ -120,10 +119,11 @@ function To_Recycle() {
             color="success"
             sx={{
               borderRadius: 30,
-              fontSize: { md: "1.75rem", xs: "1.125rem" },
+              fontSize: { md: "1.75rem", xs: "1rem" },
               padding: { md: "10px 30px", xs: "5px 10px" },
-              color: "#DFE8FB",
-              textShadow: "1px 1px 1px pink",
+              // color: "#DFE8FB",
+              fontWeight: "bold",
+              // textShadow: "1px 1px 1px pink",
             }}
           >
             Find nearest recycling centers
@@ -207,13 +207,11 @@ function To_Event({ allPosts }) {
           variant="h4"
           className="recycle_ref-heading"
           sx={{
-            fontFamily: "cursive",
             color: "#1D1D1D",
-            textShadow: "2px 2px 3px pink",
+            textShadow: "1px 1px 2px pink",
           }}
         >
           Looking to hang out with our community?
-          <Box sx={{ m: 5 }}></Box>
         </Typography>
         <Link href="/events_page" passHref>
           <MUILink
@@ -225,7 +223,7 @@ function To_Event({ allPosts }) {
               textShadow: "1px 1px 1px pink",
             }}
           >
-            Check out these events happening in Singapore
+            Check these out!
           </MUILink>
         </Link>
       </Grid>

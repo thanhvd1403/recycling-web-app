@@ -27,7 +27,7 @@ export default function RecyclePage() {
           <div className="mb-8 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Disposal guidelines
           </div>
-          <div className="text-xl px-4 laptop:px-36 laptop:text-2xl text-justify">
+          <div className="text-xl px-4 laptop:px-36 laptop:text-2xl text-left">
             <div className="py-3 font-bold text-3xl">
               Reminder before disposing your E-Waste:
             </div>

@@ -27,7 +27,7 @@ export default function InfoPage() {
         </Head>
 
         {/* BODY */}
-        <div class="w-full bg-[url('/assets/background.png')]">
+        <div className="w-full bg-[url('/assets/background.png')]">
           <div
             id="General information"
             className="space-x-7 py-20 px-5 text-center font-sans "
@@ -68,8 +68,8 @@ export default function InfoPage() {
                 contains diverse materials, which{" "}
                 <span className="font-medium italic">
                   requires special treatment and cannot
-                </span>
-                be dumped in landfill sites, most prominently, hazardous
+                </span>{" "}
+                O+ be dumped in landfill sites, most prominently, hazardous
                 substances such as lead, polychlorinated biphenyls (PCBs),
                 polybrominated biphenyls (PBBs), mercury, polybrominated
                 diphenyl ethers (PBDEs), brominated flame retardants (BFRs), and
@@ -347,8 +347,8 @@ export default function InfoPage() {
               />
             </div>
 
-            <div class="py-10 bg-[url('/assets/background.png')] items-center justify-center lg:flex">
-              <div class="px-10 pt-10 text-2xl font-bold text-teal-900 rounded-full flex items-center text-center justify-center font-mono">
+            <div className="py-10 bg-[url('/assets/background.png')] items-center justify-center lg:flex">
+              <div className="px-10 pt-10 text-2xl font-bold text-teal-900 rounded-full flex items-center text-center justify-center font-mono">
                 CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT
                 THE ENVIRONEMNT AND THE PUBLIC, AS THIS
               </div>
