@@ -306,20 +306,21 @@ function To_Event({ allPosts }) {
  */
 function Event_Card(props) {
   return (
-    <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
-      <Grid container alignItems="center" spacing={2}>
-        <Grid item>
-          <img
-            src={props.post.coverImage}
-            alt="Event cover image."
-            style={{
-              height: "120px",
-              width: "240px",
-              objectFit: "fill",
-            }}
-          />
-        </Grid>
-        <Link href={`/posts/${props.post.slug}`} passHref>
+    <Link href={`/posts/${props.post.slug}`} passHref>
+      <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
+        <Grid container alignItems="center" spacing={2}>
+          <Grid item>
+            <img
+              src={props.post.coverImage}
+              alt="Event cover image."
+              style={{
+                height: "120px",
+                width: "240px",
+                objectFit: "fill",
+              }}
+            />
+          </Grid>
+
           <Grid item maxWidth={310}>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography variant="h5" className="event_card-title">
@@ -328,9 +329,9 @@ function Event_Card(props) {
               <DateFormatter dateString={props.post.date} />
             </Box>
           </Grid>
-        </Link>
-      </Grid>
-    </Card>
+        </Grid>
+      </Card>
+    </Link>
   );
 }
 
