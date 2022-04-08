@@ -69,7 +69,7 @@ export default function InfoPage() {
                 <span className="font-medium italic">
                   requires special treatment and cannot
                 </span>{" "}
-                O+ be dumped in landfill sites, most prominently, hazardous
+                be dumped in landfill sites, most prominently, hazardous
                 substances such as lead, polychlorinated biphenyls (PCBs),
                 polybrominated biphenyls (PBBs), mercury, polybrominated
                 diphenyl ethers (PBDEs), brominated flame retardants (BFRs), and
@@ -149,15 +149,7 @@ export default function InfoPage() {
                     metals decreases. Wires and other components of electronic
                     devices made of aluminum and copper can be reused multiple
                     times. Reutilizing them in other electronic devices means
-                    little to no material goes to waste. Hence, the need to
-                    mine, extract and manufacture more metal reduces. Electronic
-                    gadgets have many components made of glass. For example, the
-                    screen of any PC, laptop, television, smartphone, or any
-                    other electronic device is made up of high-quality glass.
-                    Manufacturing glass from scratch requires a lot of energy.
-                    Manufacturers reuse glass from old electronics so it does
-                    not go to waste. This also saves time and money
-                    manufacturing new glass.{" "}
+                    little to no material goes to waste.{" "}
                     <span className="font-medium italic">
                       Recycling e-waste means that natural resources such as
                       metals aren’t wasted and the energy and cost required to
@@ -178,8 +170,6 @@ export default function InfoPage() {
                       which mean increase financial stability for our
                       communities.{" "}
                     </span>
-                    The overall economy gets a boost and will eventually results
-                    in the prosperity of the whole nation.
                   </ul>
                   <ul className="py-2">
                     <span className="font-semibold text-xl">
@@ -207,7 +197,7 @@ export default function InfoPage() {
                     case.{" "}
                     <span className="font-medium italic">
                       Permanently removing data from a mobile phone and computer
-                      requires special software and proper strategy.
+                      requires special software and proper strategy.{" "}
                     </span>
                     Ensuring the appropriate removal of data is mandatory before
                     getting rid of the electronic device. People caught breaking

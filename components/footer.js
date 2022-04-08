@@ -98,8 +98,6 @@ export default function Footer() {
               data-icon="linkedin-in"
               className="w-6"
               role="img"
-              // width="48px"
-              // height="48px"
             >
               <path
                 fill="#03A9F4"
@@ -171,7 +169,7 @@ export default function Footer() {
           </div>
 
           <div className="">
-            <h6 className="uppercase font-semibold flex justify-center md:justify-start sx:py-4">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start sx:pt-5">
               Useful links
             </h6>
             <Link href="/info_page" passHref>
@@ -303,7 +301,7 @@ export default function Footer() {
       <div className="text-center p-6 bg-gray-800">
         <span>© 2022 Copyright: </span>
         <a className="text-white font-semibold" href="!#">
-          Onestop E-cycle
+          Onestop E-cycle @NTU
         </a>
       </div>
     </footer>
