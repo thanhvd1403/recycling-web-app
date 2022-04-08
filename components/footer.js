@@ -2,6 +2,7 @@ import { doc, getDoc, setDoc, Timestamp } from "@firebase/firestore";
 import db from "../firebase-config";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 export default function Footer() {
   const [inputEmail, setInputEmail] = useState("");
@@ -173,21 +174,21 @@ export default function Footer() {
             <h6 className="uppercase font-semibold flex justify-center md:justify-start sx:py-4">
               Useful links
             </h6>
-            <p className="md:mb-4">
-              <a href="info_page" className="text-white">
-                E-waste Information
-              </a>
-            </p>
-            <p className="md:mb-4 sx:pt-1">
-              <a href="recycling_page" className="text-white">
-                Recycling Hub
-              </a>
-            </p>
-            <p className="mb-4 sx:py-1">
-              <a href="events_page" className="text-white">
-                Events
-              </a>
-            </p>
+            <Link href="/info_page" passHref>
+              <p className="md:mb-4">
+                <a className="text-white">E-waste Information</a>
+              </p>
+            </Link>
+            <Link href="/recycling_page" passHref>
+              <p className="md:mb-4 sx:pt-1">
+                <a className="text-white">Recycling Hub</a>
+              </p>
+            </Link>
+            <Link href="/recycling_page" passHref>
+              <p className="mb-4 sx:py-1">
+                <a className="text-white">Events</a>
+              </p>
+            </Link>
           </div>
 
           <div className="">
