@@ -13,7 +13,14 @@ import { getAllPosts } from "../lib/api";
 import { Card, CardActionArea } from "@mui/material";
 import DateFormatter from "../components/date-formatter";
 import Link from "next/link";
+import Swal from "sweetalert2";
+import { EwasteInfo } from "../data/data";
 
+/**
+ * Function to render index page
+ * @param {*} allPosts List of posts to render
+ * @returns {React.Node}
+ */
 export default function Index({ allPosts }) {
   return (
     <>
@@ -23,19 +30,26 @@ export default function Index({ allPosts }) {
         </Head>
         <Welcome />
         <To_Recycle />
-        <Container maxWidth="lg">
-          <div className="py-[15vh] bg-[url('/assets/background.png')]">
-            <To_Information />
-          </div>
-          <div className="pb-[15vh] bg-[url('/assets/background.png')]">
-            <To_Event allPosts={allPosts} />
-          </div>
-        </Container>
+        <div className="bg-[url('/assets/background.png')]">
+          <Container maxWidth="lg">
+            <div className="py-[15vh]">
+              <To_Information />
+            </div>
+            <hr className="border-accent-2 mb-[12vh] bg-teal-50 " />
+            <div className="pb-[15vh]">
+              <To_Event allPosts={allPosts} />
+            </div>
+          </Container>
+        </div>
       </Layout>
     </>
   );
 }
 
+/**
+ * Function to render Welcome section
+ * @returns {React.Node}
+ */
 function Welcome() {
   return (
     <div className="flex flex-wrap flex-grow justify-center">
@@ -48,6 +62,10 @@ function Welcome() {
   );
 }
 
+/**
+ * Function to render Recycle page introduction
+ * @returns {React.Node}
+ */
 function To_Recycle() {
   return (
     // <Grid container alignItems="center" spacing={2}>
@@ -134,6 +152,10 @@ function To_Recycle() {
   );
 }
 
+/**
+ * Function to render Information page introduction
+ * @returns {React.Node}
+ */
 function To_Information() {
   return (
     <div className="text-center">
@@ -141,19 +163,18 @@ function To_Information() {
         Not sure how to recycle your E-waste?
       </Typography>
       <Grid container alignItems="stretch" spacing={2} my={7}>
-        <Waste_Item title="Fluorescent lamp" image="fluorescent.jpg" />
-        <Waste_Item title="ICT Equipments" image="ict.jpg" />
-        <Waste_Item title="Household appliances" image="household.jpg" />
-        <Waste_Item title="Electric vehicles" image="lucid-dream.jpg" />
-        <Waste_Item title="Household batteries" image="batteries.jpg" />
-        <Waste_Item title="Lithium-Ion batteries" image="lithium.jpg" />
-        <Waste_Item
-          title="Electric vehicle batteries"
-          image="car-battery.jpg"
-        />
-        <Waste_Item title="Incandescent light bulb" image="lightbulbs.jpg" />
+        {Object.entries(EwasteInfo).map(([type, specificInfo]) => {
+          return (
+            <ItemCard
+              key={type}
+              title={type}
+              imageURL={specificInfo.imageURL}
+              data={[type, specificInfo.description, specificInfo.link]}
+            />
+          );
+        })}
       </Grid>
-      <Link href="/recycling_page" passHref>
+      <Link href="/info_page" passHref>
         <Button variant="contained" size="large" color="success">
           Learn more
         </Button>
@@ -162,13 +183,39 @@ function To_Information() {
   );
 }
 
-function Waste_Item(props) {
+/**
+ * Item card to display information about specific type
+ * @param {*} props
+ * @returns {React.Node} of MUI Grid item
+ */
+function ItemCard(props) {
+  const [type, description] = props.data;
   return (
     <Grid item xs={6} md={3}>
-      <Card className="waste_card" elevation={6}>
-        <CardActionArea>
+      <Card className="cardItem" elevation={6}>
+        <CardActionArea
+          onClick={() => {
+            Swal.fire({
+              title: `${type}`,
+              html: `<div>
+                <p style="text-align: justify; margin-bottom:2rem">
+                  ${description}
+                </p>
+                <link href="/button.css" rel="stylesheet">
+                <style>
+                </style>
+              </div>`,
+              icon: "info",
+              color: "#000",
+              background: "#ECEFDA",
+              backdrop: `rgba(153, 241, 118, 0.4)`,
+              confirmButtonText: "Gotcha!",
+              confirmButtonColor: "green",
+            });
+          }}
+        >
           <img
-            src={"/assets/home_page/" + props.image}
+            src={props.imageURL}
             title={props.title}
             alt={"Image of " + props.title}
             style={{
@@ -178,8 +225,11 @@ function Waste_Item(props) {
               objectFit: "cover",
             }}
           />
-          <div
-            style={{
+          <Typography
+            variant="h5"
+            fontWeight={500}
+            sx={{
+              textAlign: "center",
               position: "absolute",
               color: "white",
               top: "50%",
@@ -187,16 +237,18 @@ function Waste_Item(props) {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <Typography variant="h5" fontWeight={500}>
-              {props.title}
-            </Typography>
-          </div>
+            {props.title}
+          </Typography>
         </CardActionArea>
       </Card>
     </Grid>
   );
 }
 
+/**
+ * Function to render Event page introduction
+ * @returns {React.Node}
+ */
 function To_Event({ allPosts }) {
   const morePosts = allPosts.slice(1);
   return (
@@ -236,6 +288,11 @@ function To_Event({ allPosts }) {
   );
 }
 
+/**
+ * Item card to display information about recycling events
+ * @param {*} props
+ * @returns {React.Node} of MUI Grid item
+ */
 function Event_Card(props) {
   return (
     <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
@@ -252,12 +309,14 @@ function Event_Card(props) {
           />
         </Grid>
         <Grid item maxWidth={310}>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="h5" className="event_card-title">
-              {props.post.title}
-            </Typography>
-            <DateFormatter dateString={props.post.date} />
-          </Box>
+          <Link href={`/posts/${props.post.slug}`} passHref>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography variant="h5" className="event_card-title">
+                {props.post.title}
+              </Typography>
+              <DateFormatter dateString={props.post.date} />
+            </Box>
+          </Link>
         </Grid>
       </Grid>
     </Card>
