@@ -159,10 +159,19 @@ function To_Recycle() {
 function To_Information() {
   return (
     <div className="text-center">
-      <Typography variant="h4" align="center">
-        Not sure how to recycle your E-waste?
+      <Typography
+        variant="h4"
+        align="center"
+        sx={{
+          color: "#1D1D1D",
+          fontWeight: "bold",
+          textShadow: "0.5px 0.5px 1px gray",
+          fontSize: { md: 30, xs: 22 },
+        }}
+      >
+        Not sure what is E-cycle?
       </Typography>
-      <Grid container alignItems="stretch" spacing={2} my={7}>
+      <Grid container alignItems="stretch" spacing={2} my={{ md: 7, xs: 3 }}>
         {Object.entries(EwasteInfo).map(([type, specificInfo]) => {
           return (
             <ItemCard
@@ -219,7 +228,7 @@ function ItemCard(props) {
             title={props.title}
             alt={"Image of " + props.title}
             style={{
-              height: "200px",
+              height: "15vh",
               width: "100%",
               filter: "brightness(40%)",
               objectFit: "cover",
@@ -229,6 +238,7 @@ function ItemCard(props) {
             variant="h5"
             fontWeight={500}
             sx={{
+              fontSize: { md: 22, xs: 15 },
               textAlign: "center",
               position: "absolute",
               color: "white",
@@ -260,7 +270,9 @@ function To_Event({ allPosts }) {
           className="recycle_ref-heading"
           sx={{
             color: "#1D1D1D",
-            textShadow: "1px 1px 2px pink",
+            fontWeight: "bold",
+            textShadow: "0.5px 0.5px 1px gray",
+            fontSize: { md: 30, xs: 24 },
           }}
         >
           Looking to hang out with our community?
@@ -268,11 +280,10 @@ function To_Event({ allPosts }) {
         <Link href="/events_page" passHref>
           <MUILink
             underline="always"
-            variant="overline"
+            variant="h4"
             sx={{
-              fontSize: 15,
+              fontSize: { md: 30, xs: 24 },
               color: "#3572F5",
-              textShadow: "1px 1px 1px pink",
             }}
           >
             Check these out!

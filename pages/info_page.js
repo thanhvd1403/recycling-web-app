@@ -248,7 +248,7 @@ export default function InfoPage() {
             </p>
 
             <div className="flex items-center justify-center">
-              <div className="bg-gray-100  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
+              <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
                 <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                   <div className="w-full">
                     <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
@@ -366,14 +366,14 @@ export default function InfoPage() {
                     environment
                   </p>
                 </div>
-                <div className="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                <div className="w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-50 sx:bg-emerald-100">
                   <p className="text-md text-gray-600 text-center px-5">
                     {`Reduces strain on Singapore's waste disposal facilities and
                     frees up land for letter quality of life for residents`}
                   </p>
                 </div>
 
-                <div className="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                <div className="w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-100 sx:bg-emerald-50">
                   <p className="text-md text-gray-600 text-center px-5">
                     Helps fight climate change, grow our green economy and local
                     employment opportunities
@@ -455,7 +455,7 @@ function ItemCard(props) {
             title={props.title}
             alt={"Image of " + props.title}
             style={{
-              height: "200px",
+              height: "15vh",
               width: "100%",
               filter: "brightness(40%)",
               objectFit: "cover",
@@ -465,6 +465,7 @@ function ItemCard(props) {
             variant="h5"
             fontWeight={500}
             sx={{
+              fontSize: { md: 22, xs: 15 },
               textAlign: "center",
               position: "absolute",
               color: "white",
