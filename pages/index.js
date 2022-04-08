@@ -319,16 +319,16 @@ function Event_Card(props) {
             }}
           />
         </Grid>
-        <Grid item maxWidth={310}>
-          <Link href={`/posts/${props.post.slug}`} passHref>
+        <Link href={`/posts/${props.post.slug}`} passHref>
+          <Grid item maxWidth={310}>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography variant="h5" className="event_card-title">
                 {props.post.title}
               </Typography>
               <DateFormatter dateString={props.post.date} />
             </Box>
-          </Link>
-        </Grid>
+          </Grid>
+        </Link>
       </Grid>
     </Card>
   );
