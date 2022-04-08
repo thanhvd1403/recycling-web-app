@@ -29,6 +29,8 @@ import Swal from "sweetalert2";
 // const data = await getDocs(placesCollectionRef);
 // placesData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 
+// import API_KEY from "../googlemap-config";
+const API_KEY = "AIzaSyCtXKwCc7odv0YcpZHzRvhU-85olozLMUc";
 /**
  * Calculate the distance between two points in m's
  * @args (point1, point2): {object} { lat: number, lng: number }
@@ -63,11 +65,13 @@ const ewasteTypes = [
 ];
 
 export default function GoogleMapComponent({ containerStyle }) {
+  // GoogleMap Autocomplete search engine.
   const [autocomplete, setAutocomplete] = useState(null);
   const onLoad = (autocomplete) => {
     setAutocomplete(autocomplete);
   };
 
+  // Map localization state parameters.
   const [center, setCenter] = useState({
     lat: 1.348,
     lng: 103.683,
@@ -75,6 +79,7 @@ export default function GoogleMapComponent({ containerStyle }) {
   const [boundRadius, setBoundRadius] = useState(3000);
   const [zoomLevel, setzoomLevel] = useState(13);
 
+  // Event handler for the autocomplete search box.
   const [curPlace, setCurPlace] = useState({});
   const onPlaceChanged = () => {
     try {
@@ -89,10 +94,12 @@ export default function GoogleMapComponent({ containerStyle }) {
     } catch (error) {}
   };
 
+  // Recycling points from dataset.
   const [places, setPlaces] = useState(null);
-  useEffect(async () => {
+  useEffect(() => {
     setPlaces(placesData);
   }, [places]);
+
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       try {
@@ -129,8 +136,11 @@ export default function GoogleMapComponent({ containerStyle }) {
     }
   };
 
-  // Markers information on click
+  // Keep track information about E-waste recycling point for markers display.
   const [infos, setInfos] = useState([]);
+
+  // Keep track of marker info for current location.
+  const [infoCurrent, setinfoCurrent] = useState([]);
 
   const handleOpenFilterMenu = (event) => {
     setanchorFilter(event.currentTarget);
@@ -140,9 +150,6 @@ export default function GoogleMapComponent({ containerStyle }) {
   };
   const [anchorFilter, setanchorFilter] = useState(null);
 
-  // Info window for current location.
-  const [infoCurrent, setinfoCurrent] = useState([]);
-
   // state variables for e-waste type filters.
   const defaultChecked = {};
   for (let type of ewasteTypes) {
@@ -150,12 +157,12 @@ export default function GoogleMapComponent({ containerStyle }) {
   }
   const [typeChecked, setTypeChecked] = useState(defaultChecked);
 
-  // const for google map config
+  // library to load for google map api.
   const libraries = ["places"];
   return (
     <>
       <LoadScript
-        googleMapsApiKey="AIzaSyBYqHAL0_W6xy3_FaKoxDrnpBsWNkj0urc"
+        googleMapsApiKey={API_KEY}
         libraries={libraries}
         preventGoogleFontsLoading={false}
       >
@@ -193,6 +200,7 @@ export default function GoogleMapComponent({ containerStyle }) {
               {ewasteTypes.map((ewasteType) => {
                 return (
                   <FormControlLabel
+                    key={ewasteType}
                     control={
                       <Checkbox
                         defaultChecked
@@ -311,15 +319,18 @@ export default function GoogleMapComponent({ containerStyle }) {
                   onClick={() => {}}
                 >
                   <>
-                    <h1 class="font-medium">{info.Address},</h1>
-                    <h1 class="font-medium"> Singapore {info.PostalCode}</h1>
+                    <h1 className="font-medium">{info.Address},</h1>
+                    <h1 className="font-medium">
+                      {" "}
+                      Singapore {info.PostalCode}
+                    </h1>
                     <br></br>
-                    <h2 class="font-medium">
+                    <h2 className="font-medium">
                       Collections bin, Type available:
                     </h2>
                     <ul>
                       {info.Type?.map((type) => {
-                        return <li>{type}</li>;
+                        return <li key={type}>{type}</li>;
                       })}
                     </ul>
                   </>
@@ -345,8 +356,8 @@ export default function GoogleMapComponent({ containerStyle }) {
             />
             {infoCurrent?.map((position) => {
               return (
-                <InfoWindow position={position}>
-                  <h1>Hello</h1>
+                <InfoWindow position={position} key={position}>
+                  <h1>You are here!</h1>
                 </InfoWindow>
               );
             })}

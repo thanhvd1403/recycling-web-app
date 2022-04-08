@@ -52,23 +52,23 @@ export default function Footer() {
     setInputEmail("");
   };
   return (
-    <footer class="text-center bg-gray-900 text-white">
-      <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
-        <div class="mr-12 hidden lg:block">
+    <footer className="text-center bg-gray-900 text-white">
+      <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+        <div className="mr-12 hidden lg:block">
           <span>Get connected with us on social networks:</span>
         </div>
 
-        <div class="flex justify-center">
+        <div className="flex justify-center">
           <a
             href="https://www.linkedin.com/in/phi-dung-ho/"
-            class="mr-6 text-white"
+            className="mr-6 text-white"
           >
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fab"
               data-icon="linkedin-in"
-              class="w-3.5"
+              className="w-3.5"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -81,14 +81,14 @@ export default function Footer() {
           </a>
           <a
             href="https://github.com/PhiDung-hub/cz2006_web_app"
-            class="text-white"
+            className="text-white"
           >
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fab"
               data-icon="github"
-              class="w-4"
+              className="w-4"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 496 512"
@@ -102,11 +102,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div class="mx-6 py-10 text-center md:text-left">
-        <div class="grid grid-1 md:grid-cols-1 lg:grid-cols-4 gap-4">
-          <div class="col-span-2">
+      <div className="mx-6 py-10 text-center md:text-left">
+        <div className="grid grid-1 md:grid-cols-1 lg:grid-cols-4 gap-4">
+          <div className="col-span-2">
             <h6
-              class="
+              className="
               uppercase
               font-semibold
               mb-4
@@ -122,7 +122,7 @@ export default function Footer() {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="cube"
-                class="w-4 mr-3"
+                className="w-4 mr-3"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -140,38 +140,38 @@ export default function Footer() {
             </p>
           </div>
 
-          <div class="">
-            <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className="">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Useful links
             </h6>
-            <p class="mb-4">
-              <a href="info_page" class="text-white">
+            <p className="mb-4">
+              <a href="info_page" className="text-white">
                 E-waste Information
               </a>
             </p>
-            <p class="mb-4">
-              <a href="recycling_page" class="text-white">
+            <p className="mb-4">
+              <a href="recycling_page" className="text-white">
                 Recycling Hub
               </a>
             </p>
-            <p class="mb-4">
-              <a href="events_page" class="text-white">
+            <p className="mb-4">
+              <a href="events_page" className="text-white">
                 Events
               </a>
             </p>
           </div>
 
-          <div class="">
-            <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className="">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Contact
             </h6>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="home"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -183,13 +183,13 @@ export default function Footer() {
               </svg>
               50 Nanyang Ave, Singapore 639798
             </p>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="envelope"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -201,13 +201,13 @@ export default function Footer() {
               </svg>
               info@onestop.com
             </p>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="phone"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -225,17 +225,17 @@ export default function Footer() {
 
       <div>
         <form action="" onSubmit={handleSubmit}>
-          <div class="grid md:grid-cols-3 gird-cols-1 gap-4 justify-center items-center">
-            <div class="md:ml-auto md:mb-6">
-              <p class="">
+          <div className="grid md:grid-cols-3 gird-cols-1 gap-4 justify-center items-center">
+            <div className="md:ml-auto md:mb-6">
+              <p className="">
                 <strong>Sign up for our newsletter</strong>
               </p>
             </div>
 
-            <div class="md:mb-6">
+            <div className="md:mb-6">
               <input
                 type="text"
-                class="
+                className="
                 form-control
                 block
                 w-full
@@ -259,10 +259,10 @@ export default function Footer() {
               />
             </div>
 
-            <div class="md:mr-auto mb-6">
+            <div className="md:mr-auto mb-6">
               <button
                 type="submit"
-                class="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
               >
                 Subscribe
               </button>
@@ -270,9 +270,9 @@ export default function Footer() {
           </div>
         </form>
       </div>
-      <div class="text-center p-6 bg-gray-800">
+      <div className="text-center p-6 bg-gray-800">
         <span>© 2022 Copyright: </span>
-        <a class="text-white font-semibold" href="!#">
+        <a className="text-white font-semibold" href="!#">
           Onestop E-cycle
         </a>
       </div>
