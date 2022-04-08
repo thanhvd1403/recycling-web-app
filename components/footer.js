@@ -264,7 +264,7 @@ export default function Footer() {
 
             <div className="md:mb-6">
               <input
-                type="text"
+                type="email"
                 className="
                 form-control
                 block

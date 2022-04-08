@@ -24,10 +24,10 @@ export default function Index({ allPosts }) {
         <Welcome />
         <To_Recycle />
         <Container maxWidth="lg">
-          <div className="py-[15vh]">
+          <div className="py-[15vh] bg-[url('/assets/background.png')]">
             <To_Information />
           </div>
-          <div className="pb-[15vh]">
+          <div className="pb-[15vh] bg-[url('/assets/background.png')]">
             <To_Event allPosts={allPosts} />
           </div>
         </Container>
