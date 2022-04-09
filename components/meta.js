@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function Meta() {
   return (
     <Head>
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicons/logo.png" />
+      <link rel="logo-icon" sizes="180x180" href="/favicons/logo.png" />
       <link
         rel="icon"
         type="image/png"

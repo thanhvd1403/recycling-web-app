@@ -12,13 +12,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+/**
+ * Funtion to render Info page at "/info_page"
+ * @returns {React.Node}
+ */
 export default function InfoPage() {
-  const sectionRef = {
-    "#DoE": "Definition of E-waste",
-    "#CoE": "Characteristics of E-waste",
-    "#BoE": "Benefits of E-waste recycling",
-    "#ToE": "Different types of E-waste",
-  };
   return (
     <>
       <Layout>
@@ -27,7 +25,7 @@ export default function InfoPage() {
         </Head>
 
         {/* BODY */}
-        <div className="w-full bg-[url('/assets/background_mobile.png')]">
+        <div className="w-full bg-[url('/assets/background.jpg')]">
           <div
             id="General information"
             className="space-x-7 py-20 px-5 text-center font-sans "
@@ -35,7 +33,7 @@ export default function InfoPage() {
             <div className="rounded-3xl  bg-emerald-50 border-black py-5 shadow-sm">
               <div
                 id="Definition"
-                className="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify sm:px-10 sx:px-3"
               >
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ What is E-waste? ♻
@@ -59,7 +57,7 @@ export default function InfoPage() {
 
               <div
                 id="Characteristic"
-                className="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify sm:px-10 sx:px-3"
               >
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Characteristics of E-waste ♻
@@ -94,21 +92,23 @@ export default function InfoPage() {
 
               <div
                 id="Impact"
-                className="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify sm:px-10 sx:px-3"
               >
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Impact of E-waste ♻
                 </p>
-                <img
-                  src="/assets/ewaste_effect.jpg"
-                  className="w-full h-auto py-6"
-                  alt="..."
-                />
+                <div className="md:px-[10vw] sx:px-3">
+                  <img
+                    src="/assets/ewaste_effect.jpg"
+                    className="w-full  h-auto py-6 justify-center "
+                    alt="..."
+                  />
+                </div>
               </div>
 
               <div
                 id="Benefit"
-                className="w-full py-6 text-justify md:px-10 sx:px-3"
+                className="w-full py-6 text-justify sm:px-10 sx:px-3"
               >
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
                   ♻ Benefits of E-waste recycling ♻
@@ -238,7 +238,7 @@ export default function InfoPage() {
             </p>
 
             <div className="flex items-center justify-center">
-              <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
+              <div className="grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 min-h-min px-5 py-5 laptop:px-24">
                 <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                   <div className="w-full">
                     <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
@@ -315,7 +315,7 @@ export default function InfoPage() {
                 alt="..."
               />
               <img
-                src="/assets/home_page/stat1.png"
+                src="/assets/home_page/stat1.jpg"
                 className="lg:w-2/5 h-auto py-10 px-5 sm:w-full"
                 alt="..."
               />
@@ -323,7 +323,7 @@ export default function InfoPage() {
 
             <div className="bg-gray-100 py-10 flex flex-grow justify-center">
               <img
-                src="/assets/home_page/stat2.png"
+                src="/assets/home_page/stat2.jpg"
                 className="w-auto h-auto"
                 alt="..."
               />
@@ -331,18 +331,18 @@ export default function InfoPage() {
 
             <div className="flex flex-grow justify-center">
               <img
-                src="/assets/home_page/stat3.png"
-                className="w-auto h-auto"
+                src="/assets/home_page/stat3.jpg"
+                className="w-screen h-auto"
                 alt="..."
               />
             </div>
 
-            <div className="py-10 bg-[url('/assets/background_mobile.png')] items-center justify-center lg:flex">
+            <div className=" bg-[url('/assets/background.jpg')] items-center justify-center lg:flex md:py-10 sx:py-3">
               <div className="px-10 pt-10 text-2xl font-bold text-teal-900 rounded-full flex items-center text-center justify-center font-mono">
                 CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT
                 THE ENVIRONEMNT AND THE PUBLIC, AS THIS
               </div>
-              <div className="text-lg grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
+              <div className="text-lg grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
                 <div className="bg-emerald-100 w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                   <p className="text-md text-gray-600 text-center px-5">
                     {`Keeps valuable resources out of the waste of the stream and
@@ -356,14 +356,14 @@ export default function InfoPage() {
                     environment
                   </p>
                 </div>
-                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-50 sx:bg-emerald-100">
+                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs sm:bg-emerald-50 sx:bg-emerald-100">
                   <p className="text-md text-gray-600 text-center px-5">
                     {`Reduces strain on Singapore's waste disposal facilities and
                     frees up land for letter quality of life for residents`}
                   </p>
                 </div>
 
-                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-100 sx:bg-emerald-50">
+                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs sm:bg-emerald-100 sx:bg-emerald-50">
                   <p className="text-md text-gray-600 text-center px-5">
                     Helps fight climate change, grow our green economy and local
                     employment opportunities
@@ -432,8 +432,6 @@ function ItemCard(props) {
               </div>`,
               icon: "info",
               color: "#000",
-              // background:
-              //   "url(/assets/type_of_ewaste/alert_background.jpg) no-repeat fixed center",
               background: "#ECEFDA",
               backdrop: `rgba(153, 241, 118, 0.4)`,
               confirmButtonText: "Gotcha!",

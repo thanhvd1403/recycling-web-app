@@ -69,11 +69,11 @@ export default function EventPage({ allPosts }) {
         <div className="flex flex-wrap flex-grow justify-center">
           <picture>
             <source
-              media="(max-width: 767px)"
-              srcSet="/assets/bg_event_2_mobile.png"
+              media="(min-width: 767px)"
+              srcSet="/assets/bg_event_2_desktop.jpg"
             />
             <img
-              src="/assets/bg_event_2_desktop.png"
+              src="/assets/bg_event_2_mobile.jpg"
               className="w-screen h-auto"
               alt="Background banner."
             />
@@ -84,12 +84,18 @@ export default function EventPage({ allPosts }) {
         </Container>
         <div className="pt-6 pb-12 px-4 tablet:px-24 md:flex xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300">
           <div className="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
-            <img
-              src="/assets/bg_event.png"
-              alt="Envelope with a newsletter"
-              role="img"
-              className="w-auto h-auto  xl:w-full lg:w-1/2"
-            />
+            <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
+              <source
+                media="(min-width: 767px)"
+                srcSet="/assets/bg_event.jpg"
+              />
+              <img
+                src="/assets/bg_event_mobile.jpg"
+                className="w-screen h-auto"
+                alt="Envelope with a newsletter"
+                role="img"
+              />
+            </picture>
           </div>
 
           <div className="w-full xl:w-1/2 xl:pl-10 xl:py-28">

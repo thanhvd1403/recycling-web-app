@@ -33,7 +33,7 @@ module.exports = {
         fixed: "40px 260px",
       },
       screens: {
-        sx: { max: "767px" },
+        sx: { max: "639px" },
         // sm: "640px",
         // // => @media (min-width: 640px) { ... }
         // md: "768px",
