@@ -442,6 +442,7 @@ function ItemCard(props) {
               background: "#ECEFDA",
               backdrop: `rgba(153, 241, 118, 0.4)`,
               confirmButtonText: "Gotcha!",
+              confirmButtonColor: "#3173de",
             });
           }}
         >

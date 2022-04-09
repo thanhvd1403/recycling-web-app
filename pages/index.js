@@ -199,9 +199,6 @@ function ItemCard(props) {
                 <p style="text-align: justify; margin-bottom:2rem">
                   ${description}
                 </p>
-                <link href="/button.css" rel="stylesheet">
-                <style>
-                </style>
               </div>`,
               icon: "info",
               color: "#000",
