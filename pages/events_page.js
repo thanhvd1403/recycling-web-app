@@ -69,7 +69,7 @@ export default function EventPage({ allPosts }) {
         <div className="flex flex-wrap flex-grow justify-center">
           <img
             src="/assets/background_event_page2.png"
-            className="w-full h-auto"
+            className="w-screen h-auto"
             alt="..."
           />
         </div>
@@ -95,7 +95,7 @@ export default function EventPage({ allPosts }) {
               e-newsletter and events about E-recycling.
             </p>
             <form
-              className="grid grid-cols-1 gap-4 justify-center items-center md:grid-cols-80/20 flex items-stretch mt-12"
+              className="grid grid-cols-1 gap-4 justify-center md:grid-cols-80/20 items-stretch mt-12"
               onSubmit={handleSubmit}
             >
               <input

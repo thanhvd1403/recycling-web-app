@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="flex justify-center">
           <a
             href="https://www.linkedin.com/in/phi-dung-ho/"
-            className="mr-6 text-white"
+            className="mr-6 text-white underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -85,7 +85,7 @@ export default function Footer() {
           </a>
           <a
             href="https://twitter.com/elonmusk"
-            className="mr-6 text-white"
+            className="mr-6 text-white underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -107,7 +107,7 @@ export default function Footer() {
           </a>
           <a
             href="https://github.com/PhiDung-hub/cz2006_web_app"
-            className="text-white"
+            className="text-white underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -174,17 +174,23 @@ export default function Footer() {
             </h6>
             <Link href="/info_page" passHref>
               <p className="md:mb-4">
-                <a className="text-white">E-waste Information</a>
+                <a className="text-white hover:text-blue-400 hover:underline">
+                  E-waste Information
+                </a>
               </p>
             </Link>
             <Link href="/recycling_page" passHref>
               <p className="md:mb-4 sx:pt-1">
-                <a className="text-white">Recycling Hub</a>
+                <a className="text-white hover:text-blue-400 hover:underline">
+                  Recycling Hub
+                </a>
               </p>
             </Link>
             <Link href="/recycling_page" passHref>
               <p className="mb-4 sx:py-1">
-                <a className="text-white">Events</a>
+                <a className="text-white hover:text-blue-400 hover:underline">
+                  Events
+                </a>
               </p>
             </Link>
           </div>
@@ -211,48 +217,52 @@ export default function Footer() {
               </svg>
               50 Nanyang Ave, Singapore 639798
             </p>
-            <p className="flex items-center justify-center md:justify-start mb-4">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="envelope"
-                className="w-4 mr-4"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                ></path>
-              </svg>
-              info@onestop.com
-            </p>
-            <p className="flex items-center justify-center md:justify-start mb-4">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="phone"
-                className="w-4 mr-4"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                ></path>
-              </svg>
-              +65 99133199
-            </p>
+            <Link href="mailto: info@onestop.com" passHref>
+              <p className="flex items-center justify-center md:justify-start mb-4 hover:underline hover:text-blue-400">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="envelope"
+                  className="w-4 mr-4"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                  ></path>
+                </svg>
+                info@onestop.com
+              </p>
+            </Link>
+            <Link href="tel:+65-99133199" passHref>
+              <p className="flex items-center justify-center md:justify-start mb-4 hover:underline hover:text-blue-400">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="phone"
+                  className="w-4 mr-4"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                  ></path>
+                </svg>
+                +65 99133199
+              </p>
+            </Link>
           </div>
         </div>
       </div>
 
       <div>
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="grid md:grid-cols-3 gird-cols-1 gap-4 justify-center items-center">
             <div className="md:ml-auto md:mb-6">
               <p className="">
@@ -290,7 +300,7 @@ export default function Footer() {
             <div className="md:mr-auto mb-6">
               <button
                 type="submit"
-                className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-white hover:bg-opacity-20 focus:outline-none focus:ring-0 transition ease-in-out"
               >
                 Subscribe
               </button>

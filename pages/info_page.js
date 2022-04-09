@@ -27,7 +27,7 @@ export default function InfoPage() {
         </Head>
 
         {/* BODY */}
-        <div className="w-full bg-[url('/assets/background.png')]">
+        <div className="w-full bg-[url('/assets/background_mobile.png')]">
           <div
             id="General information"
             className="space-x-7 py-20 px-5 text-center font-sans "
@@ -337,33 +337,33 @@ export default function InfoPage() {
               />
             </div>
 
-            <div className="py-10 bg-[url('/assets/background.png')] items-center justify-center lg:flex">
+            <div className="py-10 bg-[url('/assets/background_mobile.png')] items-center justify-center lg:flex">
               <div className="px-10 pt-10 text-2xl font-bold text-teal-900 rounded-full flex items-center text-center justify-center font-mono">
                 CHANNELLING E-WASTE TO REPUTABLE E-WASTE RECYCLERS WILL BENEFIT
                 THE ENVIRONEMNT AND THE PUBLIC, AS THIS
               </div>
               <div className="text-lg grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 min-h-min min-w-max px-5 py-5 laptop:px-24">
-                <div className="bg-emerald-100 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                <div className="bg-emerald-100 w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                   <p className="text-md text-gray-600 text-center px-5">
                     {`Keeps valuable resources out of the waste of the stream and
                     converses our planet's finite resources.`}
                   </p>
                 </div>
 
-                <div className="bg-emerald-50 w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
+                <div className="bg-emerald-50 w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs">
                   <p className="text-md text-gray-600 text-center px-5">
                     Ensures harmful substances are not released into the
                     environment
                   </p>
                 </div>
-                <div className="w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-50 sx:bg-emerald-100">
+                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-50 sx:bg-emerald-100">
                   <p className="text-md text-gray-600 text-center px-5">
                     {`Reduces strain on Singapore's waste disposal facilities and
                     frees up land for letter quality of life for residents`}
                   </p>
                 </div>
 
-                <div className="w-full mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-100 sx:bg-emerald-50">
+                <div className="w-screen mx-auto rounded-lg shadow-lg px-5 pt-5 pb-5 text-gray-800 max-w-xs md:bg-emerald-100 sx:bg-emerald-50">
                   <p className="text-md text-gray-600 text-center px-5">
                     Helps fight climate change, grow our green economy and local
                     employment opportunities

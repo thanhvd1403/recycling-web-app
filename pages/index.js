@@ -15,6 +15,7 @@ import DateFormatter from "../components/date-formatter";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { EwasteInfo } from "../data/data";
+import Image from "next/image";
 
 /**
  * Function to render index page
@@ -30,7 +31,7 @@ export default function Index({ allPosts }) {
         </Head>
         <Welcome />
         <To_Recycle />
-        <div className="bg-[url('/assets/background.png')]">
+        <div className="md:bg-[url('/assets/background.png')] sx:bg-[url('/assets/background_mobile.png')]">
           <Container maxWidth="lg">
             <div className="py-[15vh]">
               <To_Information />
@@ -54,7 +55,7 @@ function Welcome() {
   return (
     <div className="flex flex-wrap flex-grow justify-center">
       <img
-        src="/assets/home_page/banner.png"
+        src="/assets/home_page/banner_optimize.png"
         className="w-full h-auto"
         alt="..."
       />
@@ -99,7 +100,7 @@ function To_Recycle() {
       }}
     >
       <img
-        src="/assets/home_page/map_preview.png"
+        src="/assets/home_page/map_preview_optimize.png"
         alt="Preview of the map of E-waste recycling centers in Singapore."
         style={{
           height: "80vh",
