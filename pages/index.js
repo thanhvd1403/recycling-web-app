@@ -31,7 +31,7 @@ export default function Index({ allPosts }) {
         </Head>
         <Welcome />
         <To_Recycle />
-        <div className="md:bg-[url('/assets/background.png')] sx:bg-[url('/assets/background_mobile.png')]">
+        <div className="bg-[url('/assets/background_mobile.png')]">
           <Container maxWidth="lg">
             <div className="py-[15vh]">
               <To_Information />
