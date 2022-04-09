@@ -87,10 +87,10 @@ export default function EventPage({ allPosts }) {
             <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
               <source
                 media="(min-width: 767px)"
-                srcSet="/assets/bg_event.jpg"
+                srcSet="/assets/bg_event.webp"
               />
               <img
-                src="/assets/bg_event_mobile.jpg"
+                src="/assets/bg_event_mobile.webp"
                 className="w-screen h-auto"
                 alt="Envelope with a newsletter"
                 role="img"

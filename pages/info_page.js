@@ -329,12 +329,19 @@ export default function InfoPage() {
               />
             </div>
 
-            <div className="flex flex-grow justify-center">
-              <img
-                src="/assets/home_page/stat3.jpg"
-                className="w-screen h-auto"
-                alt="..."
-              />
+            <div className="flex flex-wrap flex-grow justify-center">
+              <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
+                <source
+                  media="(min-width: 767px)"
+                  srcSet="/assets/home_page/stat3.jpg"
+                />
+                <img
+                  src="/assets/home_page/stat3_mobile.jpg"
+                  className="w-screen h-auto"
+                  alt="Stats image"
+                  role="img"
+                />
+              </picture>
             </div>
 
             <div className=" bg-[url('/assets/background.jpg')] items-center justify-center lg:flex md:py-10 sx:py-3">

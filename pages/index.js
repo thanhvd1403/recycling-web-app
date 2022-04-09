@@ -54,11 +54,18 @@ export default function Index({ allPosts }) {
 function Welcome() {
   return (
     <div className="flex flex-wrap flex-grow justify-center">
-      <img
-        src="/assets/home_page/banner.jpg"
-        className="w-full h-auto"
-        alt="..."
-      />
+      <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
+        <source
+          media="(min-width: 767px)"
+          srcSet="/assets/home_page/banner.jpg"
+        />
+        <img
+          src="/assets/home_page/banner_mobile.jpg"
+          className="w-screen h-auto"
+          alt="Banner image"
+          role="img"
+        />
+      </picture>
     </div>
   );
 }
@@ -81,10 +88,10 @@ function To_Recycle() {
       }}
     >
       <img
+        className="w-screen sm:h-[80vh] sx:h-[50vh]"
         src="/assets/home_page/map_preview2.jpg"
         alt="Preview of the map of E-waste recycling centers in Singapore."
         style={{
-          height: "80vh",
           width: "100vw",
           filter: "brightness(50%) blur(4px)",
           objectFit: "cover",

@@ -18,7 +18,7 @@ export default function RecyclePage() {
         <Head>
           <title>Recycling Hub</title>
         </Head>
-        <div className=" py-20 bg-[url('/assets/background.png')] items-center justify-center md:px-10 sx:px-6">
+        <div className=" py-20 bg-[url('/assets/background.jpg')] items-center justify-center md:px-10 sx:px-6">
           <div className="mb-12 text-4xl text-center md:text-5xl font-sans font-bold text-gray-800">
             Where to recycle your E-waste?
           </div>
