@@ -55,7 +55,7 @@ function Welcome() {
   return (
     <div className="flex flex-wrap flex-grow justify-center">
       <img
-        src="/assets/home_page/banner_optimize.png"
+        src="/assets/home_page/banner.jpg"
         className="w-full h-auto"
         alt="..."
       />
@@ -69,25 +69,6 @@ function Welcome() {
  */
 function To_Recycle() {
   return (
-    // <Grid container alignItems="center" spacing={2}>
-    //   <Grid item xs={12} md={6}>
-    //     <img
-    //       src="/assets/home_page/Watch_Moment.jpg"
-    //       alt="An E-waste recycling center in Singapore."
-    //     />
-    //   </Grid>
-    //   <Grid item xs={12} md={6}>
-    //     <div class="text-center">
-    //       <Typography sx={{ m: 5 }} variant="h5" align="center">
-    //         114kg of electrical and electronic items are being thrown away every
-    //         minute in Singapore.
-    //       </Typography>
-    //       <Button href="/recycling_page" variant="outlined" size="large">
-    //         Find nearest recycling centers
-    //       </Button>
-    //     </div>
-    //   </Grid>
-    // </Grid>
     <Container
       maxWidth="false"
       disableGutters="true"
@@ -100,7 +81,7 @@ function To_Recycle() {
       }}
     >
       <img
-        src="/assets/home_page/map_preview_optimize.png"
+        src="/assets/home_page/map_preview2.jpg"
         alt="Preview of the map of E-waste recycling centers in Singapore."
         style={{
           height: "80vh",
