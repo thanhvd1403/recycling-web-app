@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Link from "next/link";
 
+/**
+ * Function to render the footer of the web page.
+ * @returns {React.HTMLProps}
+ */
 export default function Footer() {
   const [inputEmail, setInputEmail] = useState("");
   const handleChange = (event) => {

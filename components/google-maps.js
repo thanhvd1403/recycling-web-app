@@ -28,11 +28,11 @@ import Swal from "sweetalert2";
 // const placesCollectionRef = collection(db, "places");
 // const data = await getDocs(placesCollectionRef);
 // placesData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-
 // import API_KEY from "../googlemap-config";
+
 const API_KEY = "AIzaSyCtXKwCc7odv0YcpZHzRvhU-85olozLMUc";
 /**
- * Calculate the distance between two points in m's
+ * Calculate the distance between two points in meters using spherical geometry.
  * @param {point_object} (point1, point2) { lat: number, lng: number }
  * @returns {number} distance in meters.
  */
