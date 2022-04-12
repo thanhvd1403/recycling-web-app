@@ -166,7 +166,7 @@ export default function GoogleMapComponent({ containerStyle }) {
         libraries={libraries}
         preventGoogleFontsLoading={false}
       >
-        {/* Type filter */}
+        {/* BEGIN E-waste Types filter */}
         <Box
           sx={{
             paddingLeft: { md: "10vw", xs: "3vw" },
@@ -230,6 +230,8 @@ export default function GoogleMapComponent({ containerStyle }) {
             </FormGroup>
           </Menu>
         </Box>
+        {/* END E-waste Types filter */}
+
         {/* Distance filter */}
         <Box
           sx={{
@@ -279,6 +281,8 @@ export default function GoogleMapComponent({ containerStyle }) {
             <LocationOnIcon />
           </Button>
         </Box>
+        {/* END Distance Filter */}
+        {/* Embedded Google map component */}
         <GoogleMap
           id="google-map"
           mapContainerStyle={containerStyle}
@@ -289,6 +293,7 @@ export default function GoogleMapComponent({ containerStyle }) {
         >
           {/* Child components, such as markers, info windows, etc. */}
           <>
+            {/* BEGIN E-waste location mapping using Markers */}
             {places?.map((place) => {
               let matchedFilter = false;
               for (let type of ewasteTypes) {
@@ -310,12 +315,14 @@ export default function GoogleMapComponent({ containerStyle }) {
                     onClick={() => {
                       setInfos((prevInfos) => [...prevInfos, place]);
                     }}
-                    icon={"/assets/markers/greenMarkers.png"}
+                    icon={"/assets/markers/greenMarkers.webp"}
                   />
                 );
               }
             })}
+            {/* END E-waste Markers */}
 
+            {/* BEGIN Info Windows for E-waste Markers */}
             {infos?.map((info) => {
               const location = {
                 lat: info.location.lat + 0.0003 * 10 ** (14 - zoomLevel),
@@ -346,6 +353,9 @@ export default function GoogleMapComponent({ containerStyle }) {
                 </InfoWindow>
               );
             })}
+            {/* END E-waste InfoWindows */}
+
+            {/* BEGIN Marker and description for current location */}
             <Marker
               onLoad={() => {}}
               position={center}
@@ -370,6 +380,9 @@ export default function GoogleMapComponent({ containerStyle }) {
                 </InfoWindow>
               );
             })}
+            {/* END current location description */}
+
+            {/* BEGIN Googlemap Autocomplete component */}
             <Autocomplete
               onLoad={onLoad}
               onPlaceChanged={onPlaceChanged}
@@ -400,6 +413,7 @@ export default function GoogleMapComponent({ containerStyle }) {
                 }}
               />
             </Autocomplete>
+            {/* END Autocomplete */}
           </>
         </GoogleMap>
       </LoadScript>
