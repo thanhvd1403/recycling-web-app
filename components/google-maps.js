@@ -33,7 +33,7 @@ import Swal from "sweetalert2";
 const API_KEY = "AIzaSyCtXKwCc7odv0YcpZHzRvhU-85olozLMUc";
 /**
  * Calculate the distance between two points in m's
- * @args (point1, point2): {object} { lat: number, lng: number }
+ * @param {point_object} (point1, point2) { lat: number, lng: number }
  * @returns {number} distance in meters.
  */
 function haversine_distance(point1, point2) {

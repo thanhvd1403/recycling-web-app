@@ -3,6 +3,11 @@ import CoverImage from "../components/cover-image";
 import PostTitle from "../components/post-title";
 import Link from "next/link";
 
+/**
+ * Function to get and style post header
+ * @param {post_data} Object store data of post geader
+ * @returns {React.Fragment}
+ */
 export default function PostHeader({
   title,
   coverImage,

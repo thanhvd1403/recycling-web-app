@@ -2,15 +2,9 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
 import Head from "next/head";
-import Link from "next/link";
 import { Typography, Grid, Card, CardActionArea } from "@mui/material";
 import { EwasteInfo } from "../data/data";
-import React, { useState } from "react";
 import Swal from "sweetalert2";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 /**
  * Funtion to render Info page at "/info_page"
@@ -30,6 +24,7 @@ export default function InfoPage() {
             id="General information"
             className="space-x-7 py-20 px-5 text-center font-sans "
           >
+            {/* BEGIN E-waste introduction */}
             <div className="rounded-3xl  bg-emerald-50 border-black py-5 shadow-sm">
               <div
                 id="Definition"
@@ -54,7 +49,9 @@ export default function InfoPage() {
                 <span className="font-medium italic">significant risk </span>
                 to health of workers and their communities.
               </div>
+              {/* END E-waste introduction */}
 
+              {/* BEGIN Characteristic of E-waste */}
               <div
                 id="Characteristic"
                 className="w-full py-6 text-justify sm:px-10 sx:px-3"
@@ -89,7 +86,9 @@ export default function InfoPage() {
                 of the roles and responsibilities of stakeholders and
                 institutions involved in e-waste management.
               </div>
+              {/* END Characteristic of E-waste */}
 
+              {/* BEGIN IMpact of E-waste */}
               <div
                 id="Impact"
                 className="w-full py-6 text-justify sm:px-10 sx:px-3"
@@ -105,7 +104,9 @@ export default function InfoPage() {
                   />
                 </div>
               </div>
+              {/* END IMpact of E-waste */}
 
+              {/* BEGIN E-waste Management */}
               <div
                 id="Benefit"
                 className="w-full py-6 text-justify sm:px-10 sx:px-3"
@@ -225,13 +226,17 @@ export default function InfoPage() {
                   </ul>
                 </div>
               </div>
+              {/* END E-waste Management */}
+
+              {/* BEGIN E-waste Type information */}
               <div id="Type" className="w-full text-center px-5 py-6">
                 <TypeInformation />
               </div>
+              {/* END E-waste Type information */}
             </div>
           </div>
 
-          {/* Do you know? */}
+          {/* BEGIN Do you know? */}
           <div id="More information">
             <p className="pt-10 pb-5 text-3xl font-bold text-gray-700 rounded-full flex items-center justify-center font-mono">
               ♻ Do you know ♻
@@ -379,9 +384,9 @@ export default function InfoPage() {
               </div>
             </div>
           </div>
-          {/* End Do you know? */}
+          {/* END Do you know? */}
         </div>
-        {/* End Body */}
+        {/* END Body */}
       </Layout>
     </>
   );

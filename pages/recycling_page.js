@@ -1,7 +1,9 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import GoogleMapComponent from "../components/google-maps";
+import React from "react";
 
+// Container style for Google map component.
 const containerStyle = {
   width: "80vw",
   height: "80vh",
@@ -11,6 +13,10 @@ const containerStyle = {
   position: "relative",
 };
 
+/**
+ * Function to render the recycling page: google map and disposal guidelines.
+ * @returns {React.Fragment}
+ */
 export default function RecyclePage() {
   return (
     <>

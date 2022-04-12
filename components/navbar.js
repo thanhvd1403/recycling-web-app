@@ -18,6 +18,31 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
 import { useRouter } from "next/router";
 
+/**
+ * Function to render NavigationBar component
+ * @param {*} props
+ * @returns {React.Fragment}
+ */
+export default function NavigationBar(props) {
+  return (
+    <>
+      <CssBaseline />
+      <ResponsiveAppBar {...props} />
+
+      <ScrollTop {...props}>
+        <Fab color="inherit" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </>
+  );
+}
+
+/**
+ * Function to enable scroll to top feature
+ * @param {*} props
+ * @returns {React.Node}
+ */
 function ScrollTop(props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -61,7 +86,12 @@ const pages = [
   { page: "Events", href: "/events_page" },
 ];
 
-const ResponsiveAppBar = (props) => {
+/**
+ * Function to render a responsive app bar
+ * @param {*} props
+ * @returns {React.Node}
+ */
+function ResponsiveAppBar(props) {
   // Open and close app bar on mobile devices
   const [anchorNav, setanchorNav] = useState(null);
   const handleOpenNavMenu = (event) => {
@@ -232,20 +262,5 @@ const ResponsiveAppBar = (props) => {
         </Toolbar>
       </Container>
     </AppBar>
-  );
-};
-
-export default function NavigationBar(props) {
-  return (
-    <>
-      <CssBaseline />
-      <ResponsiveAppBar {...props} />
-
-      <ScrollTop {...props}>
-        <Fab color="inherit" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
-    </>
   );
 }

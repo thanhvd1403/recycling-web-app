@@ -9,6 +9,11 @@ import db from "../firebase-config";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
+/**
+ * Function to render Event page.
+ * @param {allPosts} allPosts List of static posts to render
+ * @returns {React.Fragment}
+ */
 export default function EventPage({ allPosts }) {
   const morePosts = allPosts.slice(0);
 
@@ -130,6 +135,10 @@ export default function EventPage({ allPosts }) {
   );
 }
 
+/**
+ * Get static props for main component
+ * @returns {props} static props needed before rendering
+ */
 export async function getStaticProps() {
   const allPosts = getAllPosts([
     "title",

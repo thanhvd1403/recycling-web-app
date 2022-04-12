@@ -1,5 +1,9 @@
 import Head from "next/head";
 
+/**
+ * Function to render meta tag of document
+ * @returns {React.ReactHTML}
+ */
 export default function Meta() {
   return (
     <Head>

@@ -1,6 +1,11 @@
 import markdownStyles from "./markdown-styles.module.css";
 import Link from "next/link";
 
+/**
+ * Function to get and style post body
+ * @param {Object, string} (data, url) post body
+ * @returns {React.Node}
+ */
 export default function PostBody({ content, RegURL }) {
   return (
     <div className="w-full mx-auto p-5 sm:p-10 md:p-16 bg-gray-100">

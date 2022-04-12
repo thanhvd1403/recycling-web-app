@@ -15,7 +15,6 @@ import DateFormatter from "../components/date-formatter";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { EwasteInfo } from "../data/data";
-import Image from "next/image";
 
 /**
  * Function to render index page
@@ -321,6 +320,10 @@ function Event_Card(props) {
   );
 }
 
+/**
+ * Get static props for main component
+ * @returns {props} static props needed before rendering 
+ */
 export async function getStaticProps() {
   const allPosts = getAllPosts([
     "title",

@@ -2,6 +2,11 @@ import DateFormatter from "../components/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 
+/**
+ * Function to render a post preview
+ * @param {postData} data of static post
+ * @returns {React.Node}
+ */
 export default function PostPreview({
   title,
   coverImage,
