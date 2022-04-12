@@ -66,14 +66,14 @@ export default function Footer() {
 
         <div className="flex justify-center">
           <a
-            href="https://www.linkedin.com/in/phi-dung-ho/"
+            href="https://www.linkedin.com/in"
             className="mr-6 text-white underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="To LinkedIn"
           >
             <svg
-              aria-hidden="true"
-              focusable="false"
+              focusable="true"
               data-prefix="fab"
               data-icon="linkedin-in"
               className="w-3.5"
@@ -92,12 +92,12 @@ export default function Footer() {
             className="mr-6 text-white underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="To Twitter"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 48 48"
-              aria-hidden="true"
-              focusable="false"
+              focusable="true"
               data-prefix="fab"
               data-icon="linkedin-in"
               className="w-6"
@@ -110,14 +110,14 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://github.com/PhiDung-hub/cz2006_web_app"
+            href="https://github.com/"
             className="text-white underline"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="To GitHub"
           >
             <svg
-              aria-hidden="true"
-              focusable="false"
+              focusable="true"
               data-prefix="fab"
               data-icon="github"
               className="w-4"
@@ -166,10 +166,10 @@ export default function Footer() {
               </svg>
               ONESTOP E-CYCLE
             </h6>
-            <p>
+            <div>
               Torwards a greener country, transforming Singapore through
               Technology!
-            </p>
+            </div>
           </div>
 
           <div className="">
