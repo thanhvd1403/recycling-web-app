@@ -186,6 +186,7 @@ function ResponsiveAppBar(props) {
               <Link href={"/"} key={`/_Link`} passHref>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
+                    aria-label="Go to homepage"
                     textAlign="center"
                     sx={{
                       fontFamily: "Arial",
@@ -202,6 +203,7 @@ function ResponsiveAppBar(props) {
                 <Link href={href} key={`${href}_Link`} passHref>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography
+                      aria-label={`Go to ${page}`}
                       textAlign="center"
                       sx={{
                         fontFamily: "Arial",
@@ -223,6 +225,7 @@ function ResponsiveAppBar(props) {
               variant="inherit"
               noWrap
               component="div"
+              aria-label="Go to homepage"
               sx={{
                 flexGrow: 1,
                 display: { xs: trigger ? "flex" : "none", md: "none" },
@@ -242,6 +245,7 @@ function ResponsiveAppBar(props) {
               return (
                 <Link href={href} key={`${href}_Desktop_Link`} passHref>
                   <Button
+                    aria-label={`Go to ${page}`}
                     key={[page]}
                     color="inherit"
                     sx={{

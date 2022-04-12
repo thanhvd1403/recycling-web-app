@@ -172,8 +172,13 @@ function To_Information() {
         })}
       </Grid>
       <Link href="/info_page" passHref>
-        <Button variant="contained" size="large" color="success">
-          Learn more
+        <Button
+          variant="contained"
+          size="large"
+          color="success"
+          aria-label="Go to information page"
+        >
+          More information
         </Button>
       </Link>
     </div>
@@ -266,6 +271,7 @@ function To_Event({ allPosts }) {
           <MUILink
             underline="always"
             variant="h4"
+            aria-label="Go to events page"
             sx={{
               fontSize: { md: 30, xs: 24 },
               color: "#3572F5",
@@ -322,7 +328,7 @@ function Event_Card(props) {
 
 /**
  * Get static props for main component
- * @returns {props} static props needed before rendering 
+ * @returns {props} static props needed before rendering
  */
 export async function getStaticProps() {
   const allPosts = getAllPosts([

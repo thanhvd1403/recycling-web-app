@@ -1,5 +1,11 @@
-import PostPreview from '../components/post-preview'
+import React from "react";
+import PostPreview from "../components/post-preview";
 
+/**
+ * Function to render post preview in a list/grid.
+ * @param {posts} param0 - list of posts to render
+ * @returns {React.HTMLProps}
+ */
 export default function MoreStories({ posts }) {
   return (
     <section>
@@ -20,5 +26,5 @@ export default function MoreStories({ posts }) {
         ))}
       </div>
     </section>
-  )
+  );
 }

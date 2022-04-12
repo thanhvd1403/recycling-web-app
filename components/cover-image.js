@@ -2,6 +2,11 @@ import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
 
+/**
+ * Function to render Cover image of a post
+ * @param {*} Object store image props of the cover image 
+ * @returns {React.HTMLAttributes}
+ */
 export default function CoverImage({ title, src, slug, height, width }) {
   const image = (
     <Image

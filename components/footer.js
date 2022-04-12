@@ -172,27 +172,39 @@ export default function Footer() {
             <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start sx:pt-5">
               Useful links
             </h6>
-            <Link href="/info_page" passHref>
-              <p className="md:mb-4">
-                <a className="text-white hover:text-blue-400 hover:underline">
+
+            <p className="md:mb-4">
+              <Link href="/info_page" passHref>
+                <a
+                  className="text-white hover:text-blue-400 hover:underline"
+                  aria-label="Go to information page"
+                >
                   E-waste Information
                 </a>
-              </p>
-            </Link>
-            <Link href="/recycling_page" passHref>
-              <p className="md:mb-4 sx:pt-1">
-                <a className="text-white hover:text-blue-400 hover:underline">
+              </Link>
+            </p>
+
+            <p className="md:mb-4 sx:pt-1">
+              <Link href="/recycling_page" passHref>
+                <a
+                  className="text-white hover:text-blue-400 hover:underline"
+                  aria-label="Go to recycling page"
+                >
                   Recycling Hub
                 </a>
-              </p>
-            </Link>
-            <Link href="/recycling_page" passHref>
-              <p className="mb-4 sx:py-1">
-                <a className="text-white hover:text-blue-400 hover:underline">
+              </Link>
+            </p>
+
+            <p className="mb-4 sx:py-1">
+              <Link href="/recycling_page" passHref>
+                <a
+                  className="text-white hover:text-blue-400 hover:underline"
+                  aria-label="Go to event page"
+                >
                   Events
                 </a>
-              </p>
-            </Link>
+              </Link>
+            </p>
           </div>
 
           <div className="">
