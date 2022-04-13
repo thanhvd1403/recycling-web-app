@@ -37,8 +37,9 @@ export default function Meta() {
       />
       <meta property="og:title" content="OneStop E-Cycle" />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="/assets/home_page.banner.jpg" />
+      <meta property="og:image" content="/assets/home_page/banner.jpg" />
       <meta property="og:url" content="https://onestop-e-cycle.vercel.app/" />
+      <meta property="twitter:card" content="/assets/home_page/banner.jpg" />
     </Head>
   );
 }
