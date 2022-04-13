@@ -338,7 +338,7 @@ export default function InfoPage() {
             </div>
 
             <div className="flex flex-wrap flex-grow justify-center">
-              <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
+              <picture className="w-screen h-auto">
                 <source
                   media="(min-width: 767px)"
                   srcSet="/assets/home_page/stat3.jpg"
