@@ -75,14 +75,16 @@ export default function RecyclePage() {
             <div className="py-1">
               <b>For Large Household Appliances: </b>
               <div>
-                <li>
-                  Disconnect cables and ensure appliances, fittings or equipment
-                  have been switched off.
-                </li>
-                <li>
-                  Make sure to empty, properly defrost and clean refrigerators
-                  or deep freezers.
-                </li>
+                <ul>
+                  <li>
+                    Disconnect cables and ensure appliances, fittings or
+                    equipment have been switched off.
+                  </li>
+                  <li>
+                    Make sure to empty, properly defrost and clean refrigerators
+                    or deep freezers.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

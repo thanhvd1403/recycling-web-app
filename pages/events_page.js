@@ -68,7 +68,7 @@ export default function EventPage({ allPosts }) {
     <>
       <Layout preview={true}>
         <Head>
-          <title>Events</title>
+          <title>Events Hub</title>
         </Head>
 
         <div className="flex flex-wrap flex-grow justify-center">

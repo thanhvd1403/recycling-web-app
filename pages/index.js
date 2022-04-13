@@ -10,11 +10,10 @@ import {
   Link as MUILink,
 } from "@mui/material";
 import { getAllPosts } from "../lib/api";
-import { Card, CardActionArea } from "@mui/material";
+import { Card } from "@mui/material";
 import DateFormatter from "../components/date-formatter";
 import Link from "next/link";
-import Swal from "sweetalert2";
-import { EwasteInfo } from "../data/data";
+import EWasteItems from "../components/ewaste-items";
 
 /**
  * Function to render index page
@@ -159,18 +158,7 @@ function To_Information() {
       >
         Not sure what is E-cycle?
       </Typography>
-      <Grid container alignItems="stretch" spacing={2} my={{ md: 7, xs: 3 }}>
-        {Object.entries(EwasteInfo).map(([type, specificInfo]) => {
-          return (
-            <ItemCard
-              key={type}
-              title={type}
-              imageURL={specificInfo.imageURL}
-              data={[type, specificInfo.description, specificInfo.link]}
-            />
-          );
-        })}
-      </Grid>
+      <EWasteItems />
       <Link href="/info_page" passHref>
         <Button
           variant="contained"
@@ -178,70 +166,10 @@ function To_Information() {
           color="success"
           aria-label="Go to information page"
         >
-          More information
+          More about E-waste
         </Button>
       </Link>
     </div>
-  );
-}
-
-/**
- * Item card to display information about specific type
- * @param {*} props
- * @returns {React.Node} of MUI Grid item
- */
-function ItemCard(props) {
-  const [type, description] = props.data;
-  return (
-    <Grid item xs={6} md={3}>
-      <Card className="cardItem" elevation={6}>
-        <CardActionArea
-          onClick={() => {
-            Swal.fire({
-              title: `${type}`,
-              html: `<div>
-                <p style="text-align: justify; margin-bottom:2rem">
-                  ${description}
-                </p>
-              </div>`,
-              icon: "info",
-              color: "#000",
-              background: "#ECEFDA",
-              backdrop: `rgba(153, 241, 118, 0.4)`,
-              confirmButtonText: "Gotcha!",
-              confirmButtonColor: "green",
-            });
-          }}
-        >
-          <img
-            src={props.imageURL}
-            title={props.title}
-            alt={"Image of " + props.title}
-            style={{
-              height: "15vh",
-              width: "100%",
-              filter: "brightness(40%)",
-              objectFit: "cover",
-            }}
-          />
-          <Typography
-            variant="h5"
-            fontWeight={500}
-            sx={{
-              fontSize: { md: 22, xs: 15 },
-              textAlign: "center",
-              position: "absolute",
-              color: "white",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            {props.title}
-          </Typography>
-        </CardActionArea>
-      </Card>
-    </Grid>
   );
 }
 

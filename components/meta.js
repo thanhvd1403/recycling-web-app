@@ -31,7 +31,14 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={`OneStop E-waste recycling`} />
+      <meta
+        name="description"
+        content="One Stop portal for e-waste recycling"
+      />
+      <meta property="og:title" content="OneStop E-Cycle" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="/assets/home_page.banner.jpg" />
+      <meta property="og:url" content="https://onestop-e-cycle.vercel.app/" />
     </Head>
   );
 }

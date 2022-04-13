@@ -81,7 +81,7 @@ ScrollTop.propTypes = {
 };
 
 const pages = [
-  { page: "E-formation", href: "/info_page" },
+  { page: "E-waste info", href: "/info_page" },
   { page: "Recycling Hub", href: "/recycling_page" },
   { page: "Events", href: "/events_page" },
 ];

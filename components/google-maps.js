@@ -282,6 +282,7 @@ export default function GoogleMapComponent({ containerStyle }) {
           </Button>
         </Box>
         {/* END Distance Filter */}
+        
         {/* Embedded Google map component */}
         <GoogleMap
           id="google-map"
