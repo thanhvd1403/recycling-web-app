@@ -89,7 +89,7 @@ export default function EventPage({ allPosts }) {
         </Container>
         <div className="pt-6 pb-12 px-4 tablet:px-24 md:flex xl:w-auto mx-auto flex flex-col xl:items-stretch justify-between xl:flex-row bg-gradient-to-b from-white via-yellow-100 to-emerald-300">
           <div className="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
-            <picture className="w-auto h-auto  xl:w-full lg:w-1/2">
+            <picture className="w-screen h-auto">
               <source
                 media="(min-width: 767px)"
                 srcSet="/assets/bg_event.webp"
