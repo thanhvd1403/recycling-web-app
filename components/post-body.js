@@ -16,7 +16,7 @@ export default function PostBody({ content, RegURL }) {
         />
         <div className="text-center">
           <a href={RegURL} target="_blank" rel="noopener noreferrer">
-            <button className="m-10 justify-center text-center w-36 rounded-l-none hover:bg-orange-600 bg-orange-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">
+            <button className="m-10 rounded justify-center text-center w-36 hover:bg-orange-600 bg-orange-700 text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">
               Register
             </button>
           </a>
