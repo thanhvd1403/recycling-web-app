@@ -225,13 +225,9 @@ function To_Event({ allPosts }) {
  */
 function Event_Card(props) {
   return (
-    <CardActionArea>
-      <Link href={`/posts/${props.post.slug}`} passHref>
-        <Card
-          sx={{ my: 4, maxWidth: 550 }}
-          className="event_card"
-          elevation={6}
-        >
+    <Link href={`/posts/${props.post.slug}`} passHref>
+      <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
+        <CardActionArea>
           <Grid container alignItems="center" spacing={2}>
             <Grid item>
               <img
@@ -254,9 +250,9 @@ function Event_Card(props) {
               </Box>
             </Grid>
           </Grid>
-        </Card>
-      </Link>
-    </CardActionArea>
+        </CardActionArea>
+      </Card>
+    </Link>
   );
 }
 
