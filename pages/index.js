@@ -8,6 +8,7 @@ import {
   Button,
   Grid,
   Link as MUILink,
+  CardActionArea,
 } from "@mui/material";
 import { getAllPosts } from "../lib/api";
 import { Card } from "@mui/material";
@@ -31,10 +32,9 @@ export default function Index({ allPosts }) {
         <To_Recycle />
         <div className="bg-[url('/assets/background.jpg')]">
           <Container maxWidth="lg">
-            <div className="py-[15vh]">
+            <div className="py-[15vh] mb-[12vh]">
               <To_Information />
             </div>
-            <hr className="border-accent-2 mb-[12vh] bg-teal-50 " />
             <div className="pb-[15vh]">
               <To_Event allPosts={allPosts} />
             </div>
@@ -225,32 +225,38 @@ function To_Event({ allPosts }) {
  */
 function Event_Card(props) {
   return (
-    <Link href={`/posts/${props.post.slug}`} passHref>
-      <Card sx={{ my: 4, maxWidth: 550 }} className="event_card" elevation={6}>
-        <Grid container alignItems="center" spacing={2}>
-          <Grid item>
-            <img
-              src={props.post.coverImage}
-              alt="Event cover image."
-              style={{
-                height: "120px",
-                width: "240px",
-                objectFit: "fill",
-              }}
-            />
-          </Grid>
+    <CardActionArea>
+      <Link href={`/posts/${props.post.slug}`} passHref>
+        <Card
+          sx={{ my: 4, maxWidth: 550 }}
+          className="event_card"
+          elevation={6}
+        >
+          <Grid container alignItems="center" spacing={2}>
+            <Grid item>
+              <img
+                src={props.post.coverImage}
+                alt="Event cover image."
+                style={{
+                  height: "120px",
+                  width: "240px",
+                  objectFit: "fill",
+                }}
+              />
+            </Grid>
 
-          <Grid item maxWidth={310}>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <Typography variant="h5" className="event_card-title">
-                {props.post.title}
-              </Typography>
-              <DateFormatter dateString={props.post.date} />
-            </Box>
+            <Grid item maxWidth={310}>
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography variant="h5" className="event_card-title">
+                  {props.post.title}
+                </Typography>
+                <DateFormatter dateString={props.post.date} />
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Card>
-    </Link>
+        </Card>
+      </Link>
+    </CardActionArea>
   );
 }
 
