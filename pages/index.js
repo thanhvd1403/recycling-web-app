@@ -210,9 +210,9 @@ function To_Event({ allPosts }) {
         </Link>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Event_Card post={morePosts[0]} />
-        <Event_Card post={morePosts[1]} />
         <Event_Card post={morePosts[2]} />
+        <Event_Card post={morePosts[1]} />
+        <Event_Card post={morePosts[0]} />
       </Grid>
     </Grid>
   );
