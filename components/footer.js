@@ -200,7 +200,7 @@ export default function Footer() {
             </p>
 
             <p className="mb-4 sx:py-1">
-              <Link href="/recycling_page" passHref>
+              <Link href="/events_page" passHref>
                 <a
                   className="text-white hover:text-blue-400 hover:underline"
                   aria-label="Go to event page"
