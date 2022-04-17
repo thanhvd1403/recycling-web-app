@@ -80,7 +80,7 @@ function To_Recycle() {
       sx={{
         position: "relative",
         textAlign: "center",
-        width: "100vw",
+        width: "100%",
 
         padding: 0,
       }}
@@ -90,14 +90,14 @@ function To_Recycle() {
         src="/assets/home_page/map_preview2.jpg"
         alt="Preview of the map of E-waste recycling centers in Singapore."
         style={{
-          width: "100vw",
+          width: "100%",
           filter: "brightness(50%) blur(4px)",
           objectFit: "cover",
         }}
       />
       <div
         style={{
-          width: "100vw",
+          width: "100%",
           position: "absolute",
           top: "50%",
           left: "50%",
