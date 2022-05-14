@@ -29,7 +29,7 @@ export default function InfoPage() {
                 className="w-full py-6 text-justify sm:px-10 sx:px-3"
               >
                 <p className="text-3xl font-bold text-gray-700 rounded-full text-center font-mono">
-                  ♻ What is???? ♻
+                  ♻ What is E-Cycle? ♻
                 </p>
                 <span className="font-medium">
                   Electronic waste or e-waste{" "}
