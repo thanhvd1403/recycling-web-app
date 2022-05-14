@@ -116,7 +116,7 @@ function To_Recycle() {
             textShadow: "1px 1px 2px blue",
           }}
         >
-          Do your part to help the community!
+          Do your part to help the monkeys!
         </Typography>
         <Link href="/recycling_page" passHref>
           <Button
